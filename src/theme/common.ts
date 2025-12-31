@@ -1,0 +1,436 @@
+// This common.ts is file for tocken like the common things that will same both in dark and light theme
+
+import { montserrat } from './font';
+import type * as Stitches from '@stitches/react';
+
+export const defaultTokens = {
+  fonts: {
+    Montserrat: montserrat.style.fontFamily,
+  },
+  rem: {
+    '0_06': '0.0625rem',
+    '0_12': '0.125rem',
+    '0_18': '0.1875rem',
+    '0_25': '0.25rem',
+    '0_31': '0.3125rem',
+    '0_37': '0.375rem',
+    '0_43': '0.4375rem',
+    '0_5': '0.5rem',
+    '0_56': '0.5625rem',
+    '0_62': '0.625rem',
+    '0_68': '0.6875rem',
+    '0_75': '0.75rem',
+    '0_81': '0.8125rem',
+    '0_87': '0.875rem',
+    '0_93': '0.9375rem',
+    '1': '1rem',
+    '1_06': '1.0625rem',
+    '1_12': '1.125rem',
+    '1_18': '1.1875rem',
+    '1_25': '1.25rem',
+    '1_31': '1.3125rem',
+    '1_37': '1.375rem',
+    '1_43': '1.4375rem',
+    '1_5': '1.5rem',
+    '1_56': '1.5625rem',
+    '1_62': '1.625rem',
+    '1_68': '1.6875rem',
+    '1_75': '1.75rem',
+    '1_81': '1.8125rem',
+    '1_87': '1.875rem',
+    '2': '2rem',
+    '2_25': '2.25rem',
+    '2_5': '2.5rem',
+    '2_75': '2.75rem',
+    '3': '3rem',
+    '3_12': '3.125rem',
+    '3_25': '3.25rem',
+    '3_5': '3.5rem',
+    '3_75': '3.75rem',
+    '4': '4rem',
+    '4_5': '4.5rem',
+    '5': '5rem',
+    '5_5': '5.5rem',
+    '6': '6rem',
+    '6_25': '6.25rem',
+  },
+  fontWeight: {
+    hairline: 100,
+    thin: 200,
+    light: 300,
+    normal: 400,
+    medium: 500,
+    semibold: 600,
+    bold: 700,
+    extrabold: 800,
+    black: 900,
+  },
+
+  px: {
+    0.5: '0.5px',
+    1: '1px',
+    2: '2px',
+    3: '3px',
+    4: '4px',
+    5: '5px',
+    6: '6px',
+    7: '7px',
+    8: '8px',
+    9: '9px',
+    10: '10px',
+    11: '11px',
+    12: '12px',
+    13: '13px',
+    14: '14px',
+    15: '15px',
+    16: '16px',
+    17: '17px',
+    18: '18px',
+    19: '19px',
+    20: '20px',
+    21: '21px',
+    22: '22px',
+    23: '23px',
+    24: '24px',
+    25: '25px',
+    26: '26px',
+    28: '28px',
+    30: '30px',
+    32: '32px',
+    35: '35px',
+    36: '36px',
+    37: '37px',
+    40: '40px',
+    42: '42px',
+    44: '44px',
+    45: '45px',
+    48: '48px',
+    50: '50px',
+    55: '55px',
+    62: '62px',
+    70: '70px',
+    80: '80px',
+    90: '90px',
+    100: '100px',
+    120: '120px',
+    130: '130px',
+    140: '140px',
+    160: '160px',
+    150: '150px',
+    180: '180px',
+    190: '190px',
+    200: '200px',
+    220: '220px',
+    280: '280px',
+    340: '340px',
+    360: '360px',
+    400: '400px',
+    450: '450px',
+    480: '480px',
+    440: '440px',
+    640: '640px',
+    800: '800px',
+    860: '860px',
+  },
+  dvh: {
+    1.11: '1.111dvh', // 10px
+    2.22: '2.222dvh', // 20px
+    3.11: '3.111dvh', // 28px
+    3.55: '3.556dvh', // 32px
+    3.88: '3.889dvh', // 35px
+    4.44: '4.444dvh', // 40px
+    5.11: '5.111dvh', // 46px
+    5.33: '5.333dvh', // 48px
+    5.55: '5.556dvh', // 50px
+    6.11: '6.111dvh', // 55px
+    6.66: '6.667dvh', // 60px
+    6.88: '6.889dvh', // 62px
+    7.11: '7.111dvh', // 64px
+    7.77: '7.778dvh', // 70px
+    8.88: '8.889dvh', // 80px
+    10: '10dvh', // 90px
+    13.33: '13.333dvh', // 120px
+    17.77: '17.778dvh', // 160px
+    18.88: '18.889dvh', // 170px
+    26.66: '26.667dvh', // 240px
+    28.88: '28.889dvh', // 260px
+    31.11: '31.111dvh', // 280px
+    33.33: '33.333dvh', // 300px
+    35.55: '35.556dvh', // 320px
+    37.77: '37.778dvh', // 340px
+    38.88: '38.889dvh', // 350px
+    40: '40dvh', // 360px
+    100: '100dvh',
+  },
+
+  vw: {
+    0.69: '0.694vw', // 10px
+    2.77: '2.778vw', // 40px
+    3.33: '3.333vw', // 48px
+    3.81: '3.819vw', // 55px
+    4.44: '4.444vw', // 64px
+    4.86: '4.861vw', // 70px
+    5.55: '5.556vw', // 80px
+    6.25: '6.25vw', // 90px
+    6.94: '6.944vw', // 100px
+    8.33: '8.333vw', // 120px
+    15.27: '15.278vw', // 220px
+    19.44: '19.444vw', // 280px
+    23.61: '23.611vw', // 340px
+    27.77: '27.778vw', // 400px
+    30.55: '30.556vw', // 440px
+    33.33: '33.333vw', // 480px
+    44.44: '44.444vw', // 640px
+    59.72: '59.722vw', // 860px
+    100: '100vw',
+  },
+
+  ul: {
+    0: 0,
+    0.25: 0.25,
+    0.5: 0.5,
+    0.75: 0.75,
+    0.9: 0.9,
+    1: 1,
+    1.5: 1.5,
+    2: 2,
+    2.5: 2.5,
+    3: 3,
+    3.5: 3.5,
+    100: 100,
+    200: 200,
+    300: 300,
+    400: 400,
+    500: 500,
+    600: 600,
+    700: 700,
+    800: 800,
+    900: 900,
+    1000: 1000,
+  },
+  percent: {
+    10: '10%',
+    12: '12%',
+    20: '20%',
+    30: '30%',
+    40: '40%',
+    50: '50%',
+    60: '60%',
+    70: '70%',
+    80: '80%',
+    90: '90%',
+    100: '100%',
+  },
+
+  breakpoints: {
+    xxs: '380px',
+    xs: '420px',
+    sm: '576px',
+    md: '768px',
+    lg: '1000px',
+    xl: '1200px',
+    xxl: '1440px',
+    xxxl: '1780px',
+  },
+  shadows: {
+    card: '0 2px 2px rgba(0, 0, 0, 0.3)',
+    button: '0 2px 10px rgba(,0,0,0.3)',
+    sm: '0 1px 3px rgba(0, 0, 0, 0.12)',
+    md: '0 4px 6px rgba(0, 0, 0, 0.15)',
+    lg: '0 10px 15px rgba(0, 0, 0, 0.2)',
+  },
+};
+const defaultColors = {
+  white: '#ffffff',
+  black: '#000000',
+  green: '#11dd7b',
+  lightGreenColor: '#45d245',
+  muted: '#817d7dff',
+};
+
+const defaultMedia = {
+  xs: '(max-width: 652px)',
+  sm: `(min-width: 960px )`,
+  md: `(min-width: 1280px )`,
+  lg: `(min-width: 1400px)`,
+  xl: `(min-width: 1600px)`,
+  max_1550: `(max-width: 1550px)`,
+  max_1400: `(max-width: 1400px)`,
+  max_1300: `(max-width: 1300px)`,
+  max_1100: `(max-width: 1100px)`,
+
+  max_640: `(max-width: 640px)`,
+  xxs_max: `(max-width: ${defaultTokens.breakpoints.xxs})`,
+  xs_max: `(max-width: ${defaultTokens.breakpoints.xs})`,
+  sm_max: `(max-width: ${defaultTokens.breakpoints.sm})`,
+  md_max: `(max-width: ${defaultTokens.breakpoints.md})`,
+  lg_max: `(max-width: ${defaultTokens.breakpoints.lg})`,
+  xl_max: `(max-width: ${defaultTokens.breakpoints.xl})`,
+  xxl_max: `(max-width: ${defaultTokens.breakpoints.xxl})`,
+
+  motion: '(prefers-reduced-motion: reduce)',
+  dark: '(prefers-color-scheme: dark)',
+  light: '(prefers-color-scheme: light)',
+};
+
+const defaultUtils = {
+  p: (value: Stitches.PropertyValue<'padding'>) => ({
+    padding: value,
+  }),
+  pt: (value: Stitches.PropertyValue<'paddingTop'>) => ({
+    paddingTop: value,
+  }),
+  pr: (value: Stitches.PropertyValue<'paddingRight'>) => ({
+    paddingRight: value,
+  }),
+  pb: (value: Stitches.PropertyValue<'paddingBottom'>) => ({
+    paddingBottom: value,
+  }),
+  pl: (value: Stitches.PropertyValue<'paddingLeft'>) => ({
+    paddingLeft: value,
+  }),
+  px: (value: Stitches.PropertyValue<'paddingLeft'>) => ({
+    paddingLeft: value,
+    paddingRight: value,
+  }),
+  py: (value: Stitches.PropertyValue<'paddingTop'>) => ({
+    paddingTop: value,
+    paddingBottom: value,
+  }),
+
+  m: (value: Stitches.PropertyValue<'margin'>) => ({
+    margin: value,
+  }),
+  mt: (value: Stitches.PropertyValue<'marginTop'>) => ({
+    marginTop: value,
+  }),
+  mr: (value: Stitches.PropertyValue<'marginRight'>) => ({
+    marginRight: value,
+  }),
+  mb: (value: Stitches.PropertyValue<'marginBottom'>) => ({
+    marginBottom: value,
+  }),
+  ml: (value: Stitches.PropertyValue<'marginLeft'>) => ({
+    marginLeft: value,
+  }),
+  mx: (value: Stitches.PropertyValue<'marginLeft'>) => ({
+    marginLeft: value,
+    marginRight: value,
+  }),
+  my: (value: Stitches.PropertyValue<'marginTop'>) => ({
+    marginTop: value,
+    marginBottom: value,
+  }),
+
+  bgColor: (value: Stitches.PropertyValue<'backgroundColor'>) => ({
+    backgroundColor: value,
+  }),
+
+  size: (value: Stitches.PropertyValue<'width'>) => ({
+    width: value,
+    height: value,
+  }),
+  bgClip: (value: Stitches.PropertyValue<'backgroundClip'>) => ({
+    WebkitBackgroundClip: value,
+    backgroundClip: value,
+  }),
+  bs: (value: Stitches.PropertyValue<'boxShadow'>) => ({ boxShadow: value }),
+
+  dflex: (value: Stitches.PropertyValue<'alignItems'>) => ({
+    display: 'flex',
+    alignItems: value,
+    justifyContent: value,
+  }),
+  fd: (value: Stitches.PropertyValue<'flexDirection'>) => ({
+    flexDirection: value,
+  }),
+  fw: (value: Stitches.PropertyValue<'flexWrap'>) => ({ flexWrap: value }),
+  fg: (value: Stitches.PropertyValue<'flexGrow'>) => ({ flexGrow: value }),
+  fs: (value: Stitches.PropertyValue<'flexShrink'>) => ({
+    flexShrink: value,
+  }),
+  fb: (value: Stitches.PropertyValue<'flexBasis'>) => ({ flexBasis: value }),
+
+  ai: (value: Stitches.PropertyValue<'alignItems'>) => ({
+    alignItems: value,
+  }),
+  ac: (value: Stitches.PropertyValue<'alignContent'>) => ({
+    alignContent: value,
+  }),
+  as: (value: Stitches.PropertyValue<'alignSelf'>) => ({ alignSelf: value }),
+  ji: (value: Stitches.PropertyValue<'justifyItems'>) => ({
+    justifyItems: value,
+  }),
+  jc: (value: Stitches.PropertyValue<'justifyContent'>) => ({
+    justifyContent: value,
+  }),
+
+  w: (value: Stitches.PropertyValue<'width'>) => ({ width: value }),
+  h: (value: Stitches.PropertyValue<'height'>) => ({ height: value }),
+
+  minSize: (value: Stitches.PropertyValue<'minWidth'>) => ({
+    minWidth: value,
+    minHeight: value,
+  }),
+  maxSize: (value: Stitches.PropertyValue<'maxWidth'>) => ({
+    maxWidth: value,
+    maxWeight: value,
+  }),
+  ox: (value: Stitches.PropertyValue<'overflowX'>) => ({ overflowX: value }),
+  oy: (value: Stitches.PropertyValue<'overflowY'>) => ({ overflowY: value }),
+
+  br: (value: Stitches.PropertyValue<'borderRadius'>) => ({
+    borderRadius: value,
+  }),
+  btrr: (value: Stitches.PropertyValue<'borderTopRightRadius'>) => ({
+    borderTopRightRadius: value,
+  }),
+  bbrr: (value: Stitches.PropertyValue<'borderBottomRightRadius'>) => ({
+    borderBottomRightRadius: value,
+  }),
+  bblr: (value: Stitches.PropertyValue<'borderBottomLeftRadius'>) => ({
+    borderBottomLeftRadius: value,
+  }),
+  btlr: (value: Stitches.PropertyValue<'borderTopLeftRadius'>) => ({
+    borderTopLeftRadius: value,
+  }),
+
+  ta: (value: Stitches.PropertyValue<'textAlign'>) => ({ textAlign: value }),
+  tt: (value: Stitches.PropertyValue<'textTransform'>) => ({
+    textTransform: value,
+  }),
+  lh: (value: Stitches.PropertyValue<'lineHeight'>) => ({
+    lineHeight: value,
+  }),
+
+  pe: (value: Stitches.PropertyValue<'pointerEvents'>) => ({
+    pointerEvents: value,
+  }),
+  us: (value: Stitches.PropertyValue<'userSelect'>) => ({
+    WebkitUserSelect: value,
+    userSelect: value,
+  }),
+
+  linearGradient: (value: Stitches.PropertyValue<'backgroundImage'>) => ({
+    backgroundImage: `linear-gradient(${value})`,
+  }),
+  textGradient: (value: Stitches.PropertyValue<'backgroundImage'>) => ({
+    backgroundImage: `linear-gradient(${value})`,
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    '&::selection': {
+      WebkitTextFillColor: '$colors$text',
+    },
+  }),
+};
+
+const commonTheme = {
+  theme: {
+    ...defaultTokens,
+    colors: defaultColors,
+  },
+  media: defaultMedia,
+  utils: defaultUtils,
+};
+
+export default commonTheme;
