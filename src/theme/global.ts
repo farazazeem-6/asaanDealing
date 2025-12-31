@@ -6,6 +6,5 @@ export const globalStyles = globalCss({
     backgroundColor: "$background",
     color: "$text",
     minHeight: "$dvh$100",
-    fontSize: "clamp(12px, 1vw, 16px)",
   },
 });

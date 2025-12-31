@@ -17,5 +17,5 @@ export default function ThemeToggle() {
     return <Loader />;
   }
 
-  return <></>;
+  return <>hello</>;
 }
