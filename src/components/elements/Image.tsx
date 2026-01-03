@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { TAppImageProps } from "./types";
 
-export const AppImage = ({
+export const NextImage = ({
   src,
   alt,
   width,

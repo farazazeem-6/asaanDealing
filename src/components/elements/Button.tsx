@@ -16,12 +16,19 @@ export const Button = styled('button', {
   lineHeight: '$px$1',
 
   '&:disabled': {
-    opacity: '$opacity$0_5',
+    opacity: '$ul$0.5',
     cursor: 'not-allowed',
   },
 
   variants: {
     variant: {
+      default: {
+        background: '$background',
+        color: '$main',
+        '&:hover': {
+          background: '$light',
+        },
+      },
       primary: {
         background: '$gradients$primaryButton',
         color: '$white',

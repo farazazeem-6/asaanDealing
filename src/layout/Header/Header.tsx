@@ -1,9 +1,8 @@
 'use client';
 import { usePathname } from 'next/navigation';
-import { Actions, MenuButton, MobileNav, NavList } from './style';
-import { AppImage, Button } from '@/components/elements';
+import { Actions, MobileNav, MenuIconButton, NavList } from './style';
+import { NextImage, Button } from '@/components/elements';
 import { Wrapper } from '@/components/styles';
-import { MenuIcon } from '@/components/svgs';
 import { SideBar } from '../SideBar';
 import { useState } from 'react';
 import { HeaderContainer, Logo, NavItem } from '../style';
@@ -17,7 +16,7 @@ export function Header() {
     <Wrapper>
       <HeaderContainer>
         <Logo>
-          <AppImage
+          <NextImage
             src="/asaan_dealing.svg"
             width={50}
             height={50}
@@ -41,15 +40,17 @@ export function Header() {
         <Actions>
           <Button variant={'outline'}>Post a Task</Button>
           <Button variant={'outline'}>Become a Tasker</Button>
-          <Button variant={'primary'}>Sign In</Button>
+          <Button>Sign In</Button>
         </Actions>
 
         <MobileNav>
           <Button variant={'outline'}>Become a Tasker</Button>
           <Button variant={'primary'}>Sign In</Button>
-          <MenuButton onClick={() => setIsSidebarOpen(true)}>
-            <MenuIcon width="25" height="25" css={{ color: '$primary' }} />
-          </MenuButton>
+          <MenuIconButton
+            width="25"
+            height="25"
+            onClick={() => setIsSidebarOpen(true)}
+          ></MenuIconButton>
         </MobileNav>
       </HeaderContainer>
 

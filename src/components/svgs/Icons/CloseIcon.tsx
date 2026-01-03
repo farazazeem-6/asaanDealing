@@ -13,11 +13,10 @@ const Icon: React.FC<SvgProps> = (props) => {
     >
       <SvgPath
         d="M-8.21774e-08 14.3999L1.88 16.2799L8 10.1732L14.12 16.2799L16 14.3999L8 6.3999L-8.21774e-08 14.3999Z"
-        css={{ fill: '$purple' }}
       />
       <SvgPath
         d="M16 1.88L14.12 -8.21774e-08L8 6.10667L1.88 -6.17205e-07L-8.21774e-08 1.88L8 9.88L16 1.88Z"
-        css={{ fill: '$purple' }}
+        
       />
     </Svg>
   );

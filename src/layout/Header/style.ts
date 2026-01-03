@@ -1,4 +1,5 @@
 import { Flex } from '@/components/elements';
+import { MenuIcon } from '@/components/svgs';
 import { styled } from '@/theme';
 
 export const NavList = styled(Flex, {
@@ -31,15 +32,9 @@ export const MobileNav = styled(Flex, {
   },
 });
 
-export const MenuButton = styled('button', {
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  justifyContent: 'center',
-  backgroundColor: 'transparent',
-  border: 'none',
+export const MenuIconButton = styled(MenuIcon, {
   cursor: 'pointer',
-  padding: '0',
+  color:'$primary',
 
   '@lg_max': {
     display: 'flex',

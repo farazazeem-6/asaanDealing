@@ -6,7 +6,8 @@ export const Logo = styled(Flex, {
   fontWeight: '$fontWeight$bold',
   fontSize: '$rem$1_25',
   cursor: 'pointer',
-  zIndex: 1,
+  zIndex: '$ul$1',
+  gap: '$px$5',
 });
 
 export const HeaderContainer = styled(Flex, {
@@ -21,7 +22,7 @@ export const HeaderContainer = styled(Flex, {
   backdropFilter: 'none',
   WebkitBackdropFilter: 'none',
   padding: '$rem$0_62 0',
-  zIndex: 2,
+  zIndex: '$ul$2',
 });
 
 export const NavItem = styled('a', {
@@ -41,7 +42,7 @@ export const NavItem = styled('a', {
     content: '',
     position: 'absolute',
     left: 0,
-    bottom: -2,
+    bottom: '-$px$2',
     height: '$px$2',
     width: '0%',
     backgroundColor: '$dark',
