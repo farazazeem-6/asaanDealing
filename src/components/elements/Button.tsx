@@ -16,21 +16,33 @@ export const Button = styled('button', {
   lineHeight: '$px$1',
 
   '&:disabled': {
-    opacity: '$ul$0.5',
+    opacity: '$opacity$0_5',
     cursor: 'not-allowed',
   },
 
   variants: {
     variant: {
-      theme: {
-        backgroundColor: '$background',
-        color: '$text',
-        border: '$px$1 solid $border',
+      primary: {
+        background: '$gradients$primaryButton',
+        color: '$white',
+        '&:hover': {
+          background: '$gradients$primaryHover',
+        },
       },
-      green: {
-        backgroundColor: '$green',
-        color: '$text',
-        border: '$px$1 solid $border',
+      gradientGreen: {
+        background: '$$gradients$greenGradient1',
+        color: '$white',
+        '&:hover': {
+          background: '$gradients$greenGradient2',
+        },
+      },
+      outline: {
+        backgroundColor: 'transparent',
+        color: '$textOnHover',
+        border: '$px$1 solid $borderGreen',
+        '&:hover': {
+          backgroundColor: '$btnHover',
+        },
       },
     },
 

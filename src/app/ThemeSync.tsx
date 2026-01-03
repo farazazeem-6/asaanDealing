@@ -10,7 +10,7 @@ export function ThemeSync() {
   useEffect(() => {
     // Remove both theme classes first
     document.documentElement.classList.remove(lightTheme, darkTheme);
-    
+
     // Add the correct Stitches theme class
     if (theme === 'dark') {
       document.documentElement.classList.add(darkTheme);
