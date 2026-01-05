@@ -22,15 +22,34 @@ export const Button = styled('button', {
 
   variants: {
     variant: {
-      theme: {
-        backgroundColor: '$background',
-        color: '$text',
-        border: '$px$1 solid $border',
+      default: {
+        background: '$background',
+        color: '$main',
+        '&:hover': {
+          background: '$light',
+        },
       },
-      green: {
-        backgroundColor: '$green',
-        color: '$text',
-        border: '$px$1 solid $border',
+      primary: {
+        background: '$gradients$primaryButton',
+        color: '$white',
+        '&:hover': {
+          background: '$gradients$primaryHover',
+        },
+      },
+      gradientGreen: {
+        background: '$$gradients$greenGradient1',
+        color: '$white',
+        '&:hover': {
+          background: '$gradients$greenGradient2',
+        },
+      },
+      outline: {
+        backgroundColor: 'transparent',
+        color: '$textOnHover',
+        border: '$px$1 solid $borderGreen',
+        '&:hover': {
+          backgroundColor: '$btnHover',
+        },
       },
     },
 

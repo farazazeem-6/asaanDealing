@@ -1,12 +1,13 @@
 // This common.ts is file for tocken like the common things that will same both in dark and light theme
 
-import { montserrat } from './font';
+import { Greycliff } from './font';
 import type * as Stitches from '@stitches/react';
 
-export const defaultTokens = {
+const defaultTokens = {
   fonts: {
-    Montserrat: montserrat.style.fontFamily,
+    Greycliff: Greycliff.style.fontFamily,
   },
+
   rem: {
     '0_06': '0.0625rem',
     '0_12': '0.125rem',
@@ -197,6 +198,15 @@ export const defaultTokens = {
     2.5: 2.5,
     3: 3,
     3.5: 3.5,
+    4: 4,
+    5: 5,
+    6: 6,
+    7: 7,
+    8: 8,
+    9: 9,
+    10: 10,
+    11: 11,
+    12: 12,
     100: 100,
     200: 200,
     300: 300,
@@ -233,19 +243,102 @@ export const defaultTokens = {
     xxxl: '1780px',
   },
   shadows: {
-    card: '0 2px 2px rgba(0, 0, 0, 0.3)',
-    button: '0 2px 10px rgba(,0,0,0.3)',
-    sm: '0 1px 3px rgba(0, 0, 0, 0.12)',
-    md: '0 4px 6px rgba(0, 0, 0, 0.15)',
-    lg: '0 10px 15px rgba(0, 0, 0, 0.2)',
+    card: '0 $px$2 $px$2 rgba(0, 0, 0, 0.3)',
+    button: '0 $px$2 $px$10 rgba(,0,0,0.3)',
+    sm: '0 $px$1 $px$3 rgba(0, 0, 0, 0.12)',
+    md: '0 $px$4 $px$6 rgba(0, 0, 0, 0.15)',
+    lg: '0 $px$10 $px$15 rgba(0, 0, 0, 0.2)',
+    sideBarWrapper: '-$px$8 0 $px$24 rgba(0, 0, 0, 0.08)',
+    sideBarOverlay: 'rgba(0, 0, 0, 0.5)',
   },
 };
 const defaultColors = {
   white: '#ffffff',
   black: '#000000',
+  orange: '#FFAB00',
+  yellow: '#fece00',
   green: '#11dd7b',
   lightGreenColor: '#45d245',
-  muted: '#817d7dff',
+  deepPink: '#FF008A',
+  // brand colors
+  primaryBase: '$blue1',
+  primaryBgSubtle: '$blue2',
+  primaryBg: '$blue3',
+  primaryBgHover: '$blue4',
+  primaryBgActive: '$blue5',
+  primaryLine: '$blue6',
+  primaryBorder: '$blue7',
+  primaryBorderHover: '$blue8',
+  primarySolid: '$blue9',
+  primary: '$blue9',
+  primarySolidHover: '$blue10',
+  primaryText: '$blue11',
+  primaryTextContrast: '$blue12',
+  colorGray: '#f9fafb',
+  lightGrayish: '#e2e8f0',
+  accentColor: '#2AA952',
+  veryLightGray: '#f5f5f5',
+  mediumLightGray: '#ccc',
+  dGreen: '#1E7B3D',
+  disabledSlotColor: '#aaa',
+  backgroundDisabledSlot: '#f3f3f3',
+  neutralGray: '#ddd',
+  whisperGray: '#f1f1f1',
+  aliceBlue: '#e6f2ff',
+  darkGray: '#666',
+  secondary: '$purple9',
+  success: '#1DC219',
+  success1: '#22C55E',
+  warning: '$yellow9',
+  error: '#FF2727',
+  error1: '#FF3333',
+  lightRed: '#FE2A56',
+  yellowColor: '#FFAB00',
+  textGradient:
+    'linear-gradient(90deg, #5E1BD6 3%, #912FFF 22%, #D555E2 45%, #FF943B 90%, #FFD057 100%)',
+  sidebarGradient:
+    'linear-gradient(90deg, #e2e2e2, $skeletonHighlightColor, #e2e2e2) !important',
+
+  gradient:
+    'linear-gradient(112deg, $cyan600 -63.59%, $pink600 -20.3%, $blue600 70.46%)',
+  buttonBG:
+    'linear-gradient(73.6deg, #912FFF -46.37%, #D555E2 -0.62%, #FF943B 46.54%, #FFD057 76.1%, #FFFDF9 94.4%)',
+  StepCircleGradient:
+    'linear-gradient(97.77deg, #5E1BD6 -437.34%, #912FFF -333.27%, #D555E2 -207.28%, #FF943B 39.22%, #FFD057 94%)',
+  gradientAccent: 'linear-gradient(90deg, #FF2D55, #3F72FF)',
+  sideBarBgGradient:
+    'linear-gradient(135deg, $white 0%, #f8fafc 60%, #eef2f7 100%)',
+  sideBarContentBg:
+    'linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7))',
+  // misc
+  border: '$gray7',
+  text: '$slate12',
+  bgColor: '$slate1',
+  codeLight: '$cyan5',
+  code: '$cyan6',
+  selection: '$pink8',
+
+  // airdrop
+  airdropInfo: '#EE86CB',
+  airdropTask: '#8E33FF',
+  lightYellow: '#FFD057',
+  redLight: '#D82122',
+  darkGrayAirdrop: '#919EAB3D',
+  protocalMinValueBg: '#D7D5E2',
+
+  // ecosystem
+  aquaMint: '#6CF9D8',
+  deepMidnight: '#000302',
+  skyBlue: '#2AD6E1',
+  lavenderPink: '#F5B5FF',
+  sunflowerYellow: '#f4d424',
+  charcoalBlack: '#1f1f1f',
+  neonGreen: '#26D370',
+  royalPurple: '#5E1BD6',
+  mediumGray: '#888888',
+  electricPurple: '#9F37F9',
+  vibrantOrange: '#FFA81D',
+  goldenYellow: '#FFAB00',
 };
 
 const defaultMedia = {

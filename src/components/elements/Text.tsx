@@ -1,94 +1,187 @@
-import { styled } from '@/theme';
+import { popOutIn, slideDownAndFade, slideUpAndFade } from '@/theme';
+import { styled } from '@/theme/stitches.config';
 
 export const Text = styled('span', {
   margin: '0',
-  fontWeight: 400,
+  fontWeight: '$fontWeight$normal',
 
   variants: {
     color: {
+      primary: {
+        color: '$primaryHeading',
+      },
+      secondry: {
+        color: '$secondryHeading',
+      },
+      light: { color: '$light' },
       gray: {
         color: '$gray',
+      },
+      darkGreen: {
+        color: '$dGreen',
       },
       white: {
         color: '$white',
       },
-      black: {
-        color: '$black',
+      footer: {
+        color: '$footerTextColor !important',
       },
-      theme: {
-        color: '$text',
+      success: {
+        color: '$success !important',
       },
-      muted: {
-        color: '$muted',
+      error: {
+        color: '$error1 !important',
       },
-      error:{
-        color:'$red1'
-      }
     },
     heading: {
       h1: {
+        fontSize: '$rem$4',
+        fontWeight: '$fontWeight$semibold',
+        lineHeight: '$px$38',
+      },
+      h1XL: {
         fontSize: '$rem$3',
-        '@xs_max': {
-          fontSize: '$rem$2',
-        },
+        fontWeight: '$fontWeight$semibold',
+        lineHeight: '$rem$2_75',
       },
       h2: {
         fontSize: '$rem$2',
-        '@xs_max': {
-          fontSize: '$rem$2',
-        },
+        fontWeight: '$fontWeight$semibold',
+        lineHeight: '$rem$2_75',
       },
       h3: {
         fontSize: '$rem$1_75',
-        '@xs_max': {
-          fontSize: '$rem$1',
-        },
+        fontWeight: '$fontWeight$bold',
+        lineHeight: '$rem$2_75',
       },
       h4: {
-        fontSize: '$rem$1_31',
-        '@xs_max': {
-          fontSize: '$rem$1_18',
-        },
+        fontSize: '$rem$1_18',
+        fontWeight: '$fontWeight$semibold',
+        lineHeight: '$rem$1_75',
       },
       h5: {
         fontSize: '$rem$0_93',
-        '@xs_max': {
-          fontSize: '$rem$0_81',
-        },
+        fontWeight: '$fontWeight$semibold',
+        lineHeight: '$rem$1_62',
       },
       h6: {
-        fontSize: '$rem$0_81',
-        '@xs_max': {
-          fontSize: '$rem$0_62',
-        },
+        fontSize: '$rem$0_75',
+        fontWeight: '$fontWeight$semibold',
+        lineHeight: '$rem$1_75',
+      },
+      h6Bold: {
+        fontSize: '$rem$0_75',
+        fontWeight: '$fontWeight$semibold',
+        lineHeight: '$rem$1_75',
+      },
+      h7: {
+        fontSize: '$rem$0_75',
+        fontWeight: '$fontWeight$semibold',
+        lineHeight: '$rem$1_75',
+      },
+      h8: {
+        fontSize: '$rem$0_87',
+        fontWeight: '$fontWeight$thin',
+        lineHeight: '$rem$1_75',
+      },
+      h8Bold: {
+        fontSize: '$rem$1',
+        fontWeight: '$fontWeight$normal',
+      },
+      h9: {
+        fontSize: '$rem$0_62',
+        fontWeight: '$fontWeight$semibold',
+      },
+      h5Bold: {
+        fontSize: '$rem$1',
+        fontWeight: '$fontWeight$bold',
+        lineHeight: '$rem$1_75',
+      },
+      paragraph: {
+        fontSize: '$rem$1',
+        fontWeight: '$fontWeight$normal',
+        lineHeight: '$rem$0_87',
       },
     },
-    fontWeight: {
-      thin: { fontWeight: '$fontWeight$thin' },
-      light: { fontWeight: '$fontWeight$light' },
-      normal: { fontWeight: '$fontWeight$normal' },
-      medium: { fontWeight: '$fontWeight$medium' },
-      semibold: { fontWeight: '$fontWeight$semibold' },
-      bold: { fontWeight: '$fontWeight$bold' },
-      extrabold: { fontWeight: '$fontWeight$extrabold' },
-      black: { fontWeight: '$fontWeight$black' },
-    },
-    textSpacing: {
-      primary: {
-        letterSpacing: '$px$1',
+    gradient: {
+      1: {
+        background: `$gradients$textualGradient`,
+        'background-clip': 'text',
+        '-webkit-background-clip': 'text',
+        '-webkit-text-fill-color': 'transparent',
       },
-      secondary: {
-        letterSpacing: '$px$2',
+      2: {
+        background: '$textualGradient2',
+        backgroundClip: 'text',
+        WebkitBackgroundClip: 'text',
+        WebkitTextFillColor: 'transparent',
+      },
+      3: {
+        background: `$gradients$greenishGradient`,
+        backgroundClip: 'text',
+        WebkitBackgroundClip: 'text',
+        WebkitTextFillColor: 'transparent',
       },
     },
-    truncate: {
-      true: {
-        display: 'inline-block',
-        maxWidth: '15ch',
-        whiteSpace: 'nowrap',
+    animate: {
+      sileUpFade: {
+        animation: `1.5s ${slideUpAndFade}  ease-out`,
+      },
+      sileUpFade2: {
+        animation: `2s ${slideUpAndFade}  ease-out`,
+      },
+      sileUpFade2AndHalf: {
+        animation: `2.5s ${slideUpAndFade}  ease-out`,
+      },
+      sileUpFade3: {
+        animation: `3s ${slideUpAndFade}  ease-out`,
+      },
+      sileUpFade4: {
+        animation: `4s ${slideUpAndFade}  ease-out`,
+      },
+      sileUpFade5: {
+        animation: `5s ${slideUpAndFade}  ease-out`,
+      },
+      sileUpFade6: {
+        animation: `6s ${slideUpAndFade}  ease-out`,
+      },
+      sileDownFade: {
+        animation: `1.5s ${slideDownAndFade}  ease-out`,
+      },
+      sileDownFade2: {
+        animation: `2s ${slideDownAndFade}  ease-out`,
+      },
+      sileDownFade3: {
+        animation: `3s ${slideDownAndFade}  ease-out`,
+      },
+      popOutIn: {
+        animation: `1.5s ${popOutIn}  ease-out`,
+      },
+    },
+    textEllipsis: {
+      '1': {
         overflow: 'hidden',
+        display: '-webkit-box',
+        '-webkit-line-clamp': '1',
+        lineClamp: '1',
+        '-webkit-box-orient': 'vertical',
         textOverflow: 'ellipsis',
-        verticalAlign: 'bottom',
+      },
+      '2': {
+        overflow: 'hidden',
+        display: '-webkit-box',
+        '-webkit-line-clamp': '2',
+        lineClamp: '2',
+        '-webkit-box-orient': 'vertical',
+        textOverflow: 'ellipsis',
+      },
+      '3': {
+        overflow: 'hidden',
+        display: '-webkit-box',
+        '-webkit-line-clamp': '3',
+        lineClamp: '3',
+        '-webkit-box-orient': 'vertical',
+        textOverflow: 'ellipsis',
       },
     },
   },

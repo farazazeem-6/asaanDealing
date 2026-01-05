@@ -1,8 +1,27 @@
-// "use client";
+'use client';
 
-// import { store } from "@/store/store";
-// import { Provider } from "react-redux";
+import { ThemeProvider } from 'next-themes';
+import { ThemeSync } from './ThemeSync';
+import { Loader } from '@/components/elements';
+import { useEffect, useState } from 'react';
+import { Header } from '@/layout/Header';
 
-// export default function Providers({ children }: { children: React.ReactNode }) {
-//   return <Provider store={store}>{children}</Provider>;
-// }
+export const Providers = ({ children }: { children: React.ReactNode }) => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return <Loader />;
+  }
+
+  return (
+    <ThemeProvider attribute={'class'} defaultTheme="light">
+      <ThemeSync />
+      <Header />
+      {children}
+    </ThemeProvider>
+  );
+};
