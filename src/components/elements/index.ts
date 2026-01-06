@@ -10,5 +10,4 @@ export * from './Image';
 export * from './InputWrapper';
 export * from './InputButton';
 export * from './Input';
-export * from './statCard'
-export * from './Divider'
+export * from './Divider';

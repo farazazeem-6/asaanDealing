@@ -13,22 +13,21 @@ export const useTypingText = (options: TTypingHookOptions = {}) => {
   const [displayText, setDisplayText] = useState('');
 
   // Use professions from constants
-  const professions = PROFESSIONS;
 
   const typeTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const holdTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const deleteTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   useEffect(() => {
-    if (professions.length === 0) return;
+    if (PROFESSIONS.length === 0) return;
 
     // Cleanup any previous timers
     if (typeTimerRef.current) clearInterval(typeTimerRef.current);
     if (holdTimerRef.current) clearTimeout(holdTimerRef.current);
     if (deleteTimerRef.current) clearInterval(deleteTimerRef.current);
 
-    const wordIndex = activeIndex % professions.length;
-    const word = professions[wordIndex] ?? '';
+    const wordIndex = activeIndex % PROFESSIONS.length;
+    const word = PROFESSIONS[wordIndex] ?? '';
 
     // Ratios inside one cycle: type 40%, hold 20%, delete 40%
     const typeMs = Math.round(cycleMs * 0.4);
@@ -81,7 +80,7 @@ export const useTypingText = (options: TTypingHookOptions = {}) => {
       if (holdTimerRef.current) clearTimeout(holdTimerRef.current);
       if (deleteTimerRef.current) clearInterval(deleteTimerRef.current);
     };
-  }, [activeIndex, professions, cycleMs]);
+  }, [activeIndex, cycleMs]);
 
   return { displayText };
 };

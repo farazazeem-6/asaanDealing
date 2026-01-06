@@ -10,10 +10,10 @@ export const globalStyles = globalCss({
     backgroundColor: '$background',
     color: '$text',
     minHeight: '$dvh$100',
-    fontSize: 'clamp(12px, 1vw, 16px)',
+    fontSize: 'clamp($px$12, 1vw, $px$16)',
   },
 
-  input: { fontSize: '16px !important' },
-  textarea: { fontSize: '16px !important' },
-  select: { fontSize: '16px !important' },
+  input: { fontSize: '$px$16 !important' },
+  textarea: { fontSize: '$px$16 !important' },
+  select: { fontSize: '$px$16 !important' },
 });

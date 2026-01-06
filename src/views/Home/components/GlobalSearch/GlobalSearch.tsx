@@ -6,7 +6,6 @@ import {
   SearchIcon,
 } from '@/components/svgs';
 import {
-  DisplayText,
   DropdownHeader,
   DropdownMenu,
   DropdownSearch,
@@ -19,11 +18,14 @@ import {
   ServiceInputGroup,
 } from './style';
 import { LOCATION_DATA } from '@/constants';
-import { Box, Flex } from '@/components/elements';
+import { Box, Flex, Text } from '@/components/elements';
+import { LocationEnum } from '@/utils/enums';
 
 export function GlobalSearch() {
   const [isOpen, setIsOpen] = useState(false);
-  const [view, setView] = useState<'PROVINCE' | 'CITY'>('PROVINCE');
+  const [view, setView] = useState<LocationEnum.PROVINCE | LocationEnum.CITY>(
+    LocationEnum.PROVINCE,
+  );
   const [selectedProvince, setSelectedProvince] = useState<string | null>(null);
   const [selectedCity, setSelectedCity] = useState<string | null>(null);
 
@@ -48,7 +50,7 @@ export function GlobalSearch() {
   // Handler: When a Province is clicked
   const handleProvinceSelect = (province: string) => {
     setSelectedProvince(province);
-    setView('CITY');
+    setView(LocationEnum.CITY);
     setSearchQuery('');
   };
 
@@ -70,7 +72,7 @@ export function GlobalSearch() {
     e.stopPropagation();
     setSelectedProvince(null);
     setSelectedCity(null);
-    setView('PROVINCE');
+    setView(LocationEnum.PROVINCE);
     setIsOpen(false);
     setSearchQuery('');
   };
@@ -79,7 +81,7 @@ export function GlobalSearch() {
   const getFilteredItems = () => {
     const query = searchQuery.toLowerCase();
 
-    if (view === 'PROVINCE') {
+    if (view === LocationEnum.PROVINCE) {
       const provinces = Object.keys(LOCATION_DATA);
       if (!query) return provinces;
       return provinces.filter((province) =>
@@ -87,7 +89,7 @@ export function GlobalSearch() {
       );
     }
 
-    if (view === 'CITY' && selectedProvince) {
+    if (view === LocationEnum.CITY && selectedProvince) {
       const cities = LOCATION_DATA[selectedProvince] || [];
       if (!query) return cities;
       return cities.filter((city) => city.toLowerCase().includes(query));
@@ -100,9 +102,9 @@ export function GlobalSearch() {
 
   return (
     <Box css={{ marginTop: '$rem$2' }}>
-      <SearchWrapper ref={wrapperRef} align={'center'}>
+      <SearchWrapper ref={wrapperRef}>
         {/*Service Search */}
-        <ServiceInputGroup align={'center'}>
+        <ServiceInputGroup>
           <SearchIcon
             width={20}
             height={20}
@@ -113,15 +115,14 @@ export function GlobalSearch() {
 
         {/*Location Dropdown */}
         <LocationTrigger
-          align={'center'}
-          justify={'between'}
+          
           onClick={() => setIsOpen(!isOpen)}
         >
           <Flex align={'center'} gap={'8'}>
             <LocationIcon
               css={{ color: '$secondryHeading', flexShrink: '0' }}
             />
-            <DisplayText
+            <Text
               title={getDisplayText()}
               textEllipsis={'1'}
               css={{
@@ -131,7 +132,7 @@ export function GlobalSearch() {
               }}
             >
               {getDisplayText()}
-            </DisplayText>
+            </Text>
           </Flex>
 
           {selectedProvince ? (
@@ -154,7 +155,7 @@ export function GlobalSearch() {
               <DropdownHeader>
                 <DropdownSearch
                   placeholder={
-                    view === 'PROVINCE' ? 'Search Province' : 'Search City'
+                    view === LocationEnum.PROVINCE  ? 'Search Province' : 'Search City'
                   }
                   autoFocus
                   value={searchQuery}
@@ -163,7 +164,7 @@ export function GlobalSearch() {
               </DropdownHeader>
 
               <ListContainer>
-                {view === 'PROVINCE' &&
+                {view === LocationEnum.PROVINCE  &&
                   filteredList.map((province) => (
                     <ListItem
                       key={province}
@@ -173,7 +174,7 @@ export function GlobalSearch() {
                     </ListItem>
                   ))}
 
-                {view === 'CITY' && (
+                {view === LocationEnum.CITY && (
                   <>
                     {searchQuery === '' && (
                       <ListItem

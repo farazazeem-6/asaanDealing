@@ -1,4 +1,4 @@
-import { Box, Flex, Text } from '@/components/elements';
+import { Box, Flex } from '@/components/elements';
 import { styled } from '@/theme';
 
 export const SearchWrapper = styled(Flex, {
@@ -8,6 +8,7 @@ export const SearchWrapper = styled(Flex, {
   position: 'relative',
   color: '$secondryHeading',
   boxSizing: 'border-box',
+  alignItems: 'center',
 
   '@md_max': {
     border: 'none',
@@ -19,6 +20,7 @@ export const SearchWrapper = styled(Flex, {
 export const ServiceInputGroup = styled(Flex, {
   flex: 1,
   paddingLeft: '$px$10',
+  alignItems:'center',
 
   '@md_max': {
     border: '$px$1 solid $lightGrayLine',
@@ -46,9 +48,11 @@ export const LocationTrigger = styled(Flex, {
   userSelect: 'none',
   minWidth: '$px$190',
   position: 'relative',
+  alignItems: 'center',
+  justifyContent: 'space-between',
 
   '@md_max': {
-    order: 1,
+    order: '$ul$1',
     flexBasis: '$percent$100',
     border: '$px$1 solid $lightGrayLine',
     borderRadius: '$px$15',
@@ -81,9 +85,7 @@ export const SearchBtn = styled('button', {
   },
 });
 
-export const DisplayText = styled(Text, {});
-
-export const DropdownMenu = styled(Box, {
+export const DropdownMenu = styled(Flex, {
   position: 'absolute',
   backgroundColor: '$white',
   top: '$percent$110',
@@ -92,8 +94,7 @@ export const DropdownMenu = styled(Box, {
   borderRadius: '$px$12',
   boxShadow: '$shadows$dropDown',
   zIndex: '$ul$10',
-  display: 'flex',
-  flexDirection: 'column',
+  flexDirection: 'column !important',
   '@md_max': {
     width: '$percent$90',
   },

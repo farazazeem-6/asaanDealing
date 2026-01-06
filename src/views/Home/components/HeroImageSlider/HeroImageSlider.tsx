@@ -1,26 +1,11 @@
 import React from 'react';
-import {
-  FloatingImage,
-  ImageWrapper,
-} from './style';
-
-const images = [
-  '/images/acRepair.png.png',
-  '/images/Painter.png',
-  '/images/Photographer.png',
-  '/images/Electrician.png',
-  '/images/Beautician.png',
-  '/images/Plumber.png',
-  '/images/Barber.png',
-  '/images/Sweeper.png',
-  '/images/PestControl.png',
-];
+import { FloatingImage, ImageWrapper } from './style';
+import { images } from '@/constants';
 
 const HeroImageSliderComponent = ({ activeIndex }: { activeIndex: number }) => {
   const currentImage = activeIndex % images.length;
 
   return (
-    // <HeroImageWrapper>
     <ImageWrapper>
       {images.map((src, index) => (
         <FloatingImage
@@ -34,7 +19,6 @@ const HeroImageSliderComponent = ({ activeIndex }: { activeIndex: number }) => {
         />
       ))}
     </ImageWrapper>
-    // </HeroImageWrapper>
   );
 };
 

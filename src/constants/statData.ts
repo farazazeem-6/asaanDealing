@@ -5,19 +5,19 @@ export const statsData = [
   {
     id: 1,
     icon: TaskerIcon,
-    number: '385+',
+    number: 385,
     label: 'Tasks Posted',
   },
   {
     id: 2,
     icon: TaskPostedIcon,
-    number: '335+',
+    number: 335,
     label: 'Taskers',
   },
   {
     id: 3,
     icon: UserIcon,
-    number: '587+',
+    number: 587,
     label: 'Users',
   },
 ];

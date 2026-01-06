@@ -1,9 +1,6 @@
 import { Flex, Text } from '@/components/elements';
 import { styled } from '@/theme';
 
-export const HeroContainer = styled(Flex, {
-  justifyContent: 'space-around',
-});
 export const HeroContent = styled(Flex, {
   flexDirection: 'column !important',
   maxWidth: '$px$500',
@@ -14,7 +11,6 @@ export const HeroContent = styled(Flex, {
     marginTop: '$px$40',
   },
 });
-export const HeroSubTitle = styled(Text, {});
 export const PopularHeading = styled(Text, {
   color: '$gray7',
   fontWeight: '$fontWeight$semibold',
@@ -27,6 +23,7 @@ export const PopularHeading = styled(Text, {
 });
 export const PopularSearchWrapper = styled(Flex, {
   marginTop: '$px$10',
+  gap: '$px$10',
   '@md_max': {
     flexWrap: 'wrap',
   },
@@ -56,4 +53,32 @@ export const StatCardsWrapper = styled(Flex, {
   '@sm_max': {
     display: 'none',
   },
+});
+
+// Stat Card styling
+export const CardContainer = styled(Flex, {
+  padding: '$rem$0_62',
+});
+
+export const IconBox = styled(Flex, {
+  background: '$gradients$greenGradient1',
+  borderRadius: '$percent$50',
+  width: '$px$40',
+  height: '$px$40',
+  color: '$white',
+  marginRight: '$px$16',
+  flexShrink: 0,
+});
+
+export const CountText = styled(Text, {
+  fontSize: '$px$14',
+  fontWeight: '$fontWeight$semibold',
+  color: '$primaryHeading',
+});
+
+export const LabelText = styled(Text, {
+  fontSize: '$px$10',
+  color: '$secondryHeading !important',
+  textTransform: 'uppercase',
+  marginTop: '$px$4',
 });
