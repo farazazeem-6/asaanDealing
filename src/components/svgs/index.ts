@@ -1,2 +1,9 @@
-export { default as MenuIcon } from './Icons/MenuIcon'
-export { default as CloseIcon } from './Icons/CloseIcon'
+export { default as MenuIcon } from './Icons/MenuIcon';
+export { default as CloseIcon } from './Icons/CloseIcon';
+export { default as SearchIcon } from './Icons/SearchIcon';
+export { default as ChevronDown } from './Icons/ChevronDown';
+export { default as CircleClose } from './Icons/CircleClose';
+export { default as LocationIcon } from './Icons/LocationIcon';
+export { default as TaskerIcon } from './Icons/Tasker';
+export { default as TaskPostedIcon } from './Icons/TaskPosted';
+export { default as UserIcon } from './Icons/User';

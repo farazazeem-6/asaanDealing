@@ -167,8 +167,5 @@ export const Flex = styled(Box, {
   },
   defaultVariants: {
     direction: 'row',
-    align: 'stretch',
-    justify: 'start',
-    wrap: 'noWrap',
   },
 });
