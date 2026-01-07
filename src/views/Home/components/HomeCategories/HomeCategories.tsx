@@ -1,13 +1,12 @@
 import { Button, Flex, Text } from '@/components/elements';
 import {
   CategoryCardsGrid,
-  Heading,
   HomeCategoriesWrapper,
-  SubHeading,
 } from './style';
 import { CATEGORY_DATA, TEXT } from '@/constants';
 import { CategoryCard } from '@/components/ui';
 import { useScreenWidth } from '@/hooks';
+import { Heading, SubHeading } from '../style';
 
 export const HomeCategories = () => {
   const { isMobile } = useScreenWidth();

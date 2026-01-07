@@ -1,4 +1,4 @@
-import { Box, Text } from '@/components/elements';
+import { Box } from '@/components/elements';
 import { styled } from '@/theme';
 
 export const HomeCategoriesWrapper = styled(Box, {
@@ -8,22 +8,6 @@ export const HomeCategoriesWrapper = styled(Box, {
   },
   '@sm_max': {
     marginTop: '$px$20',
-  },
-});
-export const Heading = styled(Text, {
-  fontSize: '$rem$2',
-  fontWeight: '$fontWeight$bold',
-  marginBottom: '$px$10',
-  textAlign: 'center',
-  '@sm_max': {
-    fontSize: '$rem$1_87',
-  },
-});
-export const SubHeading = styled(Text, {
-  fontSize: '$rem$1',
-  textAlign: 'center',
-  '@sm_max': {
-    fontSize: '$rem$0_93',
   },
 });
 export const CategoryCardsGrid = styled(Box, {
