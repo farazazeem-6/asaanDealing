@@ -1,18 +1,5 @@
 import { TCategoryItem } from '@/components/ui/types';
 
-export const categoryImage = [
-  '/images/book.png',
-  '/images/flash.png',
-  '/images/machine.png',
-  '/images/spinner.png',
-  '/images/stationary.png',
-  '/images/tool.png',
-  '/images/tripord.png',
-  '/images/van.png',
-  '/images/grander.png',
-  '/images/ac.png',
-];
-
 export const CATEGORY_DATA: TCategoryItem[] = [
   {
     id: '1',
