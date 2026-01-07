@@ -1,7 +1,8 @@
+import { Box } from '@/components/elements';
 import { float, openFromShade, styled } from '@/theme';
 import Image from 'next/image';
 
-export const ImageWrapper = styled('div', {
+export const ImageWrapper = styled(Box, {
   position: 'relative',
   width: '$px$500',
   height: '$px$500',

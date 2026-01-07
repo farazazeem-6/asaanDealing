@@ -1,5 +1,5 @@
 export type TStatItemProps = {
   icon: React.ElementType;
-  number: string | number;
+  number: number;
   label: string;
 };
