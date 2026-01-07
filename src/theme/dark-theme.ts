@@ -98,6 +98,7 @@ const darkThemeOpt = {
     textualGradient2: 'linear-gradient(90deg, #228B22 0%, #DAA520 100%)',
     greenGradient1: 'linear-gradient(to right, #1E7B3D, #3ABF78)',
     greenGradient2: 'linear-gradient(to right, #15803D, #34D399)',
+    greenishGradient: 'linear-gradient(to top, #006400, #228B22, #32CD32)',
   },
   opacity: {
     mid: '$ul$0.5',

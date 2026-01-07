@@ -123,12 +123,14 @@ const defaultTokens = {
     200: '200px',
     220: '220px',
     280: '280px',
+    300: '300px',
     340: '340px',
     360: '360px',
     400: '400px',
     450: '450px',
-    480: '480px',
     440: '440px',
+    480: '480px',
+    500: '500px',
     640: '640px',
     800: '800px',
     860: '860px',
@@ -230,6 +232,7 @@ const defaultTokens = {
     80: '80%',
     90: '90%',
     100: '100%',
+    110: '110%',
   },
 
   breakpoints: {
@@ -250,6 +253,7 @@ const defaultTokens = {
     lg: '0 $px$10 $px$15 rgba(0, 0, 0, 0.2)',
     sideBarWrapper: '-$px$8 0 $px$24 rgba(0, 0, 0, 0.08)',
     sideBarOverlay: 'rgba(0, 0, 0, 0.5)',
+    dropDown: '0 $px$10 $px$15 -$px$3 rgba(0, 0, 0, 0.1)',
   },
 };
 const defaultColors = {

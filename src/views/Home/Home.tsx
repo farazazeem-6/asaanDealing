@@ -1,11 +1,10 @@
-import { Wrapper } from "@/components/styles/global"
+import { Wrapper } from '@/components/styles/global';
+import { HeroSection } from './components';
 
-function Home() {
+export const Home = () => {
   return (
     <Wrapper>
-        
+      <HeroSection />
     </Wrapper>
-  )
-}
-
-export default Home
+  );
+};

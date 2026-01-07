@@ -1,4 +1,4 @@
-import { globalStyles, Greycliff } from '@/theme';
+import { Greycliff } from '@/theme';
 import { Providers } from './Providers';
 import { Metadata } from 'next';
 
@@ -7,7 +7,12 @@ export const metadata: Metadata = {
   description:
     'Asaan Dealing - The easiest way to manage your daily tasks and services.',
   icons: {
-    icon: '/asaan_dealing.svg',
+    icon: { url: '/asaan_dealing.svg', type: 'image/svg+xml' },
+  },
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
   },
 };
 
@@ -16,7 +21,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  globalStyles();
   return (
     <html
       style={{ fontSize: 'clamp(12px, 1vw, 16px)' }}
