@@ -9,6 +9,7 @@ const lightThemeOpt = {
     lightBg: '$white',
     backgroundContrast: '$accents0',
     threeBarIcon: '#4A2985',
+    selectorHover: '#ddd7d7ff',
     //semantic colors
     ...blueDark,
     ...slate,

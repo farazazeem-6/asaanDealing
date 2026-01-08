@@ -1,14 +1,13 @@
 import { Button, Flex, Text } from '@/components/elements';
-import {
-  CategoryCardsGrid,
-  HomeCategoriesWrapper,
-} from './style';
+import { CategoryCardsGrid, HomeCategoriesWrapper } from './style';
 import { CATEGORY_DATA, TEXT } from '@/constants';
 import { CategoryCard } from '@/components/ui';
 import { useScreenWidth } from '@/hooks';
 import { Heading, SubHeading } from '../style';
+import { useTranslation } from 'react-i18next';
 
 export const HomeCategories = () => {
+  const { t } = useTranslation();
   const { isMobile } = useScreenWidth();
 
   const visibleCategories = isMobile
@@ -19,12 +18,12 @@ export const HomeCategories = () => {
     <HomeCategoriesWrapper>
       <Flex justify={'center'} direction={'column'}>
         <Heading>
-          {TEXT.CATEGORY.TITLE}
+          {t(TEXT.CATEGORY.TITLE)}{' '}
           <Text gradient={'3'} css={{ fontWeight: '$fontWeight$semibold' }}>
-            Categories
+            {t('HomeContent.Categories')}
           </Text>
         </Heading>
-        <SubHeading>{TEXT.CATEGORY.SUBTITLE}</SubHeading>
+        <SubHeading>{t(TEXT.CATEGORY.SUBTITLE)}</SubHeading>
       </Flex>
 
       <CategoryCardsGrid>
@@ -32,8 +31,9 @@ export const HomeCategories = () => {
           <CategoryCard key={item.id} data={item} />
         ))}
       </CategoryCardsGrid>
+
       <Flex justify={'center'} css={{ marginTop: '$rem$1' }}>
-        <Button variant={'primary'}>View All</Button>
+        <Button variant={'primary'}>{t('Action.ViewAll')}</Button>
       </Flex>
     </HomeCategoriesWrapper>
   );

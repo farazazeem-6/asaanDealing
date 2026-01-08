@@ -1,0 +1,115 @@
+{
+  "Nav": {
+    "Home": "Home",
+    "Services": "Services",
+    "Categories": "Categories",
+    "Tasks": "Tasks"
+  },
+  "Action": {
+    "SignIn": "Sign In",
+    "ViewAll": "View All",
+    "PostTask": "Post a Task",
+    "BecomeTasker": "Become a Tasker",
+    "Search": "Search"
+  },
+  "Hero": {
+    "HeroTitle": "The easiest way to find and book experts",
+    "HeroDesc": "Browse, Book, or Get Booked — the choice is yours.",
+    "PopularSearches": "Popular Searches",
+    "For": "for"
+  },
+  "HomeContent": {
+    "CategoryTitle": "Explore our",
+    "CategoryDesc": "We have simplified our categories to help you find what you need—faster and easier.",
+    "Categories": "Categories"
+  },
+  "Inputs": {
+    "ServiceInput": "Search for service",
+    "SelectLocation": "Select Location",
+    "SelectProvince": "Select Province",
+    "SelectCity": "Select City",
+    "NoResultsFound": "No results found"
+  },
+  "Stats": {
+    "TasksPosted": "Tasks Posted",
+    "Taskers": "Taskers",
+    "Users": "Users"
+  },
+  "Provinces": {
+    "Azad Kashmir": "Azad Kashmir",
+    "Balochistan": "Balochistan",
+    "Islamabad Tertiary": "Islamabad Capital Territory",
+    "Khyber Pakhtunkhwa": "Khyber Pakhtunkhwa",
+    "Northern Areas": "Gilgit-Baltistan",
+    "Punjab": "Punjab",
+    "Sindh": "Sindh"
+  },
+  "Locations": {
+    "Muzaffarabad": "Muzaffarabad",
+    "Mirpur": "Mirpur",
+    "Rawalakot": "Rawalakot",
+    "Kotli": "Kotli",
+    "Bhimber": "Bhimber",
+    "Quetta": "Quetta",
+    "Gwadar": "Gwadar",
+    "Turbat": "Turbat",
+    "Khuzdar": "Khuzdar",
+    "Sibi": "Sibi",
+    "Islamabad": "Islamabad",
+    "Blue Area": "Blue Area",
+    "F-6": "F-6",
+    "F-7": "F-7",
+    "G-11": "G-11",
+    "Peshawar": "Peshawar",
+    "Abbottabad": "Abbottabad",
+    "Mardan": "Mardan",
+    "Swat": "Swat",
+    "Kohat": "Kohat",
+    "Gilgit": "Gilgit",
+    "Skardu": "Skardu",
+    "Hunza": "Hunza",
+    "Chilas": "Chilas",
+    "Ghanche": "Ghanche",
+    "Lahore": "Lahore",
+    "Faisalabad": "Faisalabad",
+    "Rawalpindi": "Rawalpindi",
+    "Multan": "Multan",
+    "Gujranwala": "Gujranwala",
+    "Sialkot": "Sialkot",
+    "Bahawalpur": "Bahawalpur",
+    "Sargodha": "Sargodha",
+    "Karachi": "Karachi",
+    "Hyderabad": "Hyderabad",
+    "Sukkur": "Sukkur",
+    "Larkana": "Larkana",
+    "Nawabshah": "Nawabshah"
+  },
+  "CategoryNames": {
+    "ApplianceRepair": "Appliance Repair",
+    "HVAC": "HVAC Services",
+    "Maintenance": "Maintenance and Repair",
+    "CareerServices": "Admission & Career Services",
+    "Architectural": "Architectural Mapping",
+    "Tailoring": "At-Home Tailoring",
+    "Cleaning": "Cleaning Services",
+    "EventServices": "Commercial & Event Services",
+    "Courier": "Courier & Delivery Services",
+    "Emergency": "Emergency Services"
+  },
+  "PopularTags": {
+    "ACVentilation": "Air Conditioning & Ventilation",
+    "HVACMaintenance": "HVAC Maintenance & Optimization",
+    "SolarSystems": "Heating and Solar Water Systems"
+  },
+  "Professions": {
+    "ACRepair": "AC Installation & Repair",
+    "Painting": "Residential & Commercial Painting",
+    "Photography": "Photography & Videography",
+    "Electrical": "Electrical Services",
+    "EventGrooming": "Special Event Grooming",
+    "Plumbing": "Plumbing",
+    "BeardGrooming": "Beard Grooming & Shaving",
+    "HomeCleaning": "Home Cleaning",
+    "PestControl": "General Pest Control"
+  }
+}

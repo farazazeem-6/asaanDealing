@@ -7,3 +7,5 @@ export { default as LocationIcon } from './Icons/LocationIcon';
 export { default as TaskerIcon } from './Icons/Tasker';
 export { default as TaskPostedIcon } from './Icons/TaskPosted';
 export { default as UserIcon } from './Icons/User';
+export { default as GlobeIcon } from './Icons/GlobeIcon';
+export { default as CheckIcon } from './Icons/CheckIcon';

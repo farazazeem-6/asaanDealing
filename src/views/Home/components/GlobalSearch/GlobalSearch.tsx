@@ -20,8 +20,10 @@ import {
 import { LOCATION_DATA } from '@/constants';
 import { Box, Flex, Text } from '@/components/elements';
 import { LocationEnum } from '@/utils/enums';
+import { useTranslation } from 'react-i18next';
 
 export function GlobalSearch() {
+  const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [view, setView] = useState<LocationEnum.PROVINCE | LocationEnum.CITY>(
     LocationEnum.PROVINCE,
@@ -63,9 +65,13 @@ export function GlobalSearch() {
 
   // Helper to get text for the trigger button
   const getDisplayText = () => {
-    if (selectedCity) return `${selectedCity}, ${selectedProvince}`;
-    if (selectedProvince) return selectedProvince;
-    return 'Select Location';
+    if (selectedCity && selectedProvince) {
+      return `${t(`Locations.${selectedCity}`)}, ${t(`Provinces.${selectedProvince}`)}`;
+    }
+    if (selectedProvince) {
+      return t(`Provinces.${selectedProvince}`);
+    }
+    return t('Inputs.SelectLocation');
   };
 
   const clearSelection = (e: React.MouseEvent) => {
@@ -80,6 +86,10 @@ export function GlobalSearch() {
   // --- SEARCH LOGIC ---
   const getFilteredItems = () => {
     const query = searchQuery.toLowerCase();
+
+    // Note: This filters based on the ENGLISH keys in LOCATION_DATA.
+    // If you want to search by the Urdu word, you would need to filter
+    // against the translated values, which is more complex.
 
     if (view === LocationEnum.PROVINCE) {
       const provinces = Object.keys(LOCATION_DATA);
@@ -103,21 +113,19 @@ export function GlobalSearch() {
   return (
     <Box css={{ marginTop: '$rem$2' }}>
       <SearchWrapper ref={wrapperRef}>
-        {/*Service Search */}
+        {/* Service Search */}
         <ServiceInputGroup>
           <SearchIcon
             width={20}
             height={20}
             css={{ color: '$secondryHeading' }}
           />
-          <Input placeholder="Search for service" />
+          {/* Updated Key: Inputs.ServiceInput */}
+          <Input placeholder={t('Inputs.ServiceInput')} />
         </ServiceInputGroup>
 
-        {/*Location Dropdown */}
-        <LocationTrigger
-          
-          onClick={() => setIsOpen(!isOpen)}
-        >
+        {/* Location Dropdown */}
+        <LocationTrigger onClick={() => setIsOpen(!isOpen)}>
           <Flex align={'center'} gap={'8'}>
             <LocationIcon
               css={{ color: '$secondryHeading', flexShrink: '0' }}
@@ -155,7 +163,9 @@ export function GlobalSearch() {
               <DropdownHeader>
                 <DropdownSearch
                   placeholder={
-                    view === LocationEnum.PROVINCE  ? 'Search Province' : 'Search City'
+                    view === LocationEnum.PROVINCE
+                      ? t('Inputs.SelectProvince') // Updated Key
+                      : t('Inputs.SelectCity') // Updated Key
                   }
                   autoFocus
                   value={searchQuery}
@@ -164,16 +174,19 @@ export function GlobalSearch() {
               </DropdownHeader>
 
               <ListContainer>
-                {view === LocationEnum.PROVINCE  &&
-                  filteredList.map((province) => (
+                {/* PROVINCE LIST */}
+                {view === LocationEnum.PROVINCE &&
+                  filteredList.map((provinceKey) => (
                     <ListItem
-                      key={province}
-                      onClick={() => handleProvinceSelect(province)}
+                      key={provinceKey}
+                      onClick={() => handleProvinceSelect(provinceKey)}
                     >
-                      {province}
+                      {/* Dynamic Translation: Provinces.Punjab */}
+                      {t(`Provinces.${provinceKey}`)}
                     </ListItem>
                   ))}
 
+                {/* CITY LIST */}
                 {view === LocationEnum.CITY && (
                   <>
                     {searchQuery === '' && (
@@ -181,16 +194,18 @@ export function GlobalSearch() {
                         css={{ fontSize: '$px$10' }}
                         onClick={(e) => clearSelection(e)}
                       >
+                        {/* You can add "Clear Selection" to your JSON if you want it translated */}
                         Clear selection
                       </ListItem>
                     )}
 
-                    {filteredList.map((city) => (
+                    {filteredList.map((cityKey) => (
                       <ListItem
-                        key={city}
-                        onClick={() => handleCitySelect(city)}
+                        key={cityKey}
+                        onClick={() => handleCitySelect(cityKey)}
                       >
-                        {city}
+                        {/* Dynamic Translation: Locations.Lahore */}
+                        {t(`Locations.${cityKey}`)}
                       </ListItem>
                     ))}
 
@@ -201,7 +216,8 @@ export function GlobalSearch() {
                           '&:hover': { background: 'transparent' },
                         }}
                       >
-                        No results found
+                        {/* Updated Key: Inputs.NoResultsFound */}
+                        {t('Inputs.NoResultsFound')}
                       </ListItem>
                     )}
                   </>
@@ -211,8 +227,8 @@ export function GlobalSearch() {
           )}
         </LocationTrigger>
 
-        {/* Search Button */}
-        <SearchBtn>Search</SearchBtn>
+        {/* Search Button - Updated Key: Action.Search */}
+        <SearchBtn>{t('Action.Search')}</SearchBtn>
       </SearchWrapper>
     </Box>
   );

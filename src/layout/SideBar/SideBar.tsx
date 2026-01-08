@@ -11,9 +11,12 @@ import { usePathname } from 'next/navigation';
 import { HeaderContainer, Logo, NavItem } from '../style';
 import { MAIN_NAV_ITEMS } from '@/config';
 import { TSideBarProps } from '../types';
+import { useTranslation } from 'react-i18next';
 
 export function SideBar({ onClose, isSideBarOpen }: TSideBarProps) {
+  const { t } = useTranslation();
   const pathname = usePathname();
+
   return (
     <SidebarOverlay className={isSideBarOpen ? 'open' : ''}>
       <SidebarWrapper className={isSideBarOpen ? 'open' : ''}>
@@ -49,12 +52,13 @@ export function SideBar({ onClose, isSideBarOpen }: TSideBarProps) {
 
               return (
                 <NavItem location={'sidebar'} key={item.href} active={isActive}>
-                  {item.label}
+                  {t(`Nav.${item.label}`)}
                 </NavItem>
               );
             })}
           </SideBarNav>
-          <Button variant={'outline'}>Post a Task</Button>
+          <Button variant={'outline'}>{t('Action.BecomeTasker')}</Button>
+          <Button variant={'outline'}>{t('Action.PostTask')}</Button>
         </SideBarContent>
       </SidebarWrapper>
     </SidebarOverlay>
