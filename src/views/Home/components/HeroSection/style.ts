@@ -42,10 +42,10 @@ export const PopularSearchLabel = styled(Flex, {
   '@md_max': {
     justifyContent: 'center',
   },
-  '@sm_max':{
-    borderRadius:'$px$7',
+  '@sm_max': {
+    borderRadius: '$px$7',
     padding: '$rem$0_56',
-  }
+  },
 });
 export const StatCardsWrapper = styled(Flex, {
   padding: '$px$10',
@@ -58,6 +58,7 @@ export const StatCardsWrapper = styled(Flex, {
 // Stat Card styling
 export const CardContainer = styled(Flex, {
   padding: '$rem$0_62',
+  alignItems: 'center',
 });
 
 export const IconBox = styled(Flex, {
@@ -68,6 +69,8 @@ export const IconBox = styled(Flex, {
   color: '$white',
   marginRight: '$px$16',
   flexShrink: 0,
+  justifyContent: 'center',
+  alignItems: 'center',
 });
 
 export const CountText = styled(Text, {

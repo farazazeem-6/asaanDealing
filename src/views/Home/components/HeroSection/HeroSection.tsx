@@ -25,8 +25,8 @@ const StatCard = ({ icon: Icon, number, label }: TStatItemProps) => {
   const { t } = useTranslation();
   const animatedValue = useCountUp(number);
   return (
-    <CardContainer align={'center'}>
-      <IconBox justify={'center'} align={'center'}>
+    <CardContainer>
+      <IconBox>
         <Icon
           css={{ color: '$white' }}
           width={20}
