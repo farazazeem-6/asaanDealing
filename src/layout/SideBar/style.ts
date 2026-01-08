@@ -17,10 +17,10 @@ export const SideBarContent = styled(Flex, {
   gap: '$rem$1_25',
   justifyContent: 'flex-start !important',
   alignItems: 'flex-start !important',
-  padding: '0 $rem$0_87',
   overflowY: 'auto',
   overscrollBehavior: 'contain',
   flex: 1,
+  padding: '0 $rem$2',
   background: '$sideBarContentBg',
 });
 export const SideBarNav = styled(Flex, {

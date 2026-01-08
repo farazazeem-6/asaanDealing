@@ -16,10 +16,6 @@ export const PopularHeading = styled(Text, {
   fontWeight: '$fontWeight$semibold',
   fontSize: '$rem$1',
   marginTop: '$rem$1',
-  '@xxs_max': {
-    display: 'none',
-    fontSize: '$rem$2',
-  },
 });
 export const PopularSearchWrapper = styled(Flex, {
   marginTop: '$px$10',
@@ -27,8 +23,8 @@ export const PopularSearchWrapper = styled(Flex, {
   '@md_max': {
     flexWrap: 'wrap',
   },
-  '@xxs_max': {
-    display: 'none',
+  '@sm_max': {
+    gap: '$px$5',
   },
 });
 export const PopularSearchLabel = styled(Flex, {
@@ -46,6 +42,10 @@ export const PopularSearchLabel = styled(Flex, {
   '@md_max': {
     justifyContent: 'center',
   },
+  '@sm_max':{
+    borderRadius:'$px$7',
+    padding: '$rem$0_56',
+  }
 });
 export const StatCardsWrapper = styled(Flex, {
   padding: '$px$10',

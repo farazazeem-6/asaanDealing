@@ -5,8 +5,8 @@ export const Button = styled('button', {
   display: 'inline-flex',
   alignItems: 'center',
   justifyContent: 'center',
-  padding: '$rem$0_62',
-  fontSize: '$rem$0_93',
+  padding: '$rem$0_87',
+  fontSize: '$rem$1',
   fontWeight: '$fontWeight$semibold',
   borderRadius: '$px$8',
   textAlign: 'center',
@@ -59,7 +59,7 @@ export const Button = styled('button', {
         fontSize: '$rem$0_75',
       },
       md: {
-        padding: '$rem$1 $rem$1',
+        padding: '$rem$1_25 $rem$1',
         fontSize: '$rem$0_87',
       },
       lg: {

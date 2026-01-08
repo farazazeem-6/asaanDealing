@@ -55,7 +55,7 @@ export const HeroSection = () => {
   return (
     <Flex justify={'around'}>
       <HeroContent>
-        <Text heading={'h3'}>
+        <Text heading={'h3'} css={{ '@md_max': { fontSize: '$rem$2' } }}>
           {TEXT.HOME.TITLE}
           <br />
           {isSmMax ? (

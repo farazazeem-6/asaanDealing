@@ -1,6 +1,15 @@
-import { Flex } from '@/components/elements';
+import { Box, Flex } from '@/components/elements';
 import { styled } from '@/theme';
 
+export const StickyHeader = styled(Box, {
+  position: 'sticky',
+  top: 0,
+  zIndex: '$ul$2',
+  backgroundColor: '$white',
+  width: '$percent$100',
+  backdropFilter: 'none',
+  WebkitBackdropFilter: 'none',
+});
 export const Logo = styled(Flex, {
   alignItems: 'center !important',
   fontWeight: '$fontWeight$bold',
@@ -11,18 +20,12 @@ export const Logo = styled(Flex, {
 });
 
 export const HeaderContainer = styled(Flex, {
-  position: 'sticky',
-  top: 0,
   height: '$px$60',
-  backgroundColor: '$white',
-  borderBottom: '$px$1 solid $lightGrayLine',
   width: '$percent$100',
   justifyContent: 'space-between !important',
   alignItems: 'center !important',
-  backdropFilter: 'none',
-  WebkitBackdropFilter: 'none',
   padding: '$rem$0_62 0',
-  zIndex: '$ul$2',
+  borderBottom: '$px$1 solid $lightGrayLine',
 });
 
 export const NavItem = styled('a', {

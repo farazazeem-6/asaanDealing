@@ -116,8 +116,9 @@ const defaultTokens = {
     120: '120px',
     130: '130px',
     140: '140px',
-    160: '160px',
     150: '150px',
+    160: '160px',
+    170: '170px',
     180: '180px',
     190: '190px',
     200: '200px',
@@ -254,12 +255,18 @@ const defaultTokens = {
     sideBarWrapper: '-$px$8 0 $px$24 rgba(0, 0, 0, 0.08)',
     sideBarOverlay: 'rgba(0, 0, 0, 0.5)',
     dropDown: '0 $px$10 $px$15 -$px$3 rgba(0, 0, 0, 0.1)',
+    categoryCard: '0 8px 32px rgba(0, 0, 0, 0.01)',
+    categoryCardHover:
+      '0 20px 60px rgba(0, 0, 0, 0.15), 0 12px 40px rgba(34, 139, 34, 0.1)',
+    imgOverlay:
+      'linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 100%)',
   },
 };
 const defaultColors = {
   white: '#ffffff',
   black: '#000000',
   orange: '#FFAB00',
+  liteDark: '#1C1E21',
   yellow: '#fece00',
   green: '#11dd7b',
   lightGreenColor: '#45d245',
@@ -314,6 +321,7 @@ const defaultColors = {
     'linear-gradient(135deg, $white 0%, #f8fafc 60%, #eef2f7 100%)',
   sideBarContentBg:
     'linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7))',
+  categoryCardBg: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
   // misc
   border: '$gray7',
   text: '$slate12',
