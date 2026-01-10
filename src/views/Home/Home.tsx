@@ -1,5 +1,5 @@
 import { Wrapper } from '@/components/styles/global';
-import { HeroSection } from './components';
+import { HeroSection, TopExpertSection } from './components';
 import { HomeCategories } from './components';
 
 export const Home = () => {
@@ -9,6 +9,8 @@ export const Home = () => {
       <HeroSection />
       {/* Categories Section  */}
       <HomeCategories />
+      {/* Top Expert Section  */}
+      <TopExpertSection />
     </Wrapper>
   );
 };

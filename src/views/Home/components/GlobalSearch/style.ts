@@ -20,7 +20,7 @@ export const SearchWrapper = styled(Flex, {
 export const ServiceInputGroup = styled(Flex, {
   flex: 1,
   paddingLeft: '$px$10',
-  alignItems:'center',
+  alignItems: 'center',
 
   '@md_max': {
     border: '$px$1 solid $lightGrayLine',
@@ -28,6 +28,10 @@ export const ServiceInputGroup = styled(Flex, {
     borderRadius: '$px$15 0 0 $px$15',
     height: '$px$50',
     alignItems: 'center',
+  },
+
+  '@sm_max': {
+    borderRadius: '$px$10 0 0 $px$10',
   },
 });
 
@@ -58,6 +62,9 @@ export const LocationTrigger = styled(Flex, {
     borderRadius: '$px$15',
     height: '$px$50',
   },
+  '@sm_max': {
+    borderRadius: '$px$10',
+  },
 });
 
 export const SearchBtn = styled('button', {
@@ -79,10 +86,11 @@ export const SearchBtn = styled('button', {
   },
 
   '@md_max': {
-    borderTopRightRadius: '$px$15',
-    borderBottomRightRadius: '$px$15',
     height: 'auto',
   },
+   '@sm_max': {
+ borderTopRightRadius: '$px$10',
+    borderBottomRightRadius: '$px$10',  },
 });
 
 export const DropdownMenu = styled(Flex, {

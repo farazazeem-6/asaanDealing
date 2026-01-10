@@ -111,5 +111,10 @@
     "BeardGrooming": "Beard Grooming & Shaving",
     "HomeCleaning": "Home Cleaning",
     "PestControl": "General Pest Control"
+  },
+  "Expert": {
+    "ExpertTitle": "Top Experts in your ",
+    "ExpertDesc": "Our skilled and reliable experts, your most trusted partners",
+    "Town": "Town"
   }
 }

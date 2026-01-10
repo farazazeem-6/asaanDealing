@@ -12,3 +12,5 @@ export * from './InputButton';
 export * from './Input';
 export * from './Divider';
 export * from './LanguageDropdown';
+export * from './Badge';
+export * from './Tooltip';
