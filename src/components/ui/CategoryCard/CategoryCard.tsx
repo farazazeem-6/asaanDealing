@@ -22,7 +22,7 @@ export const CategoryCard: React.FC<TCategoryCardProps> = ({ data }) => {
       <HoverBackground css={{ backgroundImage: `url(${data.hoverBgSrc})` }} />
       <ContentLayer>
         <IconCircle>
-          <ContentImg src={data.iconSrc} alt={data.title} />
+          <ContentImg size={200} src={data.iconSrc} alt={data.title} />
         </IconCircle>
         <CategoryTitle>{t(data.title)}</CategoryTitle>
       </ContentLayer>

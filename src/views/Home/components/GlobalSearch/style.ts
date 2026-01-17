@@ -88,9 +88,10 @@ export const SearchBtn = styled('button', {
   '@md_max': {
     height: 'auto',
   },
-   '@sm_max': {
- borderTopRightRadius: '$px$10',
-    borderBottomRightRadius: '$px$10',  },
+  '@sm_max': {
+    borderTopRightRadius: '$px$10',
+    borderBottomRightRadius: '$px$10',
+  },
 });
 
 export const DropdownMenu = styled(Flex, {
@@ -122,6 +123,9 @@ export const DropdownSearch = styled('input', {
   border: '$px$1 solid $dGreen',
   outline: 'none',
   fontSize: '$px$12',
+  '&::placeholder': {
+    fontSize: '$px$12',
+  },
 });
 
 export const ListContainer = styled(Box, {
@@ -135,7 +139,7 @@ export const ListItem = styled(Box, {
   color: '$secondryHeading',
   cursor: 'pointer',
   borderBottom: '$px$1 solid $veryLightGray',
-  '&:hover': {
+  '&::hover': {
     backgroundColor: '$colorGray',
     color: '$dGreen',
   },

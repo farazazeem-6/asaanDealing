@@ -1,3 +1,1 @@
-export const DownloadApp=()=>{
-    
-}
+export const DownloadApp = () => {};

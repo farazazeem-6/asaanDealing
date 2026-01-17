@@ -4,8 +4,16 @@ import { useState, useRef, useEffect } from 'react';
 import { styled } from '@/theme';
 import { CheckIcon, ChevronDown, GlobeIcon } from '@/components/svgs';
 import { Box } from './Box';
-import { TSelectComponentProps } from './types';
 import { Text } from './Text';
+
+type TSelectComponentProps<T> = {
+  options: T[];
+  selected: T | null;
+  getLabel: (item: T) => string;
+  getKey: (item: T) => string | number;
+  onChange: (item: T) => void;
+  showIcon?: boolean; // optional globe icon
+};
 
 const SelectWrapper = styled(Box, {
   position: 'relative',

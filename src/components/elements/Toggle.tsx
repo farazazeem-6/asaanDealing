@@ -1,23 +1,35 @@
-import { Button } from "./Button";
-import { TButtonVariants, TToggleButtonProps } from "./types";
+import { Button } from './Button';
+import { ComponentProps } from '@stitches/react';
+
+type TToggleOption = {
+  value: string;
+  label?: string;
+  icon?: React.ReactNode;
+};
+
+type TToggleButtonProps = {
+  options: TToggleOption[];
+  value: string;
+  onChange: (value: string) => void;
+};
+
+type TButtonVariants = ComponentProps<typeof Button>;
 
 export function ToggleButton({
   options,
   value,
   onChange,
-  size = "md",
-  variant = "theme",
+  size = 'md',
 }: TToggleButtonProps & {
-  size?: TButtonVariants["size"];
-  variant?: TButtonVariants["variant"];
+  size?: TButtonVariants['size'];
+  variant?: TButtonVariants['variant'];
 }) {
   return (
     <Button
       size={size}
-      variant={variant}
       onClick={() => {
         const currentIndex = options.findIndex(
-          (option) => option.value === value
+          (option) => option.value === value,
         );
         const nextIndex = (currentIndex + 1) % options.length;
         onChange(options[nextIndex].value);

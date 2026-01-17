@@ -1,6 +1,12 @@
 import { styled } from '@/theme';
-import { TDividerProps } from './types';
 import { Flex } from './Flex';
+import { CSS } from '@/theme';
+
+type TDividerProps = {
+  orientation?: 'horizontal' | 'vertical';
+  label?: string;
+  css?: CSS;
+};
 
 export function Divider({
   orientation = 'horizontal',

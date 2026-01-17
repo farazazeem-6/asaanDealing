@@ -1,10 +1,56 @@
-import Image from 'next/image';
+import React from 'react';
+import Image, { ImageProps as NextImagePropsRaw } from 'next/image';
 import { styled } from '@/theme';
-import { TAppImageProps } from './types';
+import { CSS } from '@stitches/react';
 
-const StyledImage = styled(Image, {});
+const StyledNativeImage = styled('img', {
+  display: 'block',
+  maxWidth: '$percent$100',
+  height: 'auto',
+});
 
-type NextImageProps = TAppImageProps & React.ComponentProps<typeof StyledImage>;
+const StyledNextImageWrapper = styled(Image, {});
+
+// For HtmlImage (Flexible)
+type THtmlImageProps = React.ComponentProps<typeof StyledNativeImage> & {
+  css?: CSS;
+  borderRadius?: string | number;
+  size?: number | string;
+};
+
+// For NextImage (Strict Numbers)
+type TNextImageProps = Omit<NextImagePropsRaw, 'width' | 'height'> & {
+  css?: CSS;
+  borderRadius?: string | number;
+  size?: number;
+  width?: number;
+  height?: number;
+};
+
+// Components
+
+export const HtmlImage = ({
+  src,
+  alt,
+  css,
+  borderRadius,
+  size,
+  ...props
+}: THtmlImageProps) => {
+  return (
+    <StyledNativeImage
+      src={src}
+      alt={alt || ''}
+      css={{
+        borderRadius: borderRadius,
+        width: size,
+        height: size,
+        ...css,
+      }}
+      {...props}
+    />
+  );
+};
 
 export const NextImage = ({
   src,
@@ -15,21 +61,25 @@ export const NextImage = ({
   priority = false,
   borderRadius,
   css,
-}: NextImageProps) => {
-  const finalWidth = size ?? width ?? 40;
-  const finalHeight = size ?? height ?? 40;
+  style,
+  ...props
+}: TNextImageProps) => {
+  const finalWidth = size ?? width;
+  const finalHeight = size ?? height;
 
   return (
-    <StyledImage
+    <StyledNextImageWrapper
       src={src}
-      alt={alt}
+      alt={alt || ''}
       width={finalWidth}
       height={finalHeight}
       priority={priority}
+      style={style}
       css={{
         borderRadius: borderRadius,
         ...css,
       }}
+      {...props}
     />
   );
 };
