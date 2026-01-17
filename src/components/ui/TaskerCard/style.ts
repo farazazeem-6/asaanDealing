@@ -127,7 +127,9 @@ export const UserLocation = styled(Text, {
 });
 
 export const FooterAction = styled(Flex, {
-  gap: '$px$16',
+  justifyContent: 'center !important',
+  alignItems: 'center !important',
+  gap: '$px$10',
   color: '$secondryHeading',
   fontSize: '$px$12',
   cursor: 'pointer',
@@ -135,7 +137,7 @@ export const FooterAction = styled(Flex, {
   padding: '0 $px$10',
   '@lg_max': {
     justifyContent: 'center !important',
-    gap: '$px$10',
+    gap: '$px$5',
   },
   '@sm_max': {
     gap: '$px$2',
