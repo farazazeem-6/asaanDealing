@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import {
   CardWrapper,
@@ -8,12 +9,14 @@ import {
   ContentImg,
 } from './style';
 import { TCategoryItem } from '../types';
+import { useTranslation } from 'react-i18next';
 
 type TCategoryCardProps = {
   data: TCategoryItem;
 };
 
 export const CategoryCard: React.FC<TCategoryCardProps> = ({ data }) => {
+  const { t } = useTranslation();
   return (
     <CardWrapper>
       <HoverBackground css={{ backgroundImage: `url(${data.hoverBgSrc})` }} />
@@ -21,7 +24,7 @@ export const CategoryCard: React.FC<TCategoryCardProps> = ({ data }) => {
         <IconCircle>
           <ContentImg src={data.iconSrc} alt={data.title} />
         </IconCircle>
-        <CategoryTitle>{data.title}</CategoryTitle>
+        <CategoryTitle>{t(data.title)}</CategoryTitle>
       </ContentLayer>
     </CardWrapper>
   );

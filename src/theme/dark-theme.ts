@@ -10,6 +10,7 @@ const darkThemeOpt = {
     lightBg: '#20232D',
     backgroundContrast: '$accents0',
     threeBarIcon: '$white',
+    selectorHover: '#ddd7d7ff',
     //semantic colors
     ...blueDark,
     ...slateDark,

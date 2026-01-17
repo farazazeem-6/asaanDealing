@@ -6,18 +6,18 @@ export const statsData = [
     id: 1,
     icon: TaskerIcon,
     number: 385,
-    label: 'Tasks Posted',
+    label: 'Stats.TasksPosted',
   },
   {
     id: 2,
     icon: TaskPostedIcon,
     number: 335,
-    label: 'Taskers',
+    label: 'Stats.Taskers',
   },
   {
     id: 3,
     icon: UserIcon,
     number: 587,
-    label: 'Users',
+    label: 'Stats.Users',
   },
 ];

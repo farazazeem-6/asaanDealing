@@ -1,11 +1,11 @@
 'use client';
-
 import { ThemeProvider } from 'next-themes';
 import { ThemeSync } from './ThemeSync';
 import { Loader } from '@/components/elements';
 import { useEffect, useState } from 'react';
 import { Header } from '@/layout/Header';
 import { globalStyles } from '@/theme';
+import { I18nProvider } from '@/components/providers';
 
 export const Providers = ({ children }: { children: React.ReactNode }) => {
   const [mounted, setMounted] = useState(false);
@@ -19,10 +19,12 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
     return <Loader />;
   }
   return (
-    <ThemeProvider attribute={'class'} defaultTheme="light">
-      <ThemeSync />
-      <Header />
-      {children}
-    </ThemeProvider>
+    <I18nProvider>
+      <ThemeProvider attribute={'class'} defaultTheme="light">
+        <ThemeSync />
+        <Header />
+        {children}
+      </ThemeProvider>
+    </I18nProvider>
   );
 };

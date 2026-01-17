@@ -1,3 +1,4 @@
+'use client';
 import { Divider, Flex, Text } from '@/components/elements';
 import {
   CardContainer,
@@ -17,14 +18,15 @@ import { GlobalSearch } from '../GlobalSearch';
 import { popularSearches, statsData, TEXT } from '@/constants';
 import { HeroImageSlider } from '../HeroImageSlider';
 import { TStatItemProps } from '../types';
+import { useTranslation } from 'react-i18next';
 
 // Stat Card Component
 const StatCard = ({ icon: Icon, number, label }: TStatItemProps) => {
+  const { t } = useTranslation();
   const animatedValue = useCountUp(number);
-
   return (
-    <CardContainer align={'center'}>
-      <IconBox justify={'center'} align={'center'}>
+    <CardContainer>
+      <IconBox>
         <Icon
           css={{ color: '$white' }}
           width={20}
@@ -34,13 +36,14 @@ const StatCard = ({ icon: Icon, number, label }: TStatItemProps) => {
       </IconBox>
       <Flex direction={'column'}>
         <CountText>{animatedValue}+</CountText>
-        <LabelText>{label}</LabelText>
+        <LabelText>{t(label)}</LabelText>
       </Flex>
     </CardContainer>
   );
 };
 
 export const HeroSection = () => {
+  const { t, i18n } = useTranslation();
   const { isSmMax } = useScreenWidth();
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -56,25 +59,34 @@ export const HeroSection = () => {
     <Flex justify={'around'}>
       <HeroContent>
         <Text heading={'h3'} css={{ '@md_max': { fontSize: '$rem$2' } }}>
-          {TEXT.HOME.TITLE}
+          {t(TEXT.HOME.TITLE)}
           <br />
           {isSmMax ? (
             ''
           ) : (
             <>
-              for <TypingText activeIndex={activeIndex} />
+              {i18n.language !== 'en' ? (
+                <>
+                  <TypingText activeIndex={activeIndex} /> {t('Hero.For')}
+                </>
+              ) : (
+                <>
+                  {t('Hero.For')} <TypingText activeIndex={activeIndex} />
+                </>
+              )}
             </>
           )}
         </Text>
-        <Text heading={'h5'}>{TEXT.HOME.SUBTITLE}</Text>
+        <Text heading={'h5'}>{t(TEXT.HOME.SUBTITLE)}</Text>
 
         {/* Global Search Component */}
         <GlobalSearch />
 
-        <PopularHeading>Popular Searches</PopularHeading>
+        <PopularHeading>{t('Hero.PopularSearches')}</PopularHeading>
+
         <PopularSearchWrapper>
           {popularSearches.map((item) => (
-            <PopularSearchLabel key={item}>{item}</PopularSearchLabel>
+            <PopularSearchLabel key={item}>{t(item)}</PopularSearchLabel>
           ))}
         </PopularSearchWrapper>
 
@@ -84,7 +96,7 @@ export const HeroSection = () => {
               <StatCard
                 icon={data.icon}
                 number={data.number}
-                label={data.label}
+                label={t(data.label)}
               />
 
               {index < statsData.length - 1 && (

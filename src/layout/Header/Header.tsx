@@ -1,16 +1,20 @@
 'use client';
 import { usePathname } from 'next/navigation';
 import { Actions, MobileNav, MenuIconButton, NavList } from './style';
-import { NextImage, Button } from '@/components/elements';
+import { NextImage, Button, LanguageDropdown } from '@/components/elements';
 import { SideBar } from '../SideBar';
 import { useState } from 'react';
 import { HeaderContainer, Logo, NavItem, StickyHeader } from '../style';
 import { MAIN_NAV_ITEMS } from '@/config';
 import { Wrapper } from '@/components/styles';
+import { useTranslation } from 'react-i18next';
+import { SUPPORTED_LANGUAGES } from '@/constants';
 
 export function Header() {
   const pathname = usePathname();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language;
 
   return (
     <StickyHeader>
@@ -33,20 +37,43 @@ export function Header() {
 
               return (
                 <NavItem key={item.href} location={'header'} active={isActive}>
-                  {item.label}
+                  {t(`Nav.${item.label}`)}
                 </NavItem>
               );
             })}
           </NavList>
           <Actions>
-            <Button variant={'outline'}>Post a Task</Button>
-            <Button variant={'outline'}>Become a Tasker</Button>
-            <Button>Sign In</Button>
+            <Button variant={'outline'}>{t('Action.PostTask')}</Button>
+            <Button variant={'outline'}>{t('Action.BecomeTasker')}</Button>
+            <Button>{t('Action.SignIn')}</Button>
+            <LanguageDropdown
+              options={SUPPORTED_LANGUAGES}
+              selected={
+                SUPPORTED_LANGUAGES.find(
+                  (language) => language.identifier === currentLang,
+                ) || null
+              }
+              getLabel={(language) => language.name}
+              getKey={(language) => language.identifier}
+              showIcon={true}
+              onChange={(language) => i18n.changeLanguage(language.identifier)}
+            />
           </Actions>
 
           <MobileNav>
-            <Button variant={'outline'}>Become a Tasker</Button>
-            <Button variant={'primary'}>Sign In</Button>
+            <LanguageDropdown
+              options={SUPPORTED_LANGUAGES}
+              selected={
+                SUPPORTED_LANGUAGES.find(
+                  (language) => language.identifier === currentLang,
+                ) || null
+              }
+              getLabel={(language) => language.name}
+              getKey={(language) => language.identifier}
+              showIcon={true}
+              onChange={(language) => i18n.changeLanguage(language.identifier)}
+            />
+            <Button variant={'primary'}>{t('Action.SignIn')}</Button>
             <MenuIconButton
               width="25"
               height="25"
