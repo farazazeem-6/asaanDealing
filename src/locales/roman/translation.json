@@ -31,10 +31,10 @@
     "NoResultsFound": "Koi nateeja nahi mila"
   },
   "Stats": {
-  "TasksPosted": "Darj shuda kaam",
-  "Taskers": "Taskers",
-  "Users": "Sarifeen"
-},
+    "TasksPosted": "Darj shuda kaam",
+    "Taskers": "Taskers",
+    "Users": "Sarifeen"
+  },
   "Provinces": {
     "Azad Kashmir": "Azad Kashmir",
     "Balochistan": "Balochistan",
@@ -85,31 +85,31 @@
     "Nawabshah": "Nawabshah"
   },
   "CategoryNames": {
-  "ApplianceRepair": "Gharelu ashya ki marammat",
-  "HVAC": "AC aur Heating services",
-  "Maintenance": "Dekh bhaal aur marammat",
-  "CareerServices": "Dakhla aur career services",
-  "Architectural": "Fan-e-tameer aur mapping",
-  "Tailoring": "Ghar par silai ki khidmat",
-  "Cleaning": "Safai ki khidmat",
-  "EventServices": "Commercial aur event services",
-  "Courier": "Courier aur delivery services",
-  "Emergency": "Hangami khidmat"
-},
-"PopularTags": {
-  "ACVentilation": "Air Conditioning & Ventilation",
-  "HVACMaintenance": "HVAC Maintenance & Optimization",
-  "SolarSystems": "Heating & Solar Water Systems"
-},
-"Professions": {
-  "ACRepair": "AC Installation aur Marammat",
-  "Painting": "Gharon aur Offices ki Painting",
-  "Photography": "Photography aur Videography",
-  "Electrical": "Bijli ki Khidmat",
-  "EventGrooming": "Events ke liye Grooming",
-  "Plumbing": "Plumbing",
-  "BeardGrooming": "Khat aur Shave",
-  "HomeCleaning": "Ghar ki Safai",
-  "PestControl": "Pest Control Services"
-}
+    "ApplianceRepair": "Gharelu ashya ki marammat",
+    "HVAC": "AC aur Heating services",
+    "Maintenance": "Dekh bhaal aur marammat",
+    "CareerServices": "Dakhla aur career services",
+    "Architectural": "Fan-e-tameer aur mapping",
+    "Tailoring": "Ghar par silai ki khidmat",
+    "Cleaning": "Safai ki khidmat",
+    "EventServices": "Commercial aur event services",
+    "Courier": "Courier aur delivery services",
+    "Emergency": "Hangami khidmat"
+  },
+  "PopularTags": {
+    "ACVentilation": "Air Conditioning & Ventilation",
+    "HVACMaintenance": "HVAC Maintenance & Optimization",
+    "SolarSystems": "Heating & Solar Water Systems"
+  },
+  "Professions": {
+    "ACRepair": "AC Installation aur Marammat",
+    "Painting": "Gharon aur Offices ki Painting",
+    "Photography": "Photography aur Videography",
+    "Electrical": "Bijli ki Khidmat",
+    "EventGrooming": "Events ke liye Grooming",
+    "Plumbing": "Plumbing",
+    "BeardGrooming": "Khat aur Shave",
+    "HomeCleaning": "Ghar ki Safai",
+    "PestControl": "Pest Control Services"
+  }
 }
