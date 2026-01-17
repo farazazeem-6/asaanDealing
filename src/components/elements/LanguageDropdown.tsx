@@ -5,6 +5,7 @@ import { styled } from '@/theme';
 import { CheckIcon, ChevronDown, GlobeIcon } from '@/components/svgs';
 import { Box } from './Box';
 import { TSelectComponentProps } from './types';
+import { Text } from './Text';
 
 const SelectWrapper = styled(Box, {
   position: 'relative',
@@ -35,7 +36,7 @@ const SelectButton = styled('button', {
   },
 });
 
-const SelectText = styled('span', {
+const SelectText = styled(Text, {
   fontSize: '$rem$0.87',
   fontWeight: '$fontWeight$semibold',
   color: '$primaryHeading',
@@ -113,10 +114,9 @@ const DropdownItem = styled('li', {
   },
 });
 
-const ItemText = styled('span', {
+const ItemText = styled(Text, {
   fontSize: '$rem$0_87',
   fontWeight: 'inherit',
-  color: 'inherit',
 });
 
 export function LanguageDropdown<T>({
