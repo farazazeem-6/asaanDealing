@@ -1,11 +1,12 @@
 import React from 'react';
 import { styled } from '@/theme';
 import { Box } from './Box';
+import { Text } from './Text';
 
-export const BadgeText = styled('span', {
-  fontWeight: '$fontWeight$normal',
+export const BadgeText = styled(Text, {
+  fontWeight: '$fontWeight$normal !important',
   whiteSpace: 'nowrap',
-
+  color: 'inherit !important',
   variants: {
     textEllipsis: {
       '1': {
@@ -43,15 +44,15 @@ export const BadgeWrapper = styled(Box, {
 
   variants: {
     color: {
-      red: { backgroundColor: '#FFEAEA', color: '#D32F2F' },
-      green: { backgroundColor: '#E8F5E9', color: '#2E7D32' },
-      darkGreen: { backgroundColor: '#265855', color: '$white' },
-      purple: { backgroundColor: '#F3E5F5', color: '#7B1FA2' },
-      blue: { backgroundColor: '#E3F2FD', color: '#1565C0' },
-      orange: { backgroundColor: '#FFF3E0', color: '#EF6C00' },
-      teal: { backgroundColor: '#E0F2F1', color: '#00796B' },
-      gray: { backgroundColor: '#F5F5F5', color: '#616161' },
-      pink: { backgroundColor: '#FCE4EC', color: '#C2185B' },
+      red: { backgroundColor: '#FFEAEA', color: '#D32F2F !important' },
+      green: { backgroundColor: '#E8F5E9', color: '#2E7D32 !important' },
+      darkGreen: { backgroundColor: '#265855', color: '$white !important' },
+      purple: { backgroundColor: '#F3E5F5', color: '#7B1FA2 !important' },
+      blue: { backgroundColor: '#E3F2FD', color: '#1565C0 !important' },
+      orange: { backgroundColor: '#FFF3E0', color: '#EF6C00 !important' },
+      teal: { backgroundColor: '#E0F2F1', color: '#00796B !important' },
+      gray: { backgroundColor: '#F5F5F5', color: '#616161 !important' },
+      pink: { backgroundColor: '#FCE4EC', color: '#C2185B !important' },
     },
     size: {
       small: {
@@ -59,7 +60,7 @@ export const BadgeWrapper = styled(Box, {
         borderRadius: '$px$4',
         [`& ${BadgeText}`]: { fontSize: '$px$10' },
         '@sm_max': {
-          [`& ${BadgeText}`]: { fontSize: '$px$8',padding: '$px$1 $px$3', },
+          [`& ${BadgeText}`]: { fontSize: '$px$8', padding: '$px$1 $px$3' },
         },
       },
       medium: {

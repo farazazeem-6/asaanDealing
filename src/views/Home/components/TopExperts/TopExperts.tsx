@@ -36,7 +36,7 @@ export const TopExpertSection = () => {
             onTabChange={setActiveTab}
           />
           <Flex align={'center'} gap={'2'}>
-            <ViewMoreLink>View More</ViewMoreLink>
+            <ViewMoreLink>{t('Action.ViewMore')}</ViewMoreLink>
             <ArrowWithTail css={{ color: '$primary' }} />
           </Flex>
         </HeadingRow>
