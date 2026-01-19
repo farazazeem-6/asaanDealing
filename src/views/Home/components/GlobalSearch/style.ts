@@ -88,9 +88,10 @@ export const SearchBtn = styled('button', {
   '@md_max': {
     height: 'auto',
   },
-   '@sm_max': {
- borderTopRightRadius: '$px$10',
-    borderBottomRightRadius: '$px$10',  },
+  '@sm_max': {
+    borderTopRightRadius: '$px$10',
+    borderBottomRightRadius: '$px$10',
+  },
 });
 
 export const DropdownMenu = styled(Flex, {
