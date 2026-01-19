@@ -293,6 +293,7 @@ const defaultColors = {
   dGreen: '#1E7B3D',
   disabledSlotColor: '#aaa',
   backgroundDisabledSlot: '#f3f3f3',
+  ghostBtn: '#F3F4F6',
   neutralGray: '#ddd',
   whisperGray: '#f1f1f1',
   aliceBlue: '#e6f2ff',

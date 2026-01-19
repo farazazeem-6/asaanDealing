@@ -23,7 +23,7 @@ export const TopExpertSection = () => {
         <Heading>
           {t(TEXT.EXPERT.TITLE)}{' '}
           <Text gradient={'3'} css={{ fontWeight: '$fontWeight$semibold' }}>
-            {t('Expert.Town')}
+            {t(TEXT.EXPERT.TOWN)}
           </Text>
         </Heading>
         <SubHeading>{t(TEXT.EXPERT.SUBTITLE)}</SubHeading>

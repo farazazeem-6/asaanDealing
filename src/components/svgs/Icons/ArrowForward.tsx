@@ -1,6 +1,6 @@
 import Svg, { SvgProps } from '../svgs';
 
-const ArrowRightIcon: React.FC<SvgProps> = (props) => {
+const ArrowForward: React.FC<SvgProps> = (props) => {
   return (
     <Svg
       xmlns="http://www.w3.org/2000/svg"
@@ -18,4 +18,4 @@ const ArrowRightIcon: React.FC<SvgProps> = (props) => {
   );
 };
 
-export default ArrowRightIcon;
+export default ArrowForward;

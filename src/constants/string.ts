@@ -10,5 +10,6 @@ export const TEXT = {
   EXPERT: {
     TITLE: 'Expert.ExpertTitle',
     SUBTITLE: 'Expert.ExpertDesc',
+    TOWN: 'Expert.Town',
   },
 };

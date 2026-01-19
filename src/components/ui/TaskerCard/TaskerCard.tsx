@@ -28,8 +28,8 @@ import { useScreenWidth } from '@/hooks';
 export const TaskerCard = ({ data }: { data: TTasker }) => {
   const services = data.services || [];
 
-  const mainServiceTitle = services[0] || 'No Service Listed';
-  const secondServiceTag = services[1];
+  const mainServiceTitle = services[0]?.name || 'No Service Listed';
+  const secondServiceTag = services[1]?.name;
 
   const remainingServices = services.slice(2);
   const extraCount = remainingServices.length;
@@ -49,7 +49,7 @@ export const TaskerCard = ({ data }: { data: TTasker }) => {
             <TaskerName title={data.name} textEllipsis={'1'}>
               {data.name}
             </TaskerName>
-            <TaskerExpStatus css={{}}>{data.level}</TaskerExpStatus>
+            <TaskerExpStatus>{data.level}</TaskerExpStatus>
           </UserInfoWrapper>
         </Flex>
         {data.isOnsite && (
@@ -79,7 +79,7 @@ export const TaskerCard = ({ data }: { data: TTasker }) => {
               content={
                 <>
                   {remainingServices.map((service) => (
-                    <Box key={service}>• {service}</Box>
+                    <Box key={service.id}>• {service.name}</Box>
                   ))}
                 </>
               }

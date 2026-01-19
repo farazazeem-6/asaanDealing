@@ -55,7 +55,7 @@ export const Button = styled('button', {
         backgroundColor: 'transparent',
         color: '$dGreen',
         '&:hover': {
-          backgroundColor: '#F3F4F6',
+          backgroundColor: '$ghostBtn',
         },
       },
     },
