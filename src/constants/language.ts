@@ -10,6 +10,6 @@ export const SUPPORTED_LANGUAGES = [
   },
   {
     identifier: 'ur',
-    name: 'Urdu',
+    name: 'اردو',
   },
 ];

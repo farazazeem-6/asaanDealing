@@ -6,6 +6,10 @@ export const TEXT = {
   CATEGORY: {
     TITLE: 'HomeContent.CategoryTitle',
     SUBTITLE: 'HomeContent.CategoryDesc',
-    
+  },
+  EXPERT: {
+    TITLE: 'Expert.ExpertTitle',
+    SUBTITLE: 'Expert.ExpertDesc',
+    TOWN: 'Expert.Town',
   },
 };

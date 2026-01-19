@@ -10,7 +10,8 @@
     "ViewAll": "View All",
     "PostTask": "Post a Task",
     "BecomeTasker": "Become a Tasker",
-    "Search": "Search"
+    "Search": "Search",
+    "ViewMore": "View More"
   },
   "Hero": {
     "HeroTitle": "The easiest way to find and book experts",
@@ -111,5 +112,10 @@
     "BeardGrooming": "Beard Grooming & Shaving",
     "HomeCleaning": "Home Cleaning",
     "PestControl": "General Pest Control"
+  },
+  "Expert": {
+    "ExpertTitle": "Top Experts in your ",
+    "ExpertDesc": "Our skilled and reliable experts, your most trusted partners",
+    "Town": "Town"
   }
 }

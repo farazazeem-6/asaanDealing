@@ -33,6 +33,7 @@ const darkThemeOpt = {
     secondryHeading: '#A3A3A3',
 
     textOnHover: '#E4FDF1',
+    navBtnHover: '#E4FDF1',
     btnHover: '#0B3C2C',
     jetBlack: '#1C1E21',
     onlyGreen: '#A8E6CF',

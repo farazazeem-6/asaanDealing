@@ -23,10 +23,10 @@ export const Button = styled('button', {
   variants: {
     variant: {
       default: {
-        background: '$background',
+        background: 'none',
         color: '$main',
         '&:hover': {
-          background: '$light',
+          background: '$none',
         },
       },
       primary: {
@@ -49,6 +49,13 @@ export const Button = styled('button', {
         border: '$px$1 solid $borderGreen',
         '&:hover': {
           backgroundColor: '$btnHover',
+        },
+      },
+      ghost: {
+        backgroundColor: 'transparent',
+        color: '$dGreen',
+        '&:hover': {
+          backgroundColor: '$ghostBtn',
         },
       },
     },

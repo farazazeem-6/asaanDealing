@@ -32,6 +32,8 @@ const lightThemeOpt = {
 
     textOnHover: '#1E7B3D',
     btnHover: '#ECFDF5',
+    navBtnHover: '#E4FDF1',
+
     borderGreen: '#1E7B3D',
 
     // colors...

@@ -1,5 +1,10 @@
-import Image from "next/image";
-import { TAppImageProps } from "./types";
+import Image from 'next/image';
+import { styled } from '@/theme';
+import { TAppImageProps } from './types';
+
+const StyledImage = styled(Image, {});
+
+type NextImageProps = TAppImageProps & React.ComponentProps<typeof StyledImage>;
 
 export const NextImage = ({
   src,
@@ -9,18 +14,22 @@ export const NextImage = ({
   size,
   priority = false,
   borderRadius,
-}: TAppImageProps) => {
+  css,
+}: NextImageProps) => {
   const finalWidth = size ?? width ?? 40;
   const finalHeight = size ?? height ?? 40;
 
   return (
-    <Image
+    <StyledImage
       src={src}
       alt={alt}
       width={finalWidth}
       height={finalHeight}
       priority={priority}
-      style={{ borderRadius }}
+      css={{
+        borderRadius: borderRadius,
+        ...css,
+      }}
     />
   );
 };
