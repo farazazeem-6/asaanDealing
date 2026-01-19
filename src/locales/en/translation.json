@@ -117,5 +117,10 @@
     "ExpertTitle": "Top Experts in your ",
     "ExpertDesc": "Our skilled and reliable experts, your most trusted partners",
     "Town": "Town"
+  },
+  "DownloadApp": {
+    "Heading": "We Are Coding",
+    "Desc1": "Get ready for an exciting new app experience!",
+    "Desc2": "We are working hard to bring you an amazing mobile experience."
   }
 }
