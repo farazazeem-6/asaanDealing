@@ -1,6 +1,6 @@
 import { Wrapper } from '@/components/styles/global';
 import {
-  DownLoadApp,
+  DownloadApp,
   HeroSection,
   HomeCategories,
   TopExpertSection,
@@ -16,7 +16,7 @@ export const Home = () => {
       {/* Top Expert Section  */}
       <TopExpertSection />
       {/* Download App Section  */}
-      <DownLoadApp />
-    </Wrapper>
+      <DownloadApp/>
+   </Wrapper>
   );
 };
