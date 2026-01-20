@@ -22,9 +22,9 @@ export const DownloadApp = () => {
         <TextContent>
           <ContentHeading>{t(downloadAppEnum.HEADING)}</ContentHeading>
           <ContentSubHeading>{t(downloadAppEnum.DISC1)}</ContentSubHeading>
-          {!isMobile ? (
+          {!isMobile && (
             <ContentSubHeading>{t(downloadAppEnum.DISC2)} </ContentSubHeading>
-          ) : null}
+          )}
 
           <DownloadButtons>
             <Flex>

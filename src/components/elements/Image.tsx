@@ -64,8 +64,8 @@ export const NextImage = ({
   style,
   ...props
 }: TNextImageProps) => {
-  const finalWidth = size ?? width;
-  const finalHeight = size ?? height;
+  const finalWidth = size ?? width ?? 40;
+  const finalHeight = size ?? height ?? 40;
 
   return (
     <StyledNextImageWrapper

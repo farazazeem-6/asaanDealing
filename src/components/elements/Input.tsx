@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { styled } from '@/theme';
 import { Flex } from './Flex';
+import { TComponentSize } from '@/utils/types';
 
 type TInputFieldProps = Omit<
   React.ComponentPropsWithoutRef<'input'>,
@@ -8,7 +9,7 @@ type TInputFieldProps = Omit<
 > & {
   contentLeft?: React.ReactNode;
   contentRight?: React.ReactNode;
-  inputSize?: 'sm' | 'md' | 'lg';
+  inputSize?: TComponentSize;
 };
 
 const InputGroup = styled(Flex, {

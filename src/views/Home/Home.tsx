@@ -16,7 +16,7 @@ export const Home = () => {
       {/* Top Expert Section  */}
       <TopExpertSection />
       {/* Download App Section  */}
-      <DownloadApp/>
-   </Wrapper>
+      <DownloadApp />
+    </Wrapper>
   );
 };
