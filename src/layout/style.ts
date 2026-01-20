@@ -1,4 +1,4 @@
-import { Box, Flex } from '@/components/elements';
+import { Box, Flex, Text } from '@/components/elements';
 import { styled } from '@/theme';
 
 export const StickyHeader = styled(Box, {
@@ -91,4 +91,16 @@ export const NavItem = styled('a', {
       },
     },
   ],
+});
+
+
+export const LogoTitle = styled(Text, {
+  '&::before': {
+    content: '"Asaan "',
+    background: '$gradients$greenGradient1',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    backgroundClip: 'text',
+    fontWeight: '$fontWeight$semibold',
+  },
 });

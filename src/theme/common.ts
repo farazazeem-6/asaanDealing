@@ -198,10 +198,11 @@ const defaultTokens = {
 
   ul: {
     0: 0,
-    0.25: 0.25,
-    0.5: 0.5,
-    0.75: 0.75,
-    0.9: 0.9,
+    '0_25': 0.25,
+    '0_5': 0.5,
+    '0_75': 0.75,
+    '0_8': 0.8,
+    '0_9': 0.9,
     1: 1,
     1.5: 1.5,
     2: 2,
@@ -334,15 +335,18 @@ const defaultColors = {
   border: '$gray7',
   text: '$slate12',
   bgColor: '$slate1',
+  footerBorder: 'rgba(255, 255, 255, 0.1)',
   codeLight: '$cyan5',
   code: '$cyan6',
   selection: '$pink8',
+  footerBg: '#1a1a1a',
 
   // airdrop
   airdropInfo: '#EE86CB',
   airdropTask: '#8E33FF',
   lightYellow: '#FFD057',
   redLight: '#D82122',
+  lightGrayAirdrop: '#a3a3a3',
   darkGrayAirdrop: '#919EAB3D',
   protocalMinValueBg: '#D7D5E2',
 

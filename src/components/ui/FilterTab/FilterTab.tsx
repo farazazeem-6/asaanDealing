@@ -1,6 +1,8 @@
+'use client';
 import React from 'react';
 import { TTabItem } from '../types';
 import { TabButton, TabsContainer } from './style';
+import { useTranslation } from 'react-i18next';
 
 export type TFilterTabsProps = {
   tabs: TTabItem[];
@@ -13,6 +15,8 @@ export const FilterTabs: React.FC<TFilterTabsProps> = ({
   activeTab,
   onTabChange,
 }) => {
+  const { t } = useTranslation();
+
   return (
     <TabsContainer>
       {tabs.map((tab) => (
@@ -21,7 +25,7 @@ export const FilterTabs: React.FC<TFilterTabsProps> = ({
           isActive={activeTab === tab.value}
           onClick={() => onTabChange(tab.value)}
         >
-          {tab.label}
+          {t(tab.label)}
         </TabButton>
       ))}
     </TabsContainer>

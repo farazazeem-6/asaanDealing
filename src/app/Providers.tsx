@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { Header } from '@/layout/Header';
 import { globalStyles } from '@/theme';
 import { I18nProvider } from '@/components/providers';
+import { Footer } from '@/layout/Footer';
 
 export const Providers = ({ children }: { children: React.ReactNode }) => {
   const [mounted, setMounted] = useState(false);
@@ -24,6 +25,7 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
         <ThemeSync />
         <Header />
         {children}
+        <Footer />
       </ThemeProvider>
     </I18nProvider>
   );

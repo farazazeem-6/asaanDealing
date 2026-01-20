@@ -15,7 +15,7 @@ import { Fragment, useEffect, useState } from 'react';
 import { useCountUp, useScreenWidth } from '@/hooks';
 import { TypingText } from '../TypingText';
 import { GlobalSearch } from '../GlobalSearch';
-import { popularSearches, statsData, TEXT } from '@/constants';
+import { POPULAR_SERVICES, statsData, TEXT } from '@/constants';
 import { HeroImageSlider } from '../HeroImageSlider';
 import { TStatItemProps } from '../types';
 import { useTranslation } from 'react-i18next';
@@ -85,8 +85,10 @@ export const HeroSection = () => {
         <PopularHeading>{t('Hero.PopularSearches')}</PopularHeading>
 
         <PopularSearchWrapper>
-          {popularSearches.map((item) => (
-            <PopularSearchLabel key={item}>{t(item)}</PopularSearchLabel>
+          {POPULAR_SERVICES.slice(0, 3).map((service) => (
+            <PopularSearchLabel key={service.id}>
+              {t(service.label)}
+            </PopularSearchLabel>
           ))}
         </PopularSearchWrapper>
 

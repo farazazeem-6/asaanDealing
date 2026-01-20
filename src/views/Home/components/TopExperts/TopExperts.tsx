@@ -9,13 +9,13 @@ import {
 } from './style';
 import { Heading, SubHeading } from '../style';
 import { useTranslation } from 'react-i18next';
-import { MOCK_TASKERS, TASKER_TABS, TEXT } from '@/constants';
+import { MOCK_TASKERS, POPULAR_SERVICES, TEXT } from '@/constants';
 import { FilterTabs, TaskerCard } from '@/components/ui';
 import { useState } from 'react';
 import { ArrowWithTail } from '@/components/svgs';
 
 export const TopExpertSection = () => {
-  const [activeTab, setActiveTab] = useState(TASKER_TABS[0].value);
+  const [activeTab, setActiveTab] = useState(POPULAR_SERVICES[0].value);
   const { t } = useTranslation();
   return (
     <TopExpertWrapper>
@@ -31,7 +31,7 @@ export const TopExpertSection = () => {
       <TopExpertBody>
         <HeadingRow>
           <FilterTabs
-            tabs={TASKER_TABS}
+            tabs={POPULAR_SERVICES.slice(0, 4)}
             activeTab={activeTab}
             onTabChange={setActiveTab}
           />

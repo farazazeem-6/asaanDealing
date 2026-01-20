@@ -15,3 +15,7 @@ export { default as ChatIcon } from './Icons/ChatIcon';
 export { default as WhatsappIcon } from './Icons/WhatsappIcon';
 export { default as HeartIcon } from './Icons/HeartIcon';
 export { default as OnSiteIcon } from './Icons/OnSiteIcon';
+export { default as TwitterIcon } from './Icons/TwitterIcon';
+export { default as FacebookIcon } from './Icons/FacebookIcon';
+export { default as InstagramIcon } from './Icons/InstagramIcon';
+export { default as LinkedInIcon } from './Icons/LinkedInIcon';

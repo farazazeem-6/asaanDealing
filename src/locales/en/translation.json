@@ -97,10 +97,12 @@
     "Courier": "Courier & Delivery Services",
     "Emergency": "Emergency Services"
   },
-  "PopularTags": {
-    "ACVentilation": "Air Conditioning & Ventilation",
-    "HVACMaintenance": "HVAC Maintenance & Optimization",
-    "SolarSystems": "Heating and Solar Water Systems"
+  "PopularServices": {
+    "AC": "Air Conditioning & Ventilation",
+    "HVAC": "HVAC Maintenance & Optimization",
+    "Solar": "Heating & Solar Water Systems",
+    "CarWash": "Car Wash & Detailing",
+    "Battery": "AC & Battery Service"
   },
   "Professions": {
     "ACRepair": "AC Installation & Repair",
@@ -122,5 +124,16 @@
     "Heading": "We Are Coding",
     "Desc1": "Get ready for an exciting new app experience!",
     "Desc2": "We are working hard to bring you an amazing mobile experience."
+  },
+  "Footer": {
+    "Home": "Home",
+    "HowItWorks": "How It Works",
+    "AboutUs": "About Us",
+    "FAQs": "FAQs",
+    "ContactUs": "Contact Us",
+    "QuickLink": "Quick Links",
+    "PopularSearch": "Popular Searches",
+    "PopularCategory": "Popular Categories",
+    "TaglineLong": "Live simpler. Live smarter. Everything you need in one place."
   }
 }
