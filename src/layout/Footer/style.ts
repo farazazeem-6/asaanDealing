@@ -1,8 +1,8 @@
-import { Box, Flex, Text } from '@/components/elements';
+import { Box, Button, Flex, Text } from '@/components/elements';
 import { fadeIn, styled } from '@/theme';
 import Link from 'next/link';
 
-export const FooterRoot = styled('footer', {
+export const FooterRoot = styled(Box, {
   backgroundColor: '$black',
   color: '$neutralGray',
   marginTop: '$px$20',
@@ -172,7 +172,7 @@ export const SocialWrapper = styled(Flex, {
     },
   },
 });
-export const IconCircleWrapper = styled('a', {
+export const IconCircleWrapper = styled(Link, {
   display: 'block',
   width: '$px$30',
   height: '$px$30',
@@ -200,10 +200,10 @@ export const CopyrightRow = styled(Box, {
   fontSize: '$rem$0_87',
 });
 
-export const ScrollToTopBtn = styled('button', {
-  background: 'none',
-  border: 'none',
-  padding: 0,
+export const ScrollToTopBtn = styled(Button, {
+  background: 'none !important',
+  border: 'none !important',
+  padding: '0px !important',
   cursor: 'pointer',
   color: 'inherit',
   fontFamily: 'inherit',

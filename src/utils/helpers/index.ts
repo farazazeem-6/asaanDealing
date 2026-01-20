@@ -1,2 +1,2 @@
-export * from './scroll'
-export * from './currentYear'
+export * from './scroll';
+export * from './currentYear';

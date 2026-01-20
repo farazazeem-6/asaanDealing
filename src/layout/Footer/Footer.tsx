@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Wrapper } from '@/components/styles';
 import { LogoTitle } from '../style';
 import {
+  ASAAD_DEALING_SOCIAL_LINKS,
   CATEGORY_DATA,
   POPULAR_SERVICES,
   QUICK_LINKS,
@@ -93,7 +94,7 @@ export const Footer = () => {
           </LinkColumn>
         </FooterGrid>
 
-        {/* Mobile Social Icons for mobile  */}
+        {/* Mobile-only Social Icons */}
         <SocialMediaLinks mobileOnly={true} />
         {/* 4. COPYRIGHT */}
         <CopyrightRow>
@@ -110,20 +111,36 @@ export const Footer = () => {
   );
 };
 
-// This component type  prevents repeating code for desktop vs mobile view
+// This component prevents repeating code for desktop vs mobile view
 const SocialMediaLinks = ({ mobileOnly }: { mobileOnly: boolean }) => {
   return (
     <SocialWrapper mobileOnly={mobileOnly}>
-      <IconCircleWrapper href="#" target="_blank" aria-label="Facebook">
+      <IconCircleWrapper
+        href={ASAAD_DEALING_SOCIAL_LINKS.facebook}
+        target="_blank"
+        aria-label="Facebook"
+      >
         <FacebookIcon />
       </IconCircleWrapper>
-      <IconCircleWrapper href="#" target="_blank" aria-label="Twitter">
+      <IconCircleWrapper
+        href={ASAAD_DEALING_SOCIAL_LINKS.twitter}
+        target="_blank"
+        aria-label="Twitter"
+      >
         <TwitterIcon />
       </IconCircleWrapper>
-      <IconCircleWrapper href="#" target="_blank" aria-label="Instagram">
+      <IconCircleWrapper
+        href={ASAAD_DEALING_SOCIAL_LINKS.instagram}
+        target="_blank"
+        aria-label="Instagram"
+      >
         <InstagramIcon />
       </IconCircleWrapper>
-      <IconCircleWrapper href="#" target="_blank" aria-label="LinkedIn">
+      <IconCircleWrapper
+        href={ASAAD_DEALING_SOCIAL_LINKS.linkedin}
+        target="_blank"
+        aria-label="LinkedIn"
+      >
         <LinkedInIcon />
       </IconCircleWrapper>
     </SocialWrapper>
