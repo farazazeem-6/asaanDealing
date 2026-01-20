@@ -5,7 +5,6 @@ export * from './Flex';
 export * from './Text';
 export * from './Toggle';
 export * from './Loader';
-export * from './types';
 export * from './Image';
 export * from './InputWrapper';
 export * from './InputButton';

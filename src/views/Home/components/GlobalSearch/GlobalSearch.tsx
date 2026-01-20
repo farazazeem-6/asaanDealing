@@ -164,8 +164,8 @@ export function GlobalSearch() {
                 <DropdownSearch
                   placeholder={
                     view === LocationEnum.PROVINCE
-                      ? t('Inputs.SelectProvince') // Updated Key
-                      : t('Inputs.SelectCity') // Updated Key
+                      ? t('Inputs.SelectProvince')
+                      : t('Inputs.SelectCity') 
                   }
                   autoFocus
                   value={searchQuery}
@@ -181,7 +181,6 @@ export function GlobalSearch() {
                       key={provinceKey}
                       onClick={() => handleProvinceSelect(provinceKey)}
                     >
-                      {/* Dynamic Translation: Provinces.Punjab */}
                       {t(`Provinces.${provinceKey}`)}
                     </ListItem>
                   ))}
@@ -194,7 +193,6 @@ export function GlobalSearch() {
                         css={{ fontSize: '$px$10' }}
                         onClick={(e) => clearSelection(e)}
                       >
-                        {/* You can add "Clear Selection" to your JSON if you want it translated */}
                         Clear selection
                       </ListItem>
                     )}
@@ -204,7 +202,6 @@ export function GlobalSearch() {
                         key={cityKey}
                         onClick={() => handleCitySelect(cityKey)}
                       >
-                        {/* Dynamic Translation: Locations.Lahore */}
                         {t(`Locations.${cityKey}`)}
                       </ListItem>
                     ))}
@@ -216,7 +213,6 @@ export function GlobalSearch() {
                           '&:hover': { background: 'transparent' },
                         }}
                       >
-                        {/* Updated Key: Inputs.NoResultsFound */}
                         {t('Inputs.NoResultsFound')}
                       </ListItem>
                     )}
@@ -227,7 +223,6 @@ export function GlobalSearch() {
           )}
         </LocationTrigger>
 
-        {/* Search Button - Updated Key: Action.Search */}
         <SearchBtn>{t('Action.Search')}</SearchBtn>
       </SearchWrapper>
     </Box>

@@ -112,5 +112,10 @@
     "BeardGrooming": "Khat aur Shave",
     "HomeCleaning": "Ghar ki Safai",
     "PestControl": "Pest Control Services"
+  },
+  "DownloadApp": {
+    "Heading": "Hum Coding Kar Rahe Hain",
+    "Desc1": "Ek dilchasp nayi app ke tajrubay ke liye tayyar ho jayain!",
+    "Desc2": "Hum aap ke liye ek behtareen mobile tajruba lane ke liye sakht mehnat kar rahe hain."
   }
 }

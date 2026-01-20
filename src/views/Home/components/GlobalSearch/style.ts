@@ -123,6 +123,9 @@ export const DropdownSearch = styled('input', {
   border: '$px$1 solid $dGreen',
   outline: 'none',
   fontSize: '$px$12',
+  '&::placeholder': {
+    fontSize: '$px$12',
+  },
 });
 
 export const ListContainer = styled(Box, {
