@@ -61,7 +61,7 @@ const DropdownContainer = styled(Box, {
   borderRadius: '$px$6',
   boxShadow: '0 $px$4 $px$16 rgba(0, 0, 0, 0.12)',
   padding: '$rem$0_5',
-  zIndex: '$ul$800',
+  zIndex: '$ul$100',
   opacity: '$ul$0',
   visibility: 'hidden',
   transform: 'translateY(-$px$8)',

@@ -1,17 +1,7 @@
-import { Box, Flex, Text } from '@/components/elements';
+import { Box, Flex } from '@/components/elements';
 import { CloseIcon } from '@/components/svgs';
 import { styled } from '@/theme';
 
-export const LogoTitle = styled(Text, {
-  '&::before': {
-    content: '"Asaan "',
-    background: '$gradients$greenGradient1',
-    WebkitBackgroundClip: 'text',
-    WebkitTextFillColor: 'transparent',
-    backgroundClip: 'text',
-    fontWeight: '$fontWeight$semibold',
-  },
-});
 export const SideBarContent = styled(Flex, {
   flexDirection: 'column !important',
   gap: '$rem$1_25',

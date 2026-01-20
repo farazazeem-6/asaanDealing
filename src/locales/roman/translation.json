@@ -97,10 +97,12 @@
     "Courier": "Courier aur delivery services",
     "Emergency": "Hangami khidmat"
   },
-  "PopularTags": {
-    "ACVentilation": "Air Conditioning & Ventilation",
-    "HVACMaintenance": "HVAC Maintenance & Optimization",
-    "SolarSystems": "Heating & Solar Water Systems"
+  "PopularServices": {
+    "AC": "Air Conditioning aur Ventilation",
+    "HVAC": "HVAC Maintenance aur Optimization",
+    "Solar": "Heating aur Solar Water Systems",
+    "CarWash": "Car Wash aur Detailing",
+    "Battery": "AC aur Battery Service"
   },
   "Professions": {
     "ACRepair": "AC Installation aur Marammat",
@@ -117,5 +119,16 @@
     "Heading": "Hum Coding Kar Rahe Hain",
     "Desc1": "Ek dilchasp nayi app ke tajrubay ke liye tayyar ho jayain!",
     "Desc2": "Hum aap ke liye ek behtareen mobile tajruba lane ke liye sakht mehnat kar rahe hain."
+  },
+  "Footer": {
+    "Home": "Home",
+    "HowItWorks": "Yeh kaise kaam karta hai",
+    "AboutUs": "Hamare baare mein",
+    "FAQs": "FAQs",
+    "ContactUs": "Hum se rabta karein",
+    "QuickLink": "Quick Links",
+    "PopularSearch": "Maqbool talashein",
+    "PopularCategory": "Maqbool categories",
+    "TaglineLong": "Sada jiyein. Zahanat se jiyein. Everything you need in one place."
   }
 }

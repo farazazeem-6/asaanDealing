@@ -12,4 +12,7 @@ export const TEXT = {
     SUBTITLE: 'Expert.ExpertDesc',
     TOWN: 'Expert.Town',
   },
+  FOOTER: {
+    DISC: 'Footer.TaglineLong',
+  },
 };

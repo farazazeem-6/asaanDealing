@@ -1,14 +1,13 @@
 import { NextImage, Button } from '@/components/elements';
 import {
   CloseIconButton,
-  LogoTitle,
   SideBarContent,
   SideBarNav,
   SidebarOverlay,
   SidebarWrapper,
 } from './style';
 import { usePathname } from 'next/navigation';
-import { HeaderContainer, Logo, NavItem } from '../style';
+import { HeaderContainer, Logo, LogoTitle, NavItem } from '../style';
 import { MAIN_NAV_ITEMS } from '@/config';
 import { TSideBarProps } from '../types';
 import { useTranslation } from 'react-i18next';
