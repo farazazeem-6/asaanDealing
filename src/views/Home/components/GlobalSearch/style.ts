@@ -139,7 +139,7 @@ export const ListItem = styled(Box, {
   color: '$secondryHeading',
   cursor: 'pointer',
   borderBottom: '$px$1 solid $veryLightGray',
-  '&::hover': {
+  '&:hover': {
     backgroundColor: '$colorGray',
     color: '$dGreen',
   },

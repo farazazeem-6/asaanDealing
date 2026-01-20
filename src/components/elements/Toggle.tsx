@@ -20,12 +20,14 @@ export function ToggleButton({
   value,
   onChange,
   size = 'md',
+  variant,
 }: TToggleButtonProps & {
   size?: TButtonVariants['size'];
   variant?: TButtonVariants['variant'];
 }) {
   return (
     <Button
+      variant={variant}
       size={size}
       onClick={() => {
         const currentIndex = options.findIndex(
