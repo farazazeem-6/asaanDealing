@@ -1,5 +1,4 @@
 export * from './services';
-export * from './locations';
 export * from './statData';
 export * from './images';
 export * from './string';
@@ -10,3 +9,5 @@ export * from './popularServices';
 export * from './topExperData';
 export * from './quickLinks';
 export * from './socialLinks';
+export * from './quickLinks'
+export * from './serverRoutes'

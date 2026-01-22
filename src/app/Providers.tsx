@@ -7,6 +7,7 @@ import { Header } from '@/layout/Header';
 import { globalStyles } from '@/theme';
 import { I18nProvider } from '@/components/providers';
 import { Footer } from '@/layout/Footer';
+import { QueryProvider } from '@/providers';
 
 export const Providers = ({ children }: { children: React.ReactNode }) => {
   const [mounted, setMounted] = useState(false);
@@ -22,10 +23,12 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
   return (
     <I18nProvider>
       <ThemeProvider attribute={'class'} defaultTheme="light">
-        <ThemeSync />
-        <Header />
-        {children}
-        <Footer />
+        <QueryProvider>
+          <ThemeSync />
+          <Header />
+          {children}
+          <Footer />
+        </QueryProvider>
       </ThemeProvider>
     </I18nProvider>
   );
