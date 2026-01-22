@@ -11,7 +11,8 @@
     "PostTask": "Post a Task",
     "BecomeTasker": "Become a Tasker",
     "Search": "Search",
-    "ViewMore": "View More"
+    "ViewMore": "View More",
+    "ClearSelection":"Clear selection"
   },
   "Hero": {
     "HeroTitle": "The easiest way to find and book experts",

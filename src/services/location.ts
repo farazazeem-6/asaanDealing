@@ -11,7 +11,7 @@ export const useStateListing = (slug: string) => {
       axios.get<TStateResponse>(`${SERVER_END_POINTS.STATE}${slug}`),
     select: (response) => response.data.states,
     enabled: !!slug,
-    staleTime: 1000 * 60 * 5,
+    staleTime: 1000 * 60 * 60,
   });
 };
 export const useCityListing = (slug: string) => {
@@ -20,7 +20,7 @@ export const useCityListing = (slug: string) => {
     queryFn: () => axios.get<TCityResponse>(`${SERVER_END_POINTS.CITY}${slug}`),
     select: (response) => response.data.cities,
     enabled: !!slug,
-    staleTime: 1000 * 60 * 5,
+    staleTime: 1000 * 60 * 60,
   });
 };
 export const useTownListing = (slug: string) => {
@@ -29,6 +29,6 @@ export const useTownListing = (slug: string) => {
     queryFn: () => axios.get<TTownResponse>(`${SERVER_END_POINTS.TOWN}${slug}`),
     select: (response) => response.data.towns,
     enabled: !!slug,
-    staleTime: 1000 * 60 * 5,
+    staleTime: 1000 * 60 * 60,
   });
 };

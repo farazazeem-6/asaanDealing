@@ -9,7 +9,7 @@ export const useLocationSelector = (
   const [selectedProvince, setSelectedProvince] = useState(initialProvince);
   const [selectedCity, setSelectedCity] = useState(initialCity);
   const [selectedTown, setSelectedTown] = useState(initialTown);
-  const [showingCities, setShowingCities] = useState(!!initialCity);
+  const [showingCities, setShowingCities] = useState(Boolean(initialCity));
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const { data: provinces = [], isLoading: isProvincesLoading } =
@@ -19,7 +19,7 @@ export const useLocationSelector = (
     if (!selectedProvince || provinces.length === 0) return;
     // If selectedProvince is not a name but an ID, convert it to name
     const provinceById = provinces.find(
-      (p) => String(p.id) === selectedProvince,
+      (province) => String(province.id) === selectedProvince,
     );
     if (provinceById && provinceById.name !== selectedProvince) {
       setSelectedProvince(provinceById.name);
@@ -28,7 +28,7 @@ export const useLocationSelector = (
   const { selectedProvinceSlug, provinceID } = useMemo(() => {
     if (!selectedProvince) return { selectedProvinceSlug: '' };
 
-    const province = provinces.find((p) => p.name === selectedProvince);
+    const province = provinces.find((prov) => prov.name === selectedProvince);
 
     return {
       selectedProvinceSlug: province?.slug || '',
@@ -42,7 +42,7 @@ export const useLocationSelector = (
   useEffect(() => {
     if (!selectedCity || cities.length === 0) return;
     // If selectedCity is not a name but an ID, convert it to name
-    const cityById = cities.find((c) => String(c.id) === selectedCity);
+    const cityById = cities.find((city) => String(city.id) === selectedCity);
     if (cityById && cityById.name !== selectedCity) {
       setSelectedCity(cityById.name);
     }
@@ -61,7 +61,7 @@ export const useLocationSelector = (
   useEffect(() => {
     if (!selectedTown || towns.length === 0) return;
     // If selectedTown is not a name but an ID, convert it to name
-    const townById = towns.find((t) => String(t.id) === selectedTown);
+    const townById = towns.find((town) => String(town.id) === selectedTown);
     if (townById && townById.name !== selectedTown) {
       setSelectedTown(townById.name);
     }
@@ -69,7 +69,7 @@ export const useLocationSelector = (
 
   const townID = useMemo(() => {
     if (!selectedTown) return undefined;
-    const town = towns.find((t) => t.name === selectedTown);
+    const town = towns.find((town) => town.name === selectedTown);
     return town?.id;
   }, [selectedTown, towns]);
 
@@ -77,19 +77,19 @@ export const useLocationSelector = (
     if (isCitiesLoading) return [];
 
     if (showingCities) {
-      return cities.map((c) => ({ label: c.name, value: c.name }));
+      return cities.map((city) => ({ label: city.name, value: city.name }));
     }
 
-    return provinces.map((p) => ({ label: p.name, value: p.name }));
+    return provinces.map((province) => ({ label: province.name, value: province.name }));
   }, [showingCities, provinces, cities, isCitiesLoading]);
 
   const selectedValue = selectedCity || selectedProvince;
 
   const selectedOption = useMemo(() => {
-    const found = locationOptions.find(
+    const activeOption = locationOptions.find(
       (option) => option.value === selectedValue,
     ) || { label: selectedValue, value: selectedValue };
-    return found;
+    return activeOption;
   }, [locationOptions, selectedValue]);
 
   const handleLocationChange = (value: string) => {
@@ -104,35 +104,26 @@ export const useLocationSelector = (
     }
   };
 
-  const handleClearLocation = (resetAll = false) => {
-    if (resetAll) {
-      setSelectedProvince('');
-      setSelectedCity('');
-      setSelectedTown('');
-      setShowingCities(false);
-      setIsDropdownOpen(false);
-      return;
-    }
+  const clearCity = () => {
+    setSelectedCity('');
+    setSelectedTown('');
+    setShowingCities(false);
+    setIsDropdownOpen(true);
+  };
 
-    if (selectedCity) {
-      setSelectedCity('');
-      setSelectedTown('');
-      setShowingCities(false);
-      setIsDropdownOpen(true);
-    } else {
-      setSelectedProvince('');
-      setSelectedCity('');
-      setSelectedTown('');
-      setShowingCities(false);
-    }
+  const clearAll = () => {
+    setSelectedProvince('');
+    setSelectedCity('');
+    setSelectedTown('');
+    setShowingCities(false);
+    setIsDropdownOpen(false);
   };
 
   useEffect(() => {
     if (selectedProvince && cities.length > 0 && !showingCities) {
       setShowingCities(true);
-      setIsDropdownOpen(true);
     }
-  }, [selectedProvince, cities.length, showingCities]);
+  }, [selectedProvince, cities.length, showingCities, setIsDropdownOpen]);
 
   return {
     provinces,
@@ -145,7 +136,8 @@ export const useLocationSelector = (
     setSelectedCity,
     setSelectedTown,
     handleLocationChange,
-    handleClearLocation,
+    clearAll,
+    clearCity,
     showingCities,
     isDropdownOpen,
     setIsDropdownOpen,

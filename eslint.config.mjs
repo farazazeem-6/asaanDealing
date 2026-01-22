@@ -22,8 +22,7 @@ export default defineConfig([
       'no-warning-comments': 'error',
 
       // ❌ No console logs
-      'no-console': ['error', { allow: ['error'] }],
-
+      'no-console': 'error',
       // ❌ No unused vars / imports
       '@typescript-eslint/no-unused-vars': 'error',
       'no-unused-vars': 'off',

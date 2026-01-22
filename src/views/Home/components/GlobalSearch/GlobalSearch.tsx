@@ -33,15 +33,15 @@ export function GlobalSearch() {
     setIsDropdownOpen,
     selectedValue,
     handleLocationChange,
-    handleClearLocation,
     isProvincesLoading,
     isCitiesLoading,
     showingCities,
+    clearAll,
   } = useLocationSelector();
 
   // CLICK OUTSIDE LOGIC
   useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
+    const handleClickOutside = (event: MouseEvent) => {
       if (
         wrapperRef.current &&
         !wrapperRef.current.contains(event.target as Node)
@@ -49,18 +49,22 @@ export function GlobalSearch() {
         setIsDropdownOpen(false);
         setSearchQuery('');
       }
-    }
+    };
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [setIsDropdownOpen]);
 
   const filteredList = useMemo(() => {
-    const query = searchQuery.toLowerCase();
-    if (!query) return locationOptions;
+    if (!searchQuery) return locationOptions;
     return locationOptions.filter((opt) =>
-      opt.label.toLowerCase().includes(query),
+      opt.label.toLowerCase().includes(searchQuery.toLowerCase()),
     );
   }, [searchQuery, locationOptions]);
+  const getLocationText = () => {
+    if (isProvincesLoading) return 'Loading...';
+    if (isCitiesLoading) return 'Loading Cities...';
+    return selectedValue || t('Inputs.SelectLocation');
+  };
 
   return (
     <Box css={{ marginTop: '$rem$2' }}>
@@ -77,7 +81,6 @@ export function GlobalSearch() {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </ServiceInputGroup>
-
         <LocationTrigger onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
           <Flex align={'center'} gap={'8'}>
             <LocationIcon
@@ -91,12 +94,7 @@ export function GlobalSearch() {
                 fontWeight: selectedValue ? '$fontWeight$semibold' : '300',
               }}
             >
-              {/*LOADING CITIES TEXT */}
-              {isProvincesLoading
-                ? 'Loading...'
-                : isCitiesLoading
-                  ? 'Loading Cities...'
-                  : selectedValue || t('Inputs.SelectLocation')}
+              {getLocationText()}
             </Text>
           </Flex>
 
@@ -105,7 +103,7 @@ export function GlobalSearch() {
               onClick={(e) => {
                 e.stopPropagation();
                 //CLEAR & CLOSE DROPDOWN
-                handleClearLocation(true);
+                clearAll();
                 setIsDropdownOpen(false);
               }}
               css={{ padding: '$px$4' }}
@@ -141,7 +139,7 @@ export function GlobalSearch() {
                 {showingCities && !isCitiesLoading && (
                   <ListItem
                     onClick={() => {
-                      handleClearLocation(true);
+                      clearAll();
                       setIsDropdownOpen(false);
                     }}
                     css={{
@@ -149,7 +147,7 @@ export function GlobalSearch() {
                       color: '$secondryHeading !important',
                     }}
                   >
-                    Clear selection
+                    {t('Action.ClearSelection')}
                   </ListItem>
                 )}
 
@@ -165,7 +163,7 @@ export function GlobalSearch() {
                   </ListItem>
                 ))}
 
-                {!isCitiesLoading && filteredList.length === 0 && (
+                {!isCitiesLoading && !filteredList && (
                   <ListItem css={{ cursor: 'default' }}>
                     {t('Inputs.NoResultsFound')}
                   </ListItem>
@@ -174,8 +172,7 @@ export function GlobalSearch() {
             </DropdownMenu>
           )}
         </LocationTrigger>
-
-        <SearchBtn>Search</SearchBtn>
+        <SearchBtn>{t('Action.Search')}</SearchBtn>
       </SearchWrapper>
     </Box>
   );

@@ -1,5 +1,5 @@
 export enum QUERY_KEYS {
-  STATE_LISTING = 'state-listing',
-  CITY_LISTING = 'city-listing',
-  TOWN_LISTING = 'town-listing',
+  STATE_LISTING = 'State-Listing',
+  CITY_LISTING = 'City-Listing',
+  TOWN_LISTING = 'Town-Listing',
 }
