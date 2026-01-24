@@ -1,5 +1,4 @@
 export * from './services';
-export * from './statData';
 export * from './images';
 export * from './string';
 export * from './regex';

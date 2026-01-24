@@ -15,10 +15,12 @@ import { Fragment, useEffect, useState } from 'react';
 import { useCountUp, useScreenWidth } from '@/hooks';
 import { TypingText } from '../TypingText';
 import { GlobalSearch } from '../GlobalSearch';
-import { POPULAR_SERVICES, statsData, TEXT } from '@/constants';
+import { POPULAR_SERVICES, TEXT } from '@/constants';
 import { HeroImageSlider } from '../HeroImageSlider';
 import { TStatItemProps } from '../types';
 import { useTranslation } from 'react-i18next';
+import { useGetPlatformStats } from '@/services';
+import { TaskerIcon, TaskPostedIcon, UserIcon } from '@/components/svgs';
 
 // Stat Card Component
 const StatCard = ({ icon: Icon, number, label }: TStatItemProps) => {
@@ -43,6 +45,7 @@ const StatCard = ({ icon: Icon, number, label }: TStatItemProps) => {
 };
 
 export const HeroSection = () => {
+  const { data: stats } = useGetPlatformStats();
   const { t, i18n } = useTranslation();
   const { isSmMax } = useScreenWidth();
   const [activeIndex, setActiveIndex] = useState(0);
@@ -93,19 +96,29 @@ export const HeroSection = () => {
         </PopularSearchWrapper>
 
         <StatCardsWrapper>
-          {statsData.map((data, index) => (
-            <Fragment key={data.id || data.label}>
+          {stats && (
+            <>
+              {' '}
               <StatCard
-                icon={data.icon}
-                number={data.number}
-                label={t(data.label)}
+                icon={TaskPostedIcon}
+                number={stats?.taskPosts?.count || 0}
+                label="Stats.TasksPosted"
               />
-
-              {index < statsData.length - 1 && (
-                <Divider orientation="vertical" />
-              )}
-            </Fragment>
-          ))}
+              <Divider orientation="vertical" />
+              <StatCard
+                icon={TaskerIcon}
+                number={stats?.taskers?.count || 0}
+                label="Stats.Taskers"
+              />
+              <Divider orientation="vertical" />
+              {/* 3. Users */}
+              <StatCard
+                icon={UserIcon}
+                number={stats?.users?.count || 0}
+                label="Stats.Users"
+              />
+            </>
+          )}
         </StatCardsWrapper>
       </HeroContent>
       <HeroImageSlider activeIndex={activeIndex} />
