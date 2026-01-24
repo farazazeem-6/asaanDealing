@@ -11,7 +11,7 @@ import {
   PopularSearchWrapper,
   StatCardsWrapper,
 } from './style';
-import { Fragment, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useCountUp, useScreenWidth } from '@/hooks';
 import { TypingText } from '../TypingText';
 import { GlobalSearch } from '../GlobalSearch';
