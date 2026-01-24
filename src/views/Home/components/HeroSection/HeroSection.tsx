@@ -65,7 +65,7 @@ export const HeroSection = () => {
             ''
           ) : (
             <>
-              {i18n.language !== 'en' ? (
+              {i18n.language == 'ur' ? (
                 <>
                   <TypingText activeIndex={activeIndex} /> {t('Hero.For')}
                 </>

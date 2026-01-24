@@ -43,10 +43,7 @@ export function Header() {
             })}
           </NavList>
           <Actions>
-            <Button variant={'outline'}>{t('Action.PostTask')}</Button>
-            <Button variant={'outline'}>{t('Action.BecomeTasker')}</Button>
-            <Button>{t('Action.SignIn')}</Button>
-            <LanguageDropdown
+             <LanguageDropdown
               options={SUPPORTED_LANGUAGES}
               selected={
                 SUPPORTED_LANGUAGES.find(
@@ -58,6 +55,10 @@ export function Header() {
               showIcon={true}
               onChange={(language) => i18n.changeLanguage(language.identifier)}
             />
+            <Button variant={'outline'}>{t('Action.PostTask')}</Button>
+            <Button variant={'outline'}>{t('Action.BecomeTasker')}</Button>
+            <Button>{t('Action.SignIn')}</Button>
+           
           </Actions>
 
           <MobileNav>

@@ -100,6 +100,7 @@ const DropdownItem = styled('li', {
   color: '$foreground',
   transition: 'background-color 0.15s ease',
   userSelect: 'none',
+  margin:'$px$2 0',
 
   '&:hover': {
     backgroundColor: '$primary',
