@@ -27,7 +27,7 @@ export const useCountUp = (end: number, duration: number = 2000): number => {
     animationFrame = requestAnimationFrame(animate);
 
     return () => cancelAnimationFrame(animationFrame);
-  }, [end, duration]); 
+  }, [end, duration]);
 
   return count;
 };
