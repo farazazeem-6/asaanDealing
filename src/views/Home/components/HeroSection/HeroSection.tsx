@@ -96,28 +96,24 @@ export const HeroSection = () => {
         </PopularSearchWrapper>
 
         <StatCardsWrapper>
-          {stats && (
-            <>
-              <StatCard
-                icon={TaskPostedIcon}
-                number={stats.taskPosts?.count || 0}
-                label="Stats.TasksPosted"
-              />
-              <Divider orientation="vertical" />
-              <StatCard
-                icon={TaskerIcon}
-                number={stats.taskers?.count || 0}
-                label="Stats.Taskers"
-              />
-              <Divider orientation="vertical" />
-              {/* 3. Users */}
-              <StatCard
-                icon={UserIcon}
-                number={stats.users?.count || 0}
-                label="Stats.Users"
-              />
-            </>
-          )}
+          <StatCard
+            icon={TaskPostedIcon}
+            number={stats?.taskPosts?.count || 0}
+            label="Stats.TasksPosted"
+          />
+          <Divider orientation="vertical" />
+          <StatCard
+            icon={TaskerIcon}
+            number={stats?.taskers?.count || 0}
+            label="Stats.Taskers"
+          />
+          <Divider orientation="vertical" />
+          {/* User count statistics */}
+          <StatCard
+            icon={UserIcon}
+            number={stats?.users?.count || 0}
+            label="Stats.Users"
+          />
         </StatCardsWrapper>
       </HeroContent>
       <HeroImageSlider activeIndex={activeIndex} />

@@ -1,3 +1,9 @@
+export type TPlatformStatsResponse = {
+  data: {
+    userStats: TPlatformStats;
+  };
+};
+
 export type TCountObject = {
   count: number;
 };
