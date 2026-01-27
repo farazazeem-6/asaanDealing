@@ -7,3 +7,4 @@ export type TApiResponse<T> = {
 export * from './sizes';
 export * from './location';
 export * from './platformStats';
+export * from './tasker-categories'

@@ -8,23 +8,27 @@ import {
   CategoryTitle,
   ContentImg,
 } from './style';
-import { TCategoryItem } from '../types';
-import { useTranslation } from 'react-i18next';
+import { TTaskerCategoryCard } from '../types';
 
 type TCategoryCardProps = {
-  data: TCategoryItem;
+  data: TTaskerCategoryCard;
 };
 
 export const CategoryCard: React.FC<TCategoryCardProps> = ({ data }) => {
-  const { t } = useTranslation();
+  const iconUrls = data.media?.icons ? Object.values(data.media.icons) : [];
+  const iconSrc = iconUrls.length > 0 ? iconUrls[0] : '';
+
+  const hoverBgSrc = data.metadata?.image?.['2'] || '';
   return (
     <CardWrapper>
-      <HoverBackground css={{ backgroundImage: `url(${data.hoverBgSrc})` }} />
+      <HoverBackground
+        css={{ backgroundImage: hoverBgSrc ? `url(${hoverBgSrc})` : 'none' }}
+      />
       <ContentLayer>
         <IconCircle>
-          <ContentImg size={200} src={data.iconSrc} alt={data.title} />
+          <ContentImg src={iconSrc} alt={data.name} />
         </IconCircle>
-        <CategoryTitle>{t(data.title)}</CategoryTitle>
+        <CategoryTitle>{data.name}</CategoryTitle>
       </ContentLayer>
     </CardWrapper>
   );

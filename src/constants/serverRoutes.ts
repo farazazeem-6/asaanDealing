@@ -6,4 +6,7 @@ export const SERVER_END_POINTS = {
 
   //platform stats
   PLATFORM_STATS: 'stats/user/dashboard',
+
+  //service categories
+  TASKER_CATEGORIES: 'service/category',
 };

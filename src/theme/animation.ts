@@ -133,6 +133,14 @@ export const float = keyframes({
   '50%': { transform: 'translateY(-10px)' },
   '100%': { transform: 'translateY(0px)' },
 });
+export const CategoryCardShimmer = keyframes({
+  '0%': {
+    backgroundPosition: '-$px$468 0',
+  },
+  '100%': {
+    backgroundPosition: '$px$468 0',
+  },
+});
 
 export {
   slideFromLeft,
