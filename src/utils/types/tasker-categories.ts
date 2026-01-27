@@ -8,14 +8,21 @@ export type TCategoryMetaData = {
 export type TDynamicObjectKeyValue = { [iconName: string]: string };
 
 export type TCategoryMedia = {
-  icons: TDynamicObjectKeyValue;
-  images: TDynamicObjectKeyValue;
+  icons?: TDynamicObjectKeyValue;
+  images?: TDynamicObjectKeyValue;
 };
+
 export type TTaskerCategory = {
   id: number;
   name: string;
   slug: string;
   description: string;
   metadata: TCategoryMetaData;
-  media: TCategoryMedia;
+  media?: TCategoryMedia; 
+};
+
+export type TTaskerCategoryResponse = {
+  data: {
+    categories: TTaskerCategory[];
+  };
 };
