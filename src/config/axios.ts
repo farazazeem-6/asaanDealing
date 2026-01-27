@@ -11,7 +11,7 @@ export const axios: AxiosInstance = Axios.create({
 });
 
 axios.interceptors.response.use(
-  (response) => response.data,
+  (response) => response,
   (error) => {
     logger.error({
       msg: 'API Request Failed',

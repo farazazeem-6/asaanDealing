@@ -5,13 +5,15 @@ export type TLocationItem = {
 };
 
 export type TStateResponse = {
-  states: TLocationItem[];
+  data: {
+    states: TLocationItem[];
+  };
 };
 
 export type TCityResponse = {
-  cities: TLocationItem[];
+  data: { cities: TLocationItem[] };
 };
 
 export type TTownResponse = {
-  towns: TLocationItem[];
+  data: { towns: TLocationItem[] };
 };
