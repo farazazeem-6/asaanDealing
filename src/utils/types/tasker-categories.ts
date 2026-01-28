@@ -1,15 +1,13 @@
-export type TDynamicKeyValueObject = Record<string, string>;
+export type TStringMap = Record<string, string>;
 
 export type TCategoryMetaData = {
-  icon: TDynamicKeyValueObject;
-  image: TDynamicKeyValueObject;
+  icon: TStringMap;
+  image: TStringMap;
 };
 
-export type TDynamicObjectKeyValue = { [iconName: string]: string };
-
 export type TCategoryMedia = {
-  icons?: TDynamicObjectKeyValue;
-  images?: TDynamicObjectKeyValue;
+  icons?: TStringMap;
+  images?: TStringMap;
 };
 
 export type TTaskerCategory = {
@@ -18,7 +16,7 @@ export type TTaskerCategory = {
   slug: string;
   description: string;
   metadata: TCategoryMetaData;
-  media?: TCategoryMedia; 
+  media?: TCategoryMedia;
 };
 
 export type TTaskerCategoryResponse = {

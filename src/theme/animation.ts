@@ -135,10 +135,10 @@ export const float = keyframes({
 });
 export const CategoryCardShimmer = keyframes({
   '0%': {
-    backgroundPosition: '-$px$468 0',
+    backgroundPosition: '-468px 0',
   },
   '100%': {
-    backgroundPosition: '$px$468 0',
+    backgroundPosition: '468px 0',
   },
 });
 

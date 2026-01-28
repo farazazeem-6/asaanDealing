@@ -4,8 +4,8 @@ export type TTaskerCategoryCard = {
   metadata: {
     image?: Record<string, string>;
   };
-  media: {
-    icons: Record<string, string>;
-    images: Record<string, string>;
+  media?: {
+    icons?: Record<string, string>;
+    images?: Record<string, string>;
   };
 };

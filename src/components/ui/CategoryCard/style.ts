@@ -85,6 +85,7 @@ export const IconCircle = styled(Flex, {
 
 export const ContentImg = styled(HtmlImage, {
   objectFit: 'contain',
+  borderRadius: '$percent$50',
   width: '$px$50',
   height: '$px$50',
   '@sm_max': {

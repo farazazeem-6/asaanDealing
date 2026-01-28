@@ -7,6 +7,6 @@ export enum QUERY_KEYS {
   //platform stats
   PLATFORM_STATS = 'Platform-Stats',
 
-  //serive categories
+  //service categories
   TASKER_CATEGORIES = 'Tasker-Categories',
 }

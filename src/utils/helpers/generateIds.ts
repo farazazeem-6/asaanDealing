@@ -4,7 +4,7 @@ export const generateUniqueIds = (count: number, prefix = 'skel'): string[] => {
 
   let current = 0;
   while (current < count) {
-    ids.push(`${prefix}-${timestamp}-${String.fromCharCode(97 + current)}`);
+    ids.push(`${prefix}-${timestamp}-${current.toString(36)}`);
     current++;
   }
 

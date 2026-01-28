@@ -12,7 +12,7 @@ export const useGetTaskerCategories = ({ enabled }: { enabled: boolean }) => {
       return response.data;
     },
     select: (response) => response?.data.categories,
-    staleTime: 100 * 60 * 60,
+    staleTime: 1000 * 60 * 60,
     enabled,
   });
 };

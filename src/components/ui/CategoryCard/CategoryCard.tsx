@@ -9,6 +9,7 @@ import {
   ContentImg,
 } from './style';
 import { TTaskerCategoryCard } from '../types';
+import { USER_MOCK_AVATAR } from '@/constants';
 
 type TCategoryCardProps = {
   data: TTaskerCategoryCard;
@@ -16,7 +17,7 @@ type TCategoryCardProps = {
 
 export const CategoryCard: React.FC<TCategoryCardProps> = ({ data }) => {
   const iconUrls = data.media?.icons ? Object.values(data.media.icons) : [];
-  const iconSrc = iconUrls.length > 0 ? iconUrls[0] : '';
+  const iconSrc = iconUrls.length > 0 ? iconUrls[0] : USER_MOCK_AVATAR;
 
   const hoverBgSrc = data.metadata?.image?.['2'] || '';
   return (
