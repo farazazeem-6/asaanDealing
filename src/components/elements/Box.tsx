@@ -1,3 +1,3 @@
-import { styled } from "@/theme";
+import { styled } from '@/theme';
 
-export const Box = styled('div', {})
+export const Box = styled('div', {});

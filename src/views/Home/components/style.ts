@@ -1,5 +1,5 @@
-import { Text } from "@/components/elements";
-import { styled } from "@/theme";
+import { Text } from '@/components/elements';
+import { styled } from '@/theme';
 
 export const Heading = styled(Text, {
   fontSize: '$rem$2',

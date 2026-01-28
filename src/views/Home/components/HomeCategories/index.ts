@@ -1,1 +1,1 @@
-export * from './HomeCategories'
+export * from './HomeCategories';

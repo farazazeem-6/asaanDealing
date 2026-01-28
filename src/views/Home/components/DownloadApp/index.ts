@@ -1,1 +1,1 @@
-export * from './DownloadApp'
+export * from './DownloadApp';

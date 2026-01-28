@@ -1,5 +1,5 @@
 import { styled } from '@/theme';
-import { Flex, Box, Text, NextImage } from '@/components/elements';
+import { Flex, Box, Text, HtmlImage } from '@/components/elements';
 
 export const CardWrapper = styled(Flex, {
   flexDirection: 'column !important',
@@ -83,8 +83,9 @@ export const IconCircle = styled(Flex, {
   },
 });
 
-export const ContentImg = styled(NextImage, {
+export const ContentImg = styled(HtmlImage, {
   objectFit: 'contain',
+  borderRadius: '$percent$50',
   width: '$px$50',
   height: '$px$50',
   '@sm_max': {

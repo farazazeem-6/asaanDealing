@@ -1,1 +1,1 @@
-export * from './FilterTab'
+export * from './FilterTab';

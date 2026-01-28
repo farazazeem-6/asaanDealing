@@ -1,18 +1,32 @@
 import { Button, Flex, Text } from '@/components/elements';
 import { CategoryCardsGrid, HomeCategoriesWrapper } from './style';
-import { CATEGORY_DATA, TEXT } from '@/constants';
-import { CategoryCard } from '@/components/ui';
+import { TEXT } from '@/constants';
+import { CategoryCard, CategoryCardSkeleton } from '@/components/ui';
 import { useScreenWidth } from '@/hooks';
 import { Heading, SubHeading } from '../style';
 import { useTranslation } from 'react-i18next';
+import { useGetTaskerCategories } from '@/services';
+import { useMemo } from 'react';
+import { generateUniqueIds } from '@/utils/helpers';
 
 export const HomeCategories = () => {
+  const { data: categories, isLoading } = useGetTaskerCategories({
+    enabled: true,
+  });
+
   const { t } = useTranslation();
   const { isMobile } = useScreenWidth();
+  const allCategories = categories || [];
 
   const visibleCategories = isMobile
-    ? CATEGORY_DATA.slice(0, 6)
-    : CATEGORY_DATA;
+    ? allCategories.slice(0, 6)
+    : allCategories.slice(0, 10);
+
+  const skeletonCount = isMobile ? 6 : 10;
+  const skeletonKeys = useMemo(
+    () => generateUniqueIds(skeletonCount, 'category'),
+    [skeletonCount],
+  );
 
   return (
     <HomeCategoriesWrapper>
@@ -27,9 +41,11 @@ export const HomeCategories = () => {
       </Flex>
 
       <CategoryCardsGrid>
-        {visibleCategories.map((item) => (
-          <CategoryCard key={item.id} data={item} />
-        ))}
+        {isLoading
+          ? skeletonKeys.map((key) => <CategoryCardSkeleton key={key} />)
+          : visibleCategories.map((item) => (
+              <CategoryCard key={item.id} data={item} />
+            ))}
       </CategoryCardsGrid>
 
       <Flex justify={'center'} css={{ marginTop: '$rem$1' }}>
