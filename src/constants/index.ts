@@ -9,4 +9,4 @@ export * from './quickLinks';
 export * from './socialLinks';
 export * from './quickLinks';
 export * from './serverRoutes';
-export * from './user'
+export * from './user';

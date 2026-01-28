@@ -4,7 +4,6 @@ import { Wrapper } from '@/components/styles';
 import { LogoTitle } from '../style';
 import {
   ASAAD_DEALING_SOCIAL_LINKS,
-  CATEGORY_DATA,
   POPULAR_SERVICES,
   QUICK_LINKS,
   TEXT,
@@ -33,9 +32,13 @@ import {
 } from './style';
 import { Flex } from '@/components/elements';
 import { currentYear, handleScrollTop } from '@/utils/helpers';
+import { useGetTaskerCategories } from '@/services';
 
 export const Footer = () => {
   const { t } = useTranslation();
+  const { data: categories } = useGetTaskerCategories({
+    enabled: true,
+  });
   return (
     <Wrapper>
       <FooterRoot>
@@ -86,9 +89,9 @@ export const Footer = () => {
           {/* 3. CATEGORIES SECTION (Hidden on Mobile) */}
           <LinkColumn hiddenOnMobile>
             <SectionTitle>{t(FooterEnum.PopularCategory)}</SectionTitle>
-            {CATEGORY_DATA?.slice(0, 5)?.map((category) => (
+            {categories?.slice(0, 5)?.map((category) => (
               <LinkItem key={category.id} href="#">
-                {t(category.title)}
+                {t(category.name)}
               </LinkItem>
             ))}
           </LinkColumn>

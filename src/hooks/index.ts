@@ -1,3 +1,3 @@
-export * from './useTypingText'
-export * from './useScreenWidth'
-export * from './useCountUp'
+export * from './useTypingText';
+export * from './useScreenWidth';
+export * from './useCountUp';

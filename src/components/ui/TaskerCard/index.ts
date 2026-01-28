@@ -1,1 +1,1 @@
-export * from './TaskerCard'
+export * from './TaskerCard';

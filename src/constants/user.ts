@@ -1,1 +1,1 @@
-export const USER_MOCK_AVATAR = '/defaultImage.png'
+export const USER_MOCK_AVATAR = '/defaultImage.png';

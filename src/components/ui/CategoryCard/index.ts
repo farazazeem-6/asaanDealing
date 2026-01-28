@@ -1,2 +1,2 @@
-export * from './CategoryCard'
-export * from './CategoryCardSkeleton'
+export * from './CategoryCard';
+export * from './CategoryCardSkeleton';

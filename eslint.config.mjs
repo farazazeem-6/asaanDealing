@@ -18,11 +18,13 @@ export default defineConfig([
 
     rules: {
       'react-hooks/set-state-in-effect': 'off',
+
       // ❌ No warnings — build should fail
       'no-warning-comments': 'error',
 
       // ❌ No console logs
       'no-console': 'error',
+
       // ❌ No unused vars / imports
       '@typescript-eslint/no-unused-vars': 'error',
       'no-unused-vars': 'off',
@@ -37,7 +39,10 @@ export default defineConfig([
       // ✅ Must always have a key in mapped JSX
       'react/jsx-key': 'error',
 
-      // ❌ Cannot use <img> tag directly
+      // ❌ Always require semicolons
+      semi: ['error', 'always'],
+
+      // ❌ Cannot use restricted HTML tags
       'no-restricted-syntax': [
         'error',
         {
