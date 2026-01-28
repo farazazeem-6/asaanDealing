@@ -1,8 +1,7 @@
 import Axios, { AxiosInstance } from 'axios';
 import { BASE_URL } from './envConfig';
-import { logger } from '@/utils/helpers';
+import { logger } from '@/lib/logger.client';
 
-// 1. AXIOS INSTANCE
 export const axios: AxiosInstance = Axios.create({
   baseURL: BASE_URL,
   headers: {
@@ -11,16 +10,17 @@ export const axios: AxiosInstance = Axios.create({
   },
 });
 
-// 2. RESPONSE INTERCEPTOR
 axios.interceptors.response.use(
-  (response) => response.data,
+  (response) => response,
   (error) => {
-    logger.error('API Error', {
+    logger.error({
+      msg: 'API Request Failed',
       url: error.config?.url,
       status: error.response?.status,
-      data: error.response?.data,
-      message: error.message,
+      params: error.config?.params,
+      error: error.message,
     });
+
     return Promise.reject(error);
   },
 );

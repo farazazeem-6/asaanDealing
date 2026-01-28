@@ -25,28 +25,21 @@ export const DownloadApp = () => {
           {!isMobile && (
             <ContentSubHeading>{t(downloadAppEnum.DISC2)} </ContentSubHeading>
           )}
-
           <DownloadButtons>
             <Flex>
               <ButtonImg
                 src="/images/appstore_badge.svg"
                 alt="Download on the App Store"
-                width={200}
-                height={50}
               />
             </Flex>
-
             <Flex>
               <ButtonImg
                 src="/images/google_play_badge.svg"
                 alt="Get it on Google Play"
-                width={200}
-                height={50}
               />
             </Flex>
           </DownloadButtons>
         </TextContent>
-
         <Box>
           <IllustrationImg src="/images/AppDevelopment.svg" alt="App Preview" />
         </Box>

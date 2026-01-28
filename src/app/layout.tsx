@@ -6,14 +6,12 @@ export const metadata: Metadata = {
   title: 'Asaan Dealing',
   description:
     'Asaan Dealing - The easiest way to manage your daily tasks and services.',
-  icons: {
-    icon: { url: '/asaan_dealing.svg', type: 'image/svg+xml' },
-  },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
-  },
+  icons: { icon: { url: '/asaan_dealing.svg', type: 'image/svg+xml' } },
+};
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({
