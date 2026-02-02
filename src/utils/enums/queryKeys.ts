@@ -7,6 +7,12 @@ export enum QUERY_KEYS {
   //platform stats
   PLATFORM_STATS = 'Platform-Stats',
 
-  //service categories
+  //tasker categories
   TASKER_CATEGORIES = 'Tasker-Categories',
+
+  //tasker services
+  SERVICES_BY_CATEGORY = 'Services-By-Category',
+
+  //tasker listing
+  TASKER_LISTING = 'Tasker-Listing',
 }

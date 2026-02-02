@@ -2,12 +2,7 @@ import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 import { Wrapper } from '@/components/styles';
 import { LogoTitle } from '../style';
-import {
-  ASAAD_DEALING_SOCIAL_LINKS,
-  POPULAR_SERVICES,
-  QUICK_LINKS,
-  TEXT,
-} from '@/constants';
+import { ASAAD_DEALING_SOCIAL_LINKS, QUICK_LINKS, TEXT } from '@/constants';
 import { FooterEnum } from '@/utils/enums';
 import {
   FacebookIcon,
@@ -32,11 +27,14 @@ import {
 } from './style';
 import { Flex } from '@/components/elements';
 import { currentYear, handleScrollTop } from '@/utils/helpers';
-import { useGetTaskerCategories } from '@/services';
+import { useGetServicesByCategory, useGetTaskerCategories } from '@/services';
 
 export const Footer = () => {
   const { t } = useTranslation();
   const { data: categories } = useGetTaskerCategories({
+    enabled: true,
+  });
+  const { data: services } = useGetServicesByCategory({
     enabled: true,
   });
   return (
@@ -78,9 +76,9 @@ export const Footer = () => {
             {/* Popular Services */}
             <LinkColumn>
               <SectionTitle>{t(FooterEnum.PopularSearch)}</SectionTitle>
-              {POPULAR_SERVICES?.slice(0, 5)?.map((service) => (
+              {services?.slice(0, 5)?.map((service) => (
                 <LinkItem key={service.id} href="#">
-                  {t(service.label)}
+                  {t(service.name)}
                 </LinkItem>
               ))}
             </LinkColumn>

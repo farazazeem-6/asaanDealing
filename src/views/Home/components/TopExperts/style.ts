@@ -28,10 +28,17 @@ export const HeadingRow = styled(Flex, {
   flexWrap: 'wrap',
   gap: '$px$10',
 
+  '& > *:last-child': {
+    marginLeft: 'auto',
+  },
+
   '@sm_max': {
     flexDirection: 'column !important',
     alignItems: 'flex-end',
     gap: '$px$5',
+    '& > *:last-child': {
+      marginLeft: '0',
+    },
   },
 });
 export const TopExpertBody = styled(Flex, {

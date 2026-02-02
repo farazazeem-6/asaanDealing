@@ -1,6 +1,5 @@
-import { Box, Button, Flex, Text } from '@/components/elements';
+import { Box, Button, Flex, HtmlImage, Text } from '@/components/elements';
 import { styled } from '@/theme';
-import Image from 'next/image';
 
 export const CardWrapper = styled(Flex, {
   border: '$px$1 solid $lightGrayLine',
@@ -79,7 +78,7 @@ export const TaskerPrice = styled(Text, {
     fontSize: '$px$10',
   },
 });
-export const AvatarImg = styled(Image, {
+export const AvatarImg = styled(HtmlImage, {
   width: '$px$55',
   height: '$px$55',
   borderRadius: '$percent$50',
@@ -120,9 +119,12 @@ export const UserLocation = styled(Text, {
   fontSize: '$px$12',
   color: '$secondryHeading',
   fontWeight: '$fontWeight$normal',
-
+  width: '$px$120',
   '@sm_max': {
     fontSize: '$px$10',
+  },
+  '@xs_max': {
+    width: '$px$60',
   },
 });
 
