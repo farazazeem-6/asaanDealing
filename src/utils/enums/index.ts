@@ -3,3 +3,6 @@ export * from './location';
 export * from './downloadApp';
 export * from './footer';
 export * from './queryKeys';
+export * from './category';
+export * from './seller';
+export * from './userType';

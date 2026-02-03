@@ -41,8 +41,7 @@ const SkeletonCircle = styled(Box, {
   borderRadius: '$percent$50',
   backgroundColor: '$veryLightGray',
   flexShrink: '0',
-  backgroundImage:
-    'linear-gradient(90deg, $veryLightGray 0px, $backgroundDisabledSlot $px$40, $veryLightGray $px$80)',
+  backgroundImage: '$skeletonGradient',
   backgroundSize: '$px$468',
   animation: `${CategoryCardShimmer} 3s ease-in-out infinite`,
   '@sm_max': {
@@ -56,8 +55,7 @@ const SkeletonTitle = styled(Box, {
   width: '$px$100',
   borderRadius: '$px$4',
   backgroundColor: '$veryLightGray',
-  backgroundImage:
-    'linear-gradient(90deg, $veryLightGray 0px, $backgroundDisabledSlot $px$40, $veryLightGray $px$80)',
+  backgroundImage: '$skeletonGradient',
   backgroundSize: '$px$468',
   animation: `${CategoryCardShimmer} 3s ease-in-out infinite`,
   '@md_max': {

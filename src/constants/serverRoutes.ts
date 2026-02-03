@@ -9,4 +9,11 @@ export const SERVER_END_POINTS = {
 
   //service categories
   TASKER_CATEGORIES: 'service/category',
+  TASKER_SPECIFIC_SERVICES: 'tasker/service/listing',
+
+  //services
+  SERVICES: 'service',
+
+  //tasker services listing
+  TASKER_SERVICES_LISTING: 'tasker/service',
 };

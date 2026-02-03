@@ -8,6 +8,7 @@ import {
   FooterButton,
   HeaderRow,
   ImageWrapper,
+  ImgFallBackDiv,
   ServiceTitle,
   TaskerExpStatus,
   TaskerName,
@@ -16,7 +17,6 @@ import {
   UserLocation,
 } from './style';
 
-import { TTasker } from '../types';
 import {
   ChatIcon,
   HeartIcon,
@@ -24,52 +24,189 @@ import {
   WhatsappIcon,
 } from '@/components/svgs';
 import { useScreenWidth } from '@/hooks';
+import { TTaskerService } from '@/utils/types';
+import { USER_MOCK_AVATAR } from '@/constants';
+import { formatNumberWithCommas } from '@/utils/helpers';
+import { useState, useEffect, useMemo } from 'react';
+import { TaskerCardImageSkeleton } from './TaskerCardImageSkeleton';
+import { ServiceMode } from '@/utils/enums';
 
-export const TaskerCard = ({ data }: { data: TTasker }) => {
-  const services = data.services || [];
+const getAllTaskerImages = (data: TTaskerService): string[] => {
+  const allImageUrls: string[] = [];
 
-  const mainServiceTitle = services[0]?.name || 'No Service Listed';
-  const secondServiceTag = services[1]?.name;
+  // 1. Collect coverImage
+  const coverImageObj = data.coverImage;
+  if (coverImageObj && typeof coverImageObj === 'object') {
+    const coverImages = Object.values(coverImageObj).filter(
+      (img): img is string => typeof img === 'string' && img.length > 0,
+    );
+    allImageUrls.push(...coverImages);
+  }
 
-  const remainingServices = services.slice(2);
-  const extraCount = remainingServices.length;
+  // 2. Collect ALL media images
+  const mediaObj = data?.media;
+  if (mediaObj && typeof mediaObj === 'object') {
+    Object.values(mediaObj).forEach((mediaItem) => {
+      if (mediaItem?.images && typeof mediaItem.images === 'object') {
+        const images = Object.values(mediaItem.images).filter(
+          (img): img is string => typeof img === 'string' && img.length > 0,
+        );
+        allImageUrls.push(...images);
+      }
+    });
+  }
+
+  // 3. Collect service metadata images
+  const metadataImages = data.serviceId?.metadata?.image;
+  if (metadataImages && typeof metadataImages === 'object') {
+    const images = Object.values(metadataImages).filter(
+      (img): img is string => typeof img === 'string' && img.trim().length > 0,
+    );
+    allImageUrls.push(...images);
+  }
+
+  return allImageUrls;
+};
+
+const selectBestImage = (images: string[]): string => {
+  if (images.length >= 2) {
+    // preferred image
+    return images[images.length - 2];
+  }
+
+  if (images.length === 1) {
+    // fallback to the only available image
+    return images[0];
+  }
+
+  return '';
+};
+
+export const TaskerCard = ({
+  taskerService,
+}: {
+  taskerService: TTaskerService;
+}) => {
+  const taskerName = useMemo(
+    () =>
+      `${taskerService.taskerId?.userId?.firstName || ''} ${taskerService.taskerId?.userId?.lastName || ''}`.trim(),
+    [
+      taskerService.taskerId?.userId?.firstName,
+      taskerService.taskerId?.userId?.lastName,
+    ],
+  );
+
+  const profileImageUrl = useMemo(() => {
+    const profileImageObj = taskerService.taskerId?.userId?.profileImage;
+    return typeof profileImageObj === 'string'
+      ? profileImageObj
+      : profileImageObj &&
+          typeof profileImageObj === 'object' &&
+          'url' in profileImageObj
+        ? profileImageObj.url
+        : USER_MOCK_AVATAR;
+  }, [taskerService.taskerId?.userId?.profileImage]);
+
+  const serviceTitle = useMemo(
+    () => taskerService.serviceId?.name || 'No Service Listed',
+    [taskerService.serviceId?.name],
+  );
+
+  const location = useMemo(() => {
+    const cityName = taskerService.cityId?.name || '';
+    const stateName = taskerService.cityId?.stateId?.name || '';
+    return [cityName, stateName].filter(Boolean).join(', ');
+  }, [taskerService.cityId?.name, taskerService.cityId?.stateId?.name]);
+
+  const price = useMemo(() => taskerService.rate || 0, [taskerService.rate]);
+
+  const experienceLevel = useMemo(
+    () => taskerService.experienceLevel || 'Beginner',
+    [taskerService.experienceLevel],
+  );
+
+  const isOnsite = useMemo(
+    () => taskerService.workMode === ServiceMode.ONSITE,
+    [taskerService.workMode],
+  );
+
+  const { firstSkill, extraCount, remainingSkills } = useMemo(() => {
+    const coreSkills = taskerService.coreSkills || [];
+    return {
+      firstSkill: coreSkills[0],
+      remainingSkills: coreSkills.slice(1),
+      extraCount: coreSkills.slice(1).length,
+    };
+  }, [taskerService.coreSkills]);
+
+  const { coverImage, profileImage } = useMemo(() => {
+    const allImages = getAllTaskerImages(taskerService);
+    const selectedCover = selectBestImage(allImages);
+
+    return {
+      coverImage: selectedCover,
+      profileImage: profileImageUrl || USER_MOCK_AVATAR,
+    };
+  }, [taskerService, profileImageUrl]);
+
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const [imageError, setImageError] = useState(false);
+
   const { isMobile } = useScreenWidth();
+
+  useEffect(() => {
+    setImageLoaded(false);
+    setImageError(false);
+  }, [taskerService.id]);
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+    setImageError(false);
+  };
+
+  const handleImageError = () => {
+    setImageLoaded(true);
+    setImageError(true);
+  };
 
   return (
     <CardWrapper>
       <HeaderRow>
         <Flex align={'center'} gap={'10'}>
-          <AvatarImg
-            width={200}
-            height={200}
-            src={data.profileImage}
-            alt={data.name}
-          />
+          {profileImage && (
+            <AvatarImg
+              width={200}
+              height={200}
+              src={profileImage}
+              alt={taskerName}
+            />
+          )}
           <UserInfoWrapper>
-            <TaskerName title={data.name} textEllipsis={'1'}>
-              {data.name}
+            <TaskerName title={taskerName} textEllipsis={'1'}>
+              {taskerName}
             </TaskerName>
-            <TaskerExpStatus>{data.level}</TaskerExpStatus>
+            <TaskerExpStatus>{experienceLevel}</TaskerExpStatus>
           </UserInfoWrapper>
         </Flex>
-        {data.isOnsite && (
+        {isOnsite && (
           <Badge color={'darkGreen'} size={'small'}>
             Onsite
           </Badge>
         )}
       </HeaderRow>
-      <ServiceTitle title={mainServiceTitle}>{mainServiceTitle}</ServiceTitle>
+
+      <ServiceTitle title={serviceTitle}>{serviceTitle}</ServiceTitle>
 
       <Flex align="center" gap={'4'}>
-        {secondServiceTag && (
+        {firstSkill && (
           <Badge
-            title={secondServiceTag}
+            title={firstSkill}
             textEllipsis={'1'}
             css={{ width: '$px$100', '@sm_max': { width: '$px$80' } }}
             color={'teal'}
             size={'small'}
           >
-            {secondServiceTag}
+            {firstSkill}
           </Badge>
         )}
 
@@ -78,8 +215,8 @@ export const TaskerCard = ({ data }: { data: TTasker }) => {
             <Tooltip
               content={
                 <>
-                  {remainingServices.map((service) => (
-                    <Box key={service.id}>• {service.name}</Box>
+                  {remainingSkills.map((skill) => (
+                    <Box key={skill}>• {skill}</Box>
                   ))}
                 </>
               }
@@ -91,18 +228,39 @@ export const TaskerCard = ({ data }: { data: TTasker }) => {
           </Box>
         )}
       </Flex>
+
       <ImageWrapper>
-        <NextImage
-          width={1200}
-          height={750}
-          css={{
-            width: '$percent$100',
-            height: '$percent$100',
-            objectFit: 'cover',
-          }}
-          src={data.serviceImage}
-          alt={mainServiceTitle}
-        />
+        {/* Always render skeleton first (reserves space) */}
+        {!imageLoaded && <TaskerCardImageSkeleton />}
+
+        {/* Load image immediately (hidden until loaded) */}
+        {coverImage && !imageError && (
+          <NextImage
+            fill
+            css={{
+              objectFit: 'cover',
+              opacity: imageLoaded ? 1 : 0,
+              transition: 'opacity 0.2s ease-in-out',
+            }}
+            src={coverImage}
+            alt={serviceTitle}
+            onLoad={handleImageLoad}
+            onError={handleImageError}
+            loading="eager"
+          />
+        )}
+
+        {/* Show fallback only if image failed */}
+        {(imageLoaded && imageError) || !coverImage ? (
+          <ImgFallBackDiv
+            css={{
+              position: imageLoaded ? 'relative' : 'absolute',
+              opacity: imageLoaded ? 1 : 0,
+            }}
+          >
+            No Image Available
+          </ImgFallBackDiv>
+        ) : null}
       </ImageWrapper>
 
       <HeaderRow css={{ alignItems: 'center' }}>
@@ -118,13 +276,12 @@ export const TaskerCard = ({ data }: { data: TTasker }) => {
             width={15}
             height={15}
           />
-          <UserLocation textEllipsis={'1'}>{data.location}</UserLocation>
+          <UserLocation title={location || ''} textEllipsis={'1'}>
+            {location || 'Location not specified'}
+          </UserLocation>
         </Flex>
-        <TaskerPrice
-          title={`${data.currency} ${data.price}`}
-          textEllipsis={'1'}
-        >
-          {data.currency} {data.price}
+        <TaskerPrice title={`PKR ${price}`} textEllipsis={'1'}>
+          PKR {formatNumberWithCommas(price)}
         </TaskerPrice>
       </HeaderRow>
 

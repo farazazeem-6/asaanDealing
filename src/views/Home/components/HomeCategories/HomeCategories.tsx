@@ -10,7 +10,11 @@ import { useMemo } from 'react';
 import { generateUniqueIds } from '@/utils/helpers';
 
 export const HomeCategories = () => {
-  const { data: categories, isLoading } = useGetTaskerCategories({
+  const {
+    data: categories,
+    isLoading,
+    isError,
+  } = useGetTaskerCategories({
     enabled: true,
   });
 
@@ -41,7 +45,7 @@ export const HomeCategories = () => {
       </Flex>
 
       <CategoryCardsGrid>
-        {isLoading
+        {isLoading || isError
           ? skeletonKeys.map((key) => <CategoryCardSkeleton key={key} />)
           : visibleCategories.map((item) => (
               <CategoryCard key={item.id} data={item} />

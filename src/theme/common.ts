@@ -98,6 +98,7 @@ const defaultTokens = {
     28: '28px',
     30: '30px',
     32: '32px',
+    33: '33px',
     35: '35px',
     36: '36px',
     37: '37px',
@@ -140,6 +141,7 @@ const defaultTokens = {
     468: '468px',
     480: '480px',
     500: '500px',
+    600: '600px',
     640: '640px',
     800: '800px',
     860: '860px',
@@ -234,7 +236,9 @@ const defaultTokens = {
     10: '10%',
     12: '12%',
     20: '20%',
+    25: '25%',
     30: '30%',
+    33: '33%',
     40: '40%',
     50: '50%',
     60: '60%',
@@ -294,6 +298,7 @@ const defaultColors = {
   primarySolidHover: '$blue10',
   primaryText: '$blue11',
   primaryTextContrast: '$blue12',
+  skeletonWhite: '#f0f0f0',
   colorGray: '#f9fafb',
   lightGrayish: '#e2e8f0',
   accentColor: '#2AA952',
@@ -315,6 +320,7 @@ const defaultColors = {
   error1: '#FF3333',
   lightRed: '#FE2A56',
   yellowColor: '#FFAB00',
+  //gradients
   textGradient:
     'linear-gradient(90deg, #5E1BD6 3%, #912FFF 22%, #D555E2 45%, #FF943B 90%, #FFD057 100%)',
   sidebarGradient:
@@ -332,6 +338,8 @@ const defaultColors = {
   sideBarContentBg:
     'linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7))',
   categoryCardBg: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
+  skeletonGradient:
+    'linear-gradient(90deg, #f0f0f0 0px, #ffffff 40px, #f0f0f0 80px)',
   // misc
   border: '$gray7',
   text: '$slate12',

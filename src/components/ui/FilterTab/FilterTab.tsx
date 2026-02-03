@@ -6,8 +6,8 @@ import { useTranslation } from 'react-i18next';
 
 export type TFilterTabsProps = {
   tabs: TTabItem[];
-  activeTab: string;
-  onTabChange: (val: string) => void;
+  activeTab: number | null;
+  onTabChange: (val: number) => void;
 };
 
 export const FilterTabs: React.FC<TFilterTabsProps> = ({
@@ -22,10 +22,10 @@ export const FilterTabs: React.FC<TFilterTabsProps> = ({
       {tabs.map((tab) => (
         <TabButton
           key={tab.id}
-          isActive={activeTab === tab.value}
-          onClick={() => onTabChange(tab.value)}
+          isActive={activeTab === tab.id}
+          onClick={() => onTabChange(tab.id)}
         >
-          {t(tab.label)}
+          {t(tab.name)}
         </TabButton>
       ))}
     </TabsContainer>

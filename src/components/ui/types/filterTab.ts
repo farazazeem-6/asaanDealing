@@ -1,5 +1,5 @@
 export type TTabItem = {
-  id: string;
-  label: string;
-  value: string;
+  id: number;
+  name: string;
+  slug: string;
 };
