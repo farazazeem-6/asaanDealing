@@ -1,6 +1,7 @@
 import { TSocialKey } from '@/constants';
 import { TProfileImage } from './login';
 import { TOriginalWishlistArray } from './wishlist';
+import { UserType } from '../enums';
 
 export type TUserDOB = {
   day: number;
@@ -11,35 +12,23 @@ export type TUserVerifications = {
   email: boolean;
   phoneNumber: boolean;
 };
-type TCountry = {
-  id: number;
-  name: string;
-  slug: string;
+export type TCountry = TIdNameSlug & {
   iso2: string;
   iso3: string;
   flagUrl: string;
   currency: string;
   dialingCode: string;
 };
-type TState = {
-  id: number;
-  name: string;
-  slug: string;
+
+export type TState = TIdNameSlug & {
   countryId: TCountry;
 };
 
-type TCity = {
-  id: number;
-  name: string;
-  slug: string;
+export type TCity = TIdNameSlug & {
   stateId: TState;
 };
 
-type TTown = {
-  id: number;
-  name: string;
-  slug: string;
-};
+export type TTown = TIdNameSlug;
 
 export type TUserProfile = {
   id: number;
@@ -54,7 +43,7 @@ export type TUserProfile = {
   profileImage: TProfileImage | null;
   registrationType: 'Email' | 'Phone' | string;
   isNotificationEnabled: boolean;
-  userType: 'Tasker' | 'User' | string;
+  userType: UserType;
   userVerifications: TUserVerifications;
   cityId: TCity | null;
   townId: TTown | null;
@@ -63,4 +52,10 @@ export type TUserProfile = {
   reportedServices?: number[];
   reportedTasks?: number[];
   userWishlist?: TOriginalWishlistArray | null;
+};
+
+export type TIdNameSlug = {
+  id: number;
+  name: string;
+  slug: string;
 };

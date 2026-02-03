@@ -20,8 +20,7 @@ export const generateUrlParams = <T extends Record<string, unknown>>(
 
   for (const key in payload) {
     if (Object.prototype.hasOwnProperty.call(payload, key)) {
-      const value = payload[key];
-      addParam(key, value);
+      addParam(key, payload[key]);
     }
   }
 

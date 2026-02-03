@@ -1,7 +1,7 @@
 import { axios } from '@/config';
 import { SERVER_END_POINTS } from '@/constants';
 import { QUERY_KEYS } from '@/utils/enums';
-import { TTaskerCategory, TTaskerServiceResponse } from '@/utils/types';
+import { TServicesResponseData, TTaskerCategory } from '@/utils/types';
 import { useQuery } from '@tanstack/react-query';
 
 //fetch all categories
@@ -18,21 +18,15 @@ export const useGetTaskerCategories = ({ enabled }: { enabled: boolean }) => {
 };
 
 //fetch all the services by category or without category
-export const useGetServicesByCategory = ({
-  slug,
-  enabled,
-}: {
-  slug?: string;
-  enabled: boolean;
-}) => {
+export const useGetServicesByCategory = ({ enabled }: { enabled: boolean }) => {
   return useQuery({
-    queryKey: [QUERY_KEYS.SERVICES_BY_CATEGORY, slug],
+    queryKey: [QUERY_KEYS.SERVICES_BY_CATEGORY],
     queryFn: async () => {
       return await axios.get(SERVER_END_POINTS.SERVICES);
     },
     select: (response) => {
       const servicesListing = response?.data?.data
-        ?.services as TTaskerServiceResponse;
+        ?.services as TServicesResponseData;
 
       if (!servicesListing) return [];
 

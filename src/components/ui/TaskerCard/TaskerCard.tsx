@@ -8,6 +8,7 @@ import {
   FooterButton,
   HeaderRow,
   ImageWrapper,
+  ImgFallBackDiv,
   ServiceTitle,
   TaskerExpStatus,
   TaskerName,
@@ -28,6 +29,7 @@ import { USER_MOCK_AVATAR } from '@/constants';
 import { formatNumberWithCommas } from '@/utils/helpers';
 import { useState, useEffect, useMemo } from 'react';
 import { TaskerCardImageSkeleton } from './TaskerCardImageSkeleton';
+import { ServiceMode } from '@/utils/enums';
 
 const getAllTaskerImages = (data: TTaskerService): string[] => {
   const allImageUrls: string[] = [];
@@ -58,7 +60,7 @@ const getAllTaskerImages = (data: TTaskerService): string[] => {
   const metadataImages = data.serviceId?.metadata?.image;
   if (metadataImages && typeof metadataImages === 'object') {
     const images = Object.values(metadataImages).filter(
-      (img): img is string => typeof img === 'string' && img.length > 0,
+      (img): img is string => typeof img === 'string' && img.trim().length > 0,
     );
     allImageUrls.push(...images);
   }
@@ -67,19 +69,35 @@ const getAllTaskerImages = (data: TTaskerService): string[] => {
 };
 
 const selectBestImage = (images: string[]): string => {
-  if (images.length === 0) return '';
-  return images[images.length - 2];
+  if (images.length >= 2) {
+    // preferred image
+    return images[images.length - 2];
+  }
+
+  if (images.length === 1) {
+    // fallback to the only available image
+    return images[0];
+  }
+
+  return '';
 };
 
-export const TaskerCard = ({ data }: { data: TTaskerService }) => {
+export const TaskerCard = ({
+  taskerService,
+}: {
+  taskerService: TTaskerService;
+}) => {
   const taskerName = useMemo(
     () =>
-      `${data.taskerId?.userId?.firstName || ''} ${data.taskerId?.userId?.lastName || ''}`.trim(),
-    [data.taskerId?.userId?.firstName, data.taskerId?.userId?.lastName],
+      `${taskerService.taskerId?.userId?.firstName || ''} ${taskerService.taskerId?.userId?.lastName || ''}`.trim(),
+    [
+      taskerService.taskerId?.userId?.firstName,
+      taskerService.taskerId?.userId?.lastName,
+    ],
   );
 
   const profileImageUrl = useMemo(() => {
-    const profileImageObj = data.taskerId?.userId?.profileImage;
+    const profileImageObj = taskerService.taskerId?.userId?.profileImage;
     return typeof profileImageObj === 'string'
       ? profileImageObj
       : profileImageObj &&
@@ -87,46 +105,49 @@ export const TaskerCard = ({ data }: { data: TTaskerService }) => {
           'url' in profileImageObj
         ? profileImageObj.url
         : USER_MOCK_AVATAR;
-  }, [data.taskerId?.userId?.profileImage]);
+  }, [taskerService.taskerId?.userId?.profileImage]);
 
   const serviceTitle = useMemo(
-    () => data.serviceId?.name || 'No Service Listed',
-    [data.serviceId?.name],
+    () => taskerService.serviceId?.name || 'No Service Listed',
+    [taskerService.serviceId?.name],
   );
 
   const location = useMemo(() => {
-    const cityName = data.cityId?.name || '';
-    const stateName = data.cityId?.stateId?.name || '';
+    const cityName = taskerService.cityId?.name || '';
+    const stateName = taskerService.cityId?.stateId?.name || '';
     return [cityName, stateName].filter(Boolean).join(', ');
-  }, [data.cityId?.name, data.cityId?.stateId?.name]);
+  }, [taskerService.cityId?.name, taskerService.cityId?.stateId?.name]);
 
-  const price = useMemo(() => data.rate || 0, [data.rate]);
+  const price = useMemo(() => taskerService.rate || 0, [taskerService.rate]);
 
   const experienceLevel = useMemo(
-    () => data.experienceLevel || 'Beginner',
-    [data.experienceLevel],
+    () => taskerService.experienceLevel || 'Beginner',
+    [taskerService.experienceLevel],
   );
 
-  const isOnsite = useMemo(() => data.workMode === 'Onsite', [data.workMode]);
+  const isOnsite = useMemo(
+    () => taskerService.workMode === ServiceMode.ONSITE,
+    [taskerService.workMode],
+  );
 
   const { firstSkill, extraCount, remainingSkills } = useMemo(() => {
-    const coreSkills = data.coreSkills || [];
+    const coreSkills = taskerService.coreSkills || [];
     return {
       firstSkill: coreSkills[0],
       remainingSkills: coreSkills.slice(1),
       extraCount: coreSkills.slice(1).length,
     };
-  }, [data.coreSkills]);
+  }, [taskerService.coreSkills]);
 
   const { coverImage, profileImage } = useMemo(() => {
-    const allImages = getAllTaskerImages(data);
+    const allImages = getAllTaskerImages(taskerService);
     const selectedCover = selectBestImage(allImages);
 
     return {
       coverImage: selectedCover,
       profileImage: profileImageUrl || USER_MOCK_AVATAR,
     };
-  }, [data, profileImageUrl]);
+  }, [taskerService, profileImageUrl]);
 
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
@@ -136,7 +157,7 @@ export const TaskerCard = ({ data }: { data: TTaskerService }) => {
   useEffect(() => {
     setImageLoaded(false);
     setImageError(false);
-  }, [data.id]);
+  }, [taskerService.id]);
 
   const handleImageLoad = () => {
     setImageLoaded(true);
@@ -234,21 +255,14 @@ export const TaskerCard = ({ data }: { data: TTaskerService }) => {
 
         {/* Show fallback only if image failed */}
         {(imageLoaded && imageError) || !coverImage ? (
-          <Flex
-            justify={'center'}
-            align={'center'}
+          <ImgFallBackDiv
             css={{
-              width: '$percent$100',
-              height: '$percent$100',
-              backgroundColor: '$lightGray',
-              color: '$secondryHeading',
-              fontSize: '$px$14',
               position: imageLoaded ? 'relative' : 'absolute',
               opacity: imageLoaded ? 1 : 0,
             }}
           >
             No Image Available
-          </Flex>
+          </ImgFallBackDiv>
         ) : null}
       </ImageWrapper>
 

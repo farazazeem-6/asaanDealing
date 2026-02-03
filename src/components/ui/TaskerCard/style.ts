@@ -1,4 +1,4 @@
-import { Box, Button, Flex, HtmlImage, Text } from '@/components/elements';
+import { Box, Button, Flex, NextImage, Text } from '@/components/elements';
 import { styled } from '@/theme';
 
 export const CardWrapper = styled(Flex, {
@@ -78,7 +78,7 @@ export const TaskerPrice = styled(Text, {
     fontSize: '$px$10',
   },
 });
-export const AvatarImg = styled(HtmlImage, {
+export const AvatarImg = styled(NextImage, {
   width: '$px$55',
   height: '$px$55',
   borderRadius: '$percent$50',
@@ -163,4 +163,14 @@ export const FooterButton = styled(Button, {
 });
 export const ButtonLabel = styled(Text, {
   color: '$secondryHeading !important',
+});
+
+export const ImgFallBackDiv = styled(Flex, {
+  justifyContent: 'center !important',
+  alignItems: 'center !important',
+  width: '$percent$100',
+  height: '$percent$100',
+  backgroundColor: '$lightGray',
+  color: '$secondryHeading',
+  fontSize: '$px$14',
 });

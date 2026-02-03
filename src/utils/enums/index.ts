@@ -5,3 +5,4 @@ export * from './footer';
 export * from './queryKeys';
 export * from './category';
 export * from './seller';
+export * from './userType';

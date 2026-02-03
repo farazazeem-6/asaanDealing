@@ -298,7 +298,7 @@ const defaultColors = {
   primarySolidHover: '$blue10',
   primaryText: '$blue11',
   primaryTextContrast: '$blue12',
-  skeltonWhite: '#f0f0f0',
+  skeletonWhite: '#f0f0f0',
   colorGray: '#f9fafb',
   lightGrayish: '#e2e8f0',
   accentColor: '#2AA952',
@@ -320,6 +320,7 @@ const defaultColors = {
   error1: '#FF3333',
   lightRed: '#FE2A56',
   yellowColor: '#FFAB00',
+  //gradients
   textGradient:
     'linear-gradient(90deg, #5E1BD6 3%, #912FFF 22%, #D555E2 45%, #FF943B 90%, #FFD057 100%)',
   sidebarGradient:
@@ -337,6 +338,8 @@ const defaultColors = {
   sideBarContentBg:
     'linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7))',
   categoryCardBg: 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)',
+  skeletonGradient:
+    'linear-gradient(90deg, #f0f0f0 0px, #ffffff 40px, #f0f0f0 80px)',
   // misc
   border: '$gray7',
   text: '$slate12',

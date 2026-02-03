@@ -3,5 +3,5 @@ export enum SellerServiceStatus {
   ALL = 'All',
   IN_REVIEW = 'In Review',
   APPROVED = 'Approved',
-  REJECTED = ' Rejected',
+  REJECTED = 'Rejected',
 }

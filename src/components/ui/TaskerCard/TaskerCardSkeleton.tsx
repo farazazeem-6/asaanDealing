@@ -4,8 +4,7 @@ import { CategoryCardShimmer, styled } from '@/theme';
 
 const SkeletonBase = styled(Box, {
   backgroundColor: '$lightGray',
-  backgroundImage:
-    'linear-gradient(90deg, $skeltonWhite 0px, $white 40px, $skeltonWhite 80px)',
+  backgroundImage: '$skeletonGradient',
   backgroundSize: '$px$600 $percent$100',
   animation: `${CategoryCardShimmer} 1.5s infinite ease-in-out`,
   borderRadius: '$px$6',

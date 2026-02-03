@@ -41,7 +41,7 @@ export const TopExpertSection = () => {
   const { data: taskersServices = [], isFetching: taskersFetching } =
     useGetTaskerByServices({
       serviceIds: activeTab || undefined,
-      enabled: activeTab !== null && activeTab !== undefined,
+      enabled: !!activeTab,
     });
 
   const handleTabChange = (tabId: number) => {
@@ -89,7 +89,9 @@ export const TopExpertSection = () => {
             // Show actual tasker cards (limited to maxCards)
             taskersServices
               .slice(0, maxCards)
-              .map((tasker) => <TaskerCard key={tasker.id} data={tasker} />)
+              .map((tasker) => (
+                <TaskerCard key={tasker.id} taskerService={tasker} />
+              ))
           ) : (
             // Show empty state if no taskers found
             <Flex

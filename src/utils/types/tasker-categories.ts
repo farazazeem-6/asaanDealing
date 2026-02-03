@@ -23,7 +23,6 @@ export type TTaskerCategory = {
   media?: TCategoryMedia;
 };
 
-
 export type TServicesByCategory = {
   id: number;
   name: string;
@@ -44,11 +43,7 @@ export type TTaskerServicesMetaData = {
   coreSkills: string[];
 };
 
-export type TTaskerServiceResponse = {
-  data: {
-    services: TServicesListing[];
-  };
-};
+export type TServicesResponseData = TServicesListing | TServicesByCategory[];
 
 export type TGetTaskerServices = {
   serviceIds?: number | string;

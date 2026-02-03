@@ -1,3 +1,3 @@
 export * from './TaskerCard';
-export * from './TaskerCardSkelton';
+export * from './TaskerCardSkeleton';
 export * from './TaskerCardImageSkeleton';

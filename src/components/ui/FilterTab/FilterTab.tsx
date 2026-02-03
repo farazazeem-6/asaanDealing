@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 
 export type TFilterTabsProps = {
   tabs: TTabItem[];
-  activeTab: string | number;
+  activeTab: number | null;
   onTabChange: (val: number) => void;
 };
 

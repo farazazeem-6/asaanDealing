@@ -1,4 +1,4 @@
 export type TProfileImage = {
-  key: string
-  url: string
-}
+  key: string;
+  url: string;
+};
