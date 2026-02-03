@@ -1,4 +1,3 @@
-import React from 'react';
 import Image, { ImageProps as NextImagePropsRaw } from 'next/image';
 import { styled } from '@/theme';
 import { CSS } from '@stitches/react';
