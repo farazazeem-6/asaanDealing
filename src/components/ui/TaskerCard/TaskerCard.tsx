@@ -236,11 +236,8 @@ export const TaskerCard = ({
         {/* Load image immediately (hidden until loaded) */}
         {coverImage && !imageError && (
           <NextImage
-            width={1200}
-            height={750}
+            fill
             css={{
-              width: '$percent$100',
-              height: '$percent$100',
               objectFit: 'cover',
               opacity: imageLoaded ? 1 : 0,
               transition: 'opacity 0.2s ease-in-out',

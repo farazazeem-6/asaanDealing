@@ -61,23 +61,27 @@ export const NextImage = ({
   borderRadius,
   css,
   style,
+  fill,
   ...props
-}: TNextImageProps) => {
-  const finalWidth = size ?? width ?? 40;
-  const finalHeight = size ?? height ?? 40;
+}: TNextImageProps & { fill?: boolean }) => {
+  const dimensions = fill
+    ? { fill: true }
+    : {
+        width: size ?? width ?? 40,
+        height: size ?? height ?? 40,
+      };
 
   return (
     <StyledNextImageWrapper
       src={src}
       alt={alt || ''}
-      width={finalWidth}
-      height={finalHeight}
       priority={priority}
       style={style}
       css={{
         borderRadius: borderRadius,
         ...css,
       }}
+      {...dimensions}
       {...props}
     />
   );
