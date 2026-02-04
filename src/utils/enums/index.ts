@@ -6,3 +6,4 @@ export * from './queryKeys';
 export * from './category';
 export * from './seller';
 export * from './userType';
+export * from './staticRoutes';

@@ -1,5 +1,5 @@
 'use client';
-import { Flex, Text } from '@/components/elements';
+import { Box, Flex, Text } from '@/components/elements';
 import {
   CardsGrid,
   HeadingRow,
@@ -16,6 +16,7 @@ import { ArrowWithTail } from '@/components/svgs';
 import { useGetServicesByCategory, useGetTaskerByServices } from '@/services';
 import { useScreenWidth } from '@/hooks';
 import { generateUniqueIds } from '@/utils/helpers';
+import { EmptyBox } from '@/components/ui/EmptyBox';
 
 export const TopExpertSection = () => {
   const { isMobile } = useScreenWidth();
@@ -53,7 +54,7 @@ export const TopExpertSection = () => {
 
   // Generate unique skeleton keys
   const skeletonKeys = useMemo(
-    () => generateUniqueIds(maxCards, 'skeleton'),
+    () => generateUniqueIds(maxCards, 'taskerSkeleton'),
     [maxCards],
   );
 
@@ -94,17 +95,9 @@ export const TopExpertSection = () => {
               ))
           ) : (
             // Show empty state if no taskers found
-            <Flex
-              justify={'center'}
-              align={'center'}
-              css={{
-                gridColumn: '1 / -1',
-                padding: '$px$40',
-                color: '$secondryHeading',
-              }}
-            >
-              <Text>No taskers found for this service</Text>
-            </Flex>
+            <Box css={{ gridColumn: '1 / -1', width: '$percent$100' }}>
+              <EmptyBox message="No Tasker found for this service" />
+            </Box>
           )}
         </CardsGrid>
       </TopExpertBody>

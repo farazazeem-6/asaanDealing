@@ -19,3 +19,4 @@ export { default as TwitterIcon } from './Icons/TwitterIcon';
 export { default as FacebookIcon } from './Icons/FacebookIcon';
 export { default as InstagramIcon } from './Icons/InstagramIcon';
 export { default as LinkedInIcon } from './Icons/LinkedInIcon';
+export { default as SearchNotFound } from './Icons/SearchNotFound';

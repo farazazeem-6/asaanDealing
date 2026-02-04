@@ -179,6 +179,8 @@ export const TaskerCard = ({
               height={200}
               src={profileImage}
               alt={taskerName}
+              loading="eager"
+              sizes="1000"
             />
           )}
           <UserInfoWrapper>
@@ -236,6 +238,7 @@ export const TaskerCard = ({
         {/* Load image immediately (hidden until loaded) */}
         {coverImage && !imageError && (
           <NextImage
+            size={1000}
             fill
             css={{
               objectFit: 'cover',
@@ -247,6 +250,7 @@ export const TaskerCard = ({
             onLoad={handleImageLoad}
             onError={handleImageError}
             loading="eager"
+            sizes="1000"
           />
         )}
 

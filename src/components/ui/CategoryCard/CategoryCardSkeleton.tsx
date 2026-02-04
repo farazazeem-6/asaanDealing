@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { styled, CategoryCardShimmer } from '@/theme';
+import { styled, CardsShimmer } from '@/theme';
 import { Flex, Box } from '@/components/elements';
 
 const SkeletonWrapper = styled(Flex, {
@@ -43,7 +43,7 @@ const SkeletonCircle = styled(Box, {
   flexShrink: '0',
   backgroundImage: '$skeletonGradient',
   backgroundSize: '$px$468',
-  animation: `${CategoryCardShimmer} 3s ease-in-out infinite`,
+  animation: `${CardsShimmer} 3s ease-in-out infinite`,
   '@sm_max': {
     height: '$px$50',
     width: '$px$50',
@@ -57,7 +57,7 @@ const SkeletonTitle = styled(Box, {
   backgroundColor: '$veryLightGray',
   backgroundImage: '$skeletonGradient',
   backgroundSize: '$px$468',
-  animation: `${CategoryCardShimmer} 3s ease-in-out infinite`,
+  animation: `${CardsShimmer} 3s ease-in-out infinite`,
   '@md_max': {
     height: '$px$10',
     width: '$px$80',

@@ -1,11 +1,5 @@
 'use client';
-
-export const ROUTES = {
-  HOME: '/',
-  SERVICES: '/services',
-  CATEGORIES: '/categories',
-  TASKS: '/tasks',
-};
+import { ROUTES } from '@/utils/enums';
 
 export const MAIN_NAV_ITEMS = [
   {
@@ -14,7 +8,7 @@ export const MAIN_NAV_ITEMS = [
   },
   {
     label: 'Services',
-    href: ROUTES.SERVICES,
+    href: ROUTES.TASKER_SERVICES,
   },
   {
     label: 'Categories',

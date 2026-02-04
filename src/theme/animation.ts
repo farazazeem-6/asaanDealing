@@ -133,7 +133,7 @@ export const float = keyframes({
   '50%': { transform: 'translateY(-10px)' },
   '100%': { transform: 'translateY(0px)' },
 });
-export const CategoryCardShimmer = keyframes({
+export const CardsShimmer = keyframes({
   '0%': {
     backgroundPosition: '-468px 0',
   },

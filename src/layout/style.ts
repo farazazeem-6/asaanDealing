@@ -1,5 +1,6 @@
 import { Box, Flex, Text } from '@/components/elements';
 import { styled } from '@/theme';
+import Link from 'next/link';
 
 export const StickyHeader = styled(Box, {
   position: 'sticky',
@@ -28,7 +29,7 @@ export const HeaderContainer = styled(Flex, {
   borderBottom: '$px$1 solid $lightGrayLine',
 });
 
-export const NavItem = styled('a', {
+export const NavItem = styled(Link, {
   position: 'relative',
   display: 'block',
   fontSize: '$rem$1',

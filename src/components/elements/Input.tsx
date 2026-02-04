@@ -10,6 +10,8 @@ type TInputFieldProps = Omit<
   contentLeft?: React.ReactNode;
   contentRight?: React.ReactNode;
   inputSize?: TComponentSize;
+  variant?: 'filled' | 'outline' | 'ghost' | 'simple';
+  invalid?: boolean;
 };
 
 const InputGroup = styled(Flex, {
@@ -23,7 +25,8 @@ const StyledInput = styled('input', {
   backgroundColor: '$background',
   width: '$percent$100',
   border: '$px$1 solid $border',
-  outline: '$px$1  solid $border',
+  outline: '$px$1 solid $border',
+  transition: 'all 0.2s ease',
 
   variants: {
     inputSize: {
@@ -31,11 +34,71 @@ const StyledInput = styled('input', {
       md: { padding: '$rem$1 $rem$1', fontSize: '$rem$0_87' },
       lg: { padding: '$rem$1_25 $rem$1', fontSize: '$rem$1_06' },
     },
+    variant: {
+      filled: {
+        backgroundColor: '$veryLightGreen',
+        outline: 'none',
+        '&:hover': {
+          backgroundColor: '$veryLightPeel',
+        },
+        '&:focus': {
+          backgroundColor: '$white',
+        },
+      },
+      outline: {
+        backgroundColor: 'transparent',
+        border: '$px$1 solid $dGreen',
+        outline: 'none',
+      },
+      ghost: {
+        border: 'none',
+        backgroundColor: 'transparent',
+        boxShadow: 'none',
+        outline: 'none',
+        padding: 0,
+        '&:focus': {
+          border: 'none',
+          boxShadow: 'none',
+        },
+      },
+      simple: {
+        border: 'none',
+        backgroundColor: 'transparent',
+        boxShadow: 'none',
+        '&:hover': {
+          backgroundColor: 'transparent',
+        },
+        '&:focus': {
+          outline: 'none',
+          border: 'none',
+          backgroundColor: '$white',
+          boxShadow: '0 $px$1 0 0 $dGreen',
+        },
+      },
+    },
+    invalid: {
+      true: {
+        borderColor: '$colors$errorColor',
+        '&::placeholder': {
+          color: '$colors$errorColor',
+        },
+        '&:focus': {
+          boxShadow: '0 0 0 3px rgba(255, 0, 0, 0.25)',
+        },
+      },
+    },
   },
-  defaultVariants: { inputSize: 'md' },
 
-  '&.has-left': { paddingLeft: '$px$40' },
-  '&.has-right': { paddingRight: '$px$90' },
+  defaultVariants: {
+    inputSize: 'md',
+  },
+
+  '&.has-left': {
+    paddingLeft: '$px$40',
+  },
+  '&.has-right': {
+    paddingRight: '$px$90',
+  },
 });
 
 const InputSlot = styled(Flex, {
@@ -52,31 +115,26 @@ const InputSlot = styled(Flex, {
 });
 
 export const Input = React.forwardRef<HTMLInputElement, TInputFieldProps>(
-  ({ contentLeft, contentRight, inputSize, ...props }, ref) => {
+  (
+    { contentLeft, contentRight, inputSize, variant, invalid, ...props },
+    ref,
+  ) => {
     const className = [contentLeft && 'has-left', contentRight && 'has-right']
       .filter(Boolean)
       .join(' ');
 
     return (
-      <InputGroup align={'center'}>
-        {contentLeft && (
-          <InputSlot align={'center'} side="left">
-            {contentLeft}
-          </InputSlot>
-        )}
-
+      <InputGroup>
+        {contentLeft && <InputSlot side="left">{contentLeft}</InputSlot>}
         <StyledInput
           ref={ref}
           className={className}
           inputSize={inputSize}
+          variant={variant}
+          invalid={invalid}
           {...props}
         />
-
-        {contentRight && (
-          <InputSlot align={'center'} side="right">
-            {contentRight}
-          </InputSlot>
-        )}
+        {contentRight && <InputSlot side="right">{contentRight}</InputSlot>}
       </InputGroup>
     );
   },

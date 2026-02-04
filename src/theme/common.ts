@@ -303,6 +303,8 @@ const defaultColors = {
   lightGrayish: '#e2e8f0',
   accentColor: '#2AA952',
   veryLightGray: '#f5f5f5',
+  veryLightGreen: '#e8f5e9',
+  veryLightPeel: '#d0f0dc',
   mediumLightGray: '#ccc',
   dGreen: '#1E7B3D',
   disabledSlotColor: '#aaa',

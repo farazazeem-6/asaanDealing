@@ -1,11 +1,11 @@
 import { Box } from '@/components/elements';
-import { CategoryCardShimmer, styled } from '@/theme';
+import { CardsShimmer, styled } from '@/theme';
 
 const SkeletonBase = styled(Box, {
   backgroundColor: '$lightGray',
   backgroundImage: '$skeletonGradient',
   backgroundSize: '$px$600 $percent$100',
-  animation: `${CategoryCardShimmer} 1.5s infinite ease-in-out`,
+  animation: `${CardsShimmer} 1.5s infinite ease-in-out`,
   borderRadius: '$px$10',
 });
 

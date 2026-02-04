@@ -26,6 +26,7 @@ export function Header() {
               width={50}
               height={50}
               alt="Asaan Dealing"
+              loading='eager'
             />
           </Logo>
           <NavList css={{ marginLeft: '$px$100' }}>
@@ -36,14 +37,19 @@ export function Header() {
                   : pathname.startsWith(item.href);
 
               return (
-                <NavItem key={item.href} location={'header'} active={isActive}>
+                <NavItem
+                  href={item.href}
+                  key={item.href}
+                  location={'header'}
+                  active={isActive}
+                >
                   {t(`Nav.${item.label}`)}
                 </NavItem>
               );
             })}
           </NavList>
           <Actions>
-             <LanguageDropdown
+            <LanguageDropdown
               options={SUPPORTED_LANGUAGES}
               selected={
                 SUPPORTED_LANGUAGES.find(
@@ -58,7 +64,6 @@ export function Header() {
             <Button variant={'outline'}>{t('Action.PostTask')}</Button>
             <Button variant={'outline'}>{t('Action.BecomeTasker')}</Button>
             <Button>{t('Action.SignIn')}</Button>
-           
           </Actions>
 
           <MobileNav>

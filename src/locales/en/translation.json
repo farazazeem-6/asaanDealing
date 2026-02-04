@@ -12,7 +12,7 @@
     "BecomeTasker": "Become a Tasker",
     "Search": "Search",
     "ViewMore": "View More",
-    "ClearSelection":"Clear selection"
+    "ClearSelection": "Clear selection"
   },
   "Hero": {
     "HeroTitle": "The easiest way to find and book experts",
@@ -87,5 +87,13 @@
     "PopularSearch": "Popular Searches",
     "PopularCategory": "Popular Categories",
     "TaglineLong": "Live simpler. Live smarter. Everything you need in one place."
+  },
+  "Services": {
+    "Available": "Available",
+    "ServiceDesc": "Browse all available services and find the right one for your needs."
+  },
+  "Messages": {
+    "NoServiceFound": "No Service Found",
+    "NoServiceFoundSub": "We couldn't find anything matching"
   }
 }
