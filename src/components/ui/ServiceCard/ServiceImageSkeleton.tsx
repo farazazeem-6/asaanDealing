@@ -7,7 +7,7 @@ export const ServiceImageSkeleton = () => (
       inset: 0,
       width: '$percent$100',
       height: '$percent$100',
-      borderRadius: '$px$12',
+      borderRadius: '$radius$lg',
       zIndex: 2,
     }}
   />

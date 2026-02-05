@@ -12,6 +12,7 @@ import { useGetServicesByCategory } from '@/services';
 import { useMemo, useState } from 'react';
 import { generateUniqueIds } from '@/utils/helpers';
 import { EmptyBox } from '@/components/ui/EmptyBox';
+import { StickyPageHeader } from '@/components/ui/StickyPageHeader';
 
 export default function ServicesPage() {
   const { data: services, isLoading: ServicesFetching } =
@@ -36,38 +37,47 @@ export default function ServicesPage() {
     () => generateUniqueIds(8, 'taskerSkeleton'),
     [],
   );
+  const headerContent = (
+    <Flex justify={'center'} direction={'column'}>
+      <Heading>
+        {t(TEXT.SERVICES.TITLE)}{' '}
+        <Text gradient={'3'} css={{ fontWeight: '$fontWeight$semibold' }}>
+          {t('Nav.Services')}
+        </Text>
+      </Heading>
+      <SubHeading>{t(TEXT.CATEGORY.SUBTITLE)}</SubHeading>
+    </Flex>
+  );
   return (
     <SubCategoryWrapper>
-      <Flex justify={'center'} direction={'column'}>
-        <Heading>
-          {t(TEXT.SERVICES.TITLE)}{' '}
-          <Text gradient={'3'} css={{ fontWeight: '$fontWeight$semibold' }}>
-            {t('Nav.Services')}
+      <StickyPageHeader
+        isSticky={true}
+        heading={headerContent}
+        topOffset={'60px'}
+        border={false}
+      >
+        <SubCategoryHeader>
+          <Text heading="h4" css={{ color: '$textDark', textAlign: 'center' }}>
+            {ServicesFetching ? '...' : filteredServices.length}{' '}
+            {t('Services.Available')} {t('Nav.Services')}{' '}
+            {searchTerm.trim() && (
+              <Text
+                css={{ fontWeight: '$fontWeight$bold' }}
+              >{`for "${searchTerm}"`}</Text>
+            )}
           </Text>
-        </Heading>
-        <SubHeading>{t(TEXT.CATEGORY.SUBTITLE)}</SubHeading>
-      </Flex>
-      <SubCategoryHeader>
-        <Text heading="h4" css={{ color: '$textDark', textAlign: 'center' }}>
-          {ServicesFetching ? '...' : filteredServices.length}{' '}
-          {t('Services.Available')} {t('Nav.Services')}{' '}
-          {searchTerm.trim() && (
-            <Text
-              css={{ fontWeight: '$fontWeight$bold' }}
-            >{`for "${searchTerm}"`}</Text>
-          )}
-        </Text>
-        <Box>
-          <Input
-            maxLength={30}
-            variant="outline"
-            inputSize="md"
-            placeholder={t('Inputs.ServiceInput')}
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-        </Box>
-      </SubCategoryHeader>
+          <Box>
+            <Input
+              maxLength={30}
+              variant="outline"
+              inputSize="md"
+              placeholder={t('Inputs.ServiceInput')}
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </Box>
+        </SubCategoryHeader>
+      </StickyPageHeader>
       <ServiceCardGrid>
         {ServicesFetching ? (
           skeletonKeys.map((key) => <ServiceCardSkeleton key={key} />)

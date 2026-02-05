@@ -4,7 +4,7 @@ import { CardsShimmer, styled } from '@/theme';
 export const ServiceCardWrapper = styled(Box, {
   padding: '$px$8',
   border: '$px$1 solid $lightGrayLine',
-  borderRadius: '$px$12',
+  borderRadius: '$radius$lg',
   cursor: 'pointer',
   background: '$categoryCardBg',
 });
@@ -12,7 +12,7 @@ export const ServiceCardImage = styled(Box, {
   position: 'relative',
   width: '$percent$100',
   height: '$px$160',
-  borderRadius: '$px$12',
+  borderRadius: '$radius$lg',
   overflow: 'hidden',
   marginBottom: '$px$10',
 
@@ -35,13 +35,16 @@ export const ServiceCardImage = styled(Box, {
 });
 export const ServiceCardTitle = styled(Text, {
   color: '$primaryHeading !important',
-  fontSize: '$px$13',
+  fontSize: '$fontSize$sm',
   fontWeight: '$fontWeight$bold',
   width: '$percent$80',
 });
 export const ServiceCardDesc = styled(Text, {
   color: '$secondryHeading !important',
-  fontSize: '$px$12',
+  fontSize: '$fontSize$xs',
+  '@sm_max': {
+    fontSize: '$fontSize$xxs',
+  },
 });
 export const ServiceCardHeader = styled(Flex, {
   justifyContent: 'space-between !important',
