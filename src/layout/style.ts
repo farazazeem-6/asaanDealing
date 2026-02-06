@@ -1,10 +1,11 @@
 import { Box, Flex, Text } from '@/components/elements';
 import { styled } from '@/theme';
+import Link from 'next/link';
 
 export const StickyHeader = styled(Box, {
   position: 'sticky',
   top: 0,
-  zIndex: '$ul$2',
+  zIndex: '$ul$10',
   backgroundColor: '$white',
   width: '$percent$100',
   backdropFilter: 'none',
@@ -28,7 +29,7 @@ export const HeaderContainer = styled(Flex, {
   borderBottom: '$px$1 solid $lightGrayLine',
 });
 
-export const NavItem = styled('a', {
+export const NavItem = styled(Link, {
   position: 'relative',
   display: 'block',
   fontSize: '$rem$1',
@@ -92,7 +93,6 @@ export const NavItem = styled('a', {
     },
   ],
 });
-
 
 export const LogoTitle = styled(Text, {
   '&::before': {

@@ -24,6 +24,7 @@ type TNextImageProps = Omit<NextImagePropsRaw, 'width' | 'height'> & {
   size?: number;
   width?: number;
   height?: number;
+  sizes?: string;
 };
 
 // Components
@@ -62,10 +63,14 @@ export const NextImage = ({
   css,
   style,
   fill,
+  sizes,
   ...props
 }: TNextImageProps & { fill?: boolean }) => {
   const dimensions = fill
-    ? { fill: true }
+    ? {
+        fill: true,
+        sizes: sizes || '100vw',
+      }
     : {
         width: size ?? width ?? 40,
         height: size ?? height ?? 40,

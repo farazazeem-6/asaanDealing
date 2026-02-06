@@ -15,4 +15,8 @@ export const TEXT = {
   FOOTER: {
     DISC: 'Footer.TaglineLong',
   },
+  SERVICES: {
+    TITLE: 'Services.Available',
+    SUBTITLE: 'Services.ServiceDesc',
+  },
 };

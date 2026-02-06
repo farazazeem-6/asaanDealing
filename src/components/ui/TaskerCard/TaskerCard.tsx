@@ -29,7 +29,6 @@ import { USER_MOCK_AVATAR } from '@/constants';
 import { formatNumberWithCommas } from '@/utils/helpers';
 import { useState, useEffect, useMemo } from 'react';
 import { TaskerCardImageSkeleton } from './TaskerCardImageSkeleton';
-import { ServiceMode } from '@/utils/enums';
 
 const getAllTaskerImages = (data: TTaskerService): string[] => {
   const allImageUrls: string[] = [];
@@ -125,11 +124,6 @@ export const TaskerCard = ({
     [taskerService.experienceLevel],
   );
 
-  const isOnsite = useMemo(
-    () => taskerService.workMode === ServiceMode.ONSITE,
-    [taskerService.workMode],
-  );
-
   const { firstSkill, extraCount, remainingSkills } = useMemo(() => {
     const coreSkills = taskerService.coreSkills || [];
     return {
@@ -179,6 +173,8 @@ export const TaskerCard = ({
               height={200}
               src={profileImage}
               alt={taskerName}
+              loading="eager"
+              sizes="(max-width: 768px) 100vw, 25vw"
             />
           )}
           <UserInfoWrapper>
@@ -188,11 +184,10 @@ export const TaskerCard = ({
             <TaskerExpStatus>{experienceLevel}</TaskerExpStatus>
           </UserInfoWrapper>
         </Flex>
-        {isOnsite && (
-          <Badge color={'darkGreen'} size={'small'}>
-            Onsite
-          </Badge>
-        )}
+
+        <Badge color={'darkGreen'} size={'small'}>
+          {taskerService.workMode}
+        </Badge>
       </HeaderRow>
 
       <ServiceTitle title={serviceTitle}>{serviceTitle}</ServiceTitle>
@@ -236,6 +231,7 @@ export const TaskerCard = ({
         {/* Load image immediately (hidden until loaded) */}
         {coverImage && !imageError && (
           <NextImage
+            size={1000}
             fill
             css={{
               objectFit: 'cover',
@@ -247,6 +243,7 @@ export const TaskerCard = ({
             onLoad={handleImageLoad}
             onError={handleImageError}
             loading="eager"
+            sizes="(max-width: 768px) 100vw, 25vw"
           />
         )}
 

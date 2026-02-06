@@ -82,5 +82,13 @@
     "PopularSearch": "Maqbool talashein",
     "PopularCategory": "Maqbool categories",
     "TaglineLong": "Sada jiyein. Zahanat se jiyein. Everything you need in one place."
+  },
+  "Services": {
+    "Available": "Mojood",
+    "ServiceDesc": "Tamam dastiyab services dekhein aur apni zaroorat ke mutabiq behtareen service talash karein."
+  },
+  "Messages": {
+    "NoServiceFound": "Koi service nahi mili",
+    "NoServiceFoundSub": "Humein kuch bhi mutabiqat rakhne wala nahi mila"
   }
 }

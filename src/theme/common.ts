@@ -146,6 +146,29 @@ const defaultTokens = {
     800: '800px',
     860: '860px',
   },
+  fontSize: {
+    xxs: '10px',
+    xs: '12px',
+    sm: '14px',
+    md: '16px',
+    lg: '18px',
+    xl: '20px',
+    xxl: '24px',
+    xxxl: '32px',
+    display: '48px',
+  },
+  radius: {
+    none: '0px',
+    xs: '2px',
+    sm: '4px',
+    md: '8px',
+    lg: '12px',
+    xl: '16px',
+    xxl: '24px',
+    'round-sm': '50%',
+    full: '9999px',
+    circle: '50%',
+  },
   dvh: {
     1.11: '1.111dvh', // 10px
     2.22: '2.222dvh', // 20px
@@ -303,6 +326,8 @@ const defaultColors = {
   lightGrayish: '#e2e8f0',
   accentColor: '#2AA952',
   veryLightGray: '#f5f5f5',
+  veryLightGreen: '#e8f5e9',
+  veryLightPeel: '#d0f0dc',
   mediumLightGray: '#ccc',
   dGreen: '#1E7B3D',
   disabledSlotColor: '#aaa',

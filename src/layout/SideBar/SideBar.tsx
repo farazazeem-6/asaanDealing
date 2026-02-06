@@ -27,6 +27,7 @@ export function SideBar({ onClose, isSideBarOpen }: TSideBarProps) {
                 width={50}
                 height={50}
                 alt="Asaan Dealing"
+                loading="eager"
               />
               <LogoTitle
                 css={{ fontWeight: '$fontWeight$semibold' }}
@@ -50,7 +51,13 @@ export function SideBar({ onClose, isSideBarOpen }: TSideBarProps) {
                   : pathname.startsWith(item.href);
 
               return (
-                <NavItem location={'sidebar'} key={item.href} active={isActive}>
+                <NavItem
+                  href={item.href}
+                  location={'sidebar'}
+                  key={item.href}
+                  active={isActive}
+                  onClick={() => onClose(true)}
+                >
                   {t(`Nav.${item.label}`)}
                 </NavItem>
               );

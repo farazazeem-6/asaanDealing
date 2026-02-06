@@ -1,12 +1,12 @@
 import { styled, rotate360 } from '@/theme';
 import { Box } from './Box';
+import { Flex } from './Flex';
 
-const LoaderWrapper = styled(Box, {
+const LoaderWrapper = styled(Flex, {
   height: '$dvh$100',
-  width: '$vw$100',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
+  width: '$percent$100',
+  alignItems: 'center !important',
+  justifyContent: 'center !important',
   backgroundColor: '$background',
 });
 

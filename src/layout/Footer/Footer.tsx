@@ -49,6 +49,7 @@ export const Footer = () => {
                 width={40}
                 height={40}
                 alt="Asaan Dealing Logo"
+                loading='eager'
               />
               <LogoTitle heading="h4" color="white">
                 Dealing
