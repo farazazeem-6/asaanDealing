@@ -1,6 +1,6 @@
 import { Flex, Text, Box } from '@/components/elements';
 import { EmptyBoxWrapper } from './style';
-import { CircleClose } from '@/components/svgs';
+import { SearchNotFound } from '@/components/svgs';
 
 interface NoResultsProps {
   message: string;
@@ -10,8 +10,8 @@ interface NoResultsProps {
 export const EmptyBox = ({ message, subMessage }: NoResultsProps) => {
   return (
     <EmptyBoxWrapper>
-      <Box css={{ color: '$green', opacity: 0.6 }}>
-        <CircleClose width={50} height={50} />
+      <Box css={{ opacity: 0.6 }}>
+        <SearchNotFound width={100} height={100}/>
       </Box>
       <Flex direction="column" gap="4">
         <Text

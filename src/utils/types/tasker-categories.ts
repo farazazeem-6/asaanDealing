@@ -33,6 +33,7 @@ export type TServicesByCategory = {
   media: TServiceImages | null;
   categorySlug?: string;
   categoryId?: number;
+  workMode: string;
 };
 
 export type TServicesListing = { [slug: string]: TServicesByCategory[] };

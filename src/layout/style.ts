@@ -5,7 +5,7 @@ import Link from 'next/link';
 export const StickyHeader = styled(Box, {
   position: 'sticky',
   top: 0,
-  zIndex: '$ul$2',
+  zIndex: '$ul$10',
   backgroundColor: '$white',
   width: '$percent$100',
   backdropFilter: 'none',
@@ -93,7 +93,6 @@ export const NavItem = styled(Link, {
     },
   ],
 });
-
 
 export const LogoTitle = styled(Text, {
   '&::before': {

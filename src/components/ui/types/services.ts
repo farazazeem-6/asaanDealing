@@ -12,4 +12,5 @@ export type TServiceData = {
   media?: {
     images?: { [key: string]: string };
   } | null;
+  workMode: string;
 };

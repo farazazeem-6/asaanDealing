@@ -14,7 +14,7 @@ import { generateUniqueIds } from '@/utils/helpers';
 import { EmptyBox } from '@/components/ui/EmptyBox';
 import { StickyPageHeader } from '@/components/ui/StickyPageHeader';
 
-export default function ServicesPage() {
+export default function SubCategory() {
   const { data: services, isLoading: ServicesFetching } =
     useGetServicesByCategory({
       enabled: true,
@@ -26,10 +26,8 @@ export default function ServicesPage() {
     if (!searchTerm.trim()) return services;
 
     const lowerCaseSearch = searchTerm.toLowerCase();
-    return services.filter(
-      (service) =>
-        service.name.toLowerCase().includes(lowerCaseSearch) ||
-        service.name.toLowerCase().includes(lowerCaseSearch),
+    return services.filter((service) =>
+      service.name.toLowerCase().includes(lowerCaseSearch),
     );
   }, [services, searchTerm]);
   // Generate unique skeleton keys
@@ -45,7 +43,7 @@ export default function ServicesPage() {
           {t('Nav.Services')}
         </Text>
       </Heading>
-      <SubHeading>{t(TEXT.CATEGORY.SUBTITLE)}</SubHeading>
+      <SubHeading>{t(TEXT.SERVICES.SUBTITLE)}</SubHeading>
     </Flex>
   );
   return (
@@ -74,6 +72,7 @@ export default function ServicesPage() {
               placeholder={t('Inputs.ServiceInput')}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
+              aria-label="Search services"
             />
           </Box>
         </SubCategoryHeader>

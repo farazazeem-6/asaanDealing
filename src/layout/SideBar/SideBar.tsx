@@ -51,7 +51,13 @@ export function SideBar({ onClose, isSideBarOpen }: TSideBarProps) {
                   : pathname.startsWith(item.href);
 
               return (
-                <NavItem href={item.href} location={'sidebar'} key={item.href} active={isActive}>
+                <NavItem
+                  href={item.href}
+                  location={'sidebar'}
+                  key={item.href}
+                  active={isActive}
+                  onClick={() => onClose(true)}
+                >
                   {t(`Nav.${item.label}`)}
                 </NavItem>
               );

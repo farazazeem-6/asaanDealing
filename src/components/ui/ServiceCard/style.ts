@@ -7,6 +7,10 @@ export const ServiceCardWrapper = styled(Box, {
   borderRadius: '$radius$lg',
   cursor: 'pointer',
   background: '$categoryCardBg',
+  transition: 'all .3s ease',
+  '&:hover': {
+    border: '$px$1 solid $dGreen',
+  },
 });
 export const ServiceCardImage = styled(Box, {
   position: 'relative',

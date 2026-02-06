@@ -20,7 +20,7 @@ const StickyWrapper = styled(Box, {
 export const StickyPageHeader = ({
   heading,
   children,
-  zIndex = 10,
+  zIndex = 5,
   topOffset = '0px',
   isSticky = true,
   border = true,

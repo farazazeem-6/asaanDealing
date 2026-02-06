@@ -10,15 +10,13 @@ export const SubCategoryWrapper = styled(Box, {
     padding: '$rem$2 $rem$3',
   },
   '@sm_max': {
-    marginTop: '$px$30',
-    padding: '$rem$2 $px$1',
+    padding: '0px $px$1',
   },
 });
 export const ServiceCardGrid = styled(Box, {
   display: 'grid',
   gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))',
   gap: '$px$16',
-  marginTop: '$px$24',
   '@lg_max': {
     gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
   },
@@ -42,7 +40,6 @@ export const ServiceCardGrid = styled(Box, {
 export const SubCategoryHeader = styled(Flex, {
   width: '$percent$100',
   justifyContent: 'space-between !important',
-  marginTop: '$px$40',
   alignItems: 'center !important',
   '@md_max': {
     flexDirection: 'column !important',

@@ -39,8 +39,6 @@ export const ServiceCard = ({ Service }: { Service: TServiceData }) => {
   const [isImageLoading, setIsImageLoading] = useState(true);
 
   const coverImage = useMemo(() => getServiceImage(Service), [Service]);
-  
-
   return (
     <ServiceCardWrapper>
       <ServiceCardImage>
@@ -51,7 +49,7 @@ export const ServiceCard = ({ Service }: { Service: TServiceData }) => {
 
         {coverImage && !imageError ? (
           <NextImage
-            sizes="1000"
+            sizes="(max-width: 768px) 100vw, 25vw"
             src={coverImage}
             alt={Service.name}
             fill
@@ -76,7 +74,7 @@ export const ServiceCard = ({ Service }: { Service: TServiceData }) => {
           {Service.name}
         </ServiceCardTitle>
         <Badge color={'darkGreen'} size={'small'}>
-          Onsite
+          {Service.metadata?.workMode}
         </Badge>
       </ServiceCardHeader>
 
