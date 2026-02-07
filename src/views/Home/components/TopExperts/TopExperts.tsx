@@ -17,6 +17,7 @@ import { useGetServicesByCategory, useGetTaskerByServices } from '@/services';
 import { useScreenWidth } from '@/hooks';
 import { generateUniqueIds } from '@/utils/helpers';
 import { EmptyBox } from '@/components/ui/EmptyBox';
+import { TTaskerService } from '@/utils/types';
 
 export const TopExpertSection = () => {
   const { isMobile } = useScreenWidth();
@@ -90,7 +91,7 @@ export const TopExpertSection = () => {
             // Show actual tasker cards (limited to maxCards)
             taskersServices
               .slice(0, maxCards)
-              .map((tasker) => (
+              .map((tasker: TTaskerService) => (
                 <TaskerCard key={tasker.id} taskerService={tasker} />
               ))
           ) : (
