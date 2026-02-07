@@ -1,12 +1,12 @@
 import { Box, Flex, Input, Text } from '@/components/elements';
 import { TEXT } from '@/constants';
-import { Heading, SubHeading } from '@/views/Home/components/style';
-import { useTranslation } from 'react-i18next';
 import {
-  ServiceCardGrid,
-  SubCategoryHeader,
-  SubCategoryWrapper,
-} from './style';
+  Heading,
+  RoutePageHeader,
+  SubHeading,
+} from '@/views/Home/components/style';
+import { useTranslation } from 'react-i18next';
+import { ServiceCardGrid } from './style';
 import { ServiceCard, ServiceCardSkeleton } from '@/components/ui/ServiceCard';
 import { useGetServicesByCategory } from '@/services';
 import { useMemo, useState } from 'react';
@@ -36,9 +36,9 @@ export default function SubCategory() {
     [],
   );
   const headerContent = (
-    <Flex justify={'center'} direction={'column'}>
+    <Flex justify={'center'} direction={'column'} css={{marginTop:'$px$25','@sm_max':{marginTop:'$px$8'}}}>
       <Heading>
-        {t(TEXT.SERVICES.TITLE)}{' '}
+        {t(TEXT.STRING.AVAILBLE)}{' '}
         <Text gradient={'3'} css={{ fontWeight: '$fontWeight$semibold' }}>
           {t('Nav.Services')}
         </Text>
@@ -47,17 +47,17 @@ export default function SubCategory() {
     </Flex>
   );
   return (
-    <SubCategoryWrapper>
+    <Box>
       <StickyPageHeader
         isSticky={true}
         heading={headerContent}
         topOffset={'60px'}
         border={false}
       >
-        <SubCategoryHeader>
+        <RoutePageHeader>
           <Text heading="h4" css={{ color: '$textDark', textAlign: 'center' }}>
             {ServicesFetching ? '...' : filteredServices.length}{' '}
-            {t('Services.Available')} {t('Nav.Services')}{' '}
+            {t('Action.Available')} {t('Nav.Services')}{' '}
             {searchTerm.trim() && (
               <Text
                 css={{ fontWeight: '$fontWeight$bold' }}
@@ -75,7 +75,7 @@ export default function SubCategory() {
               aria-label="Search services"
             />
           </Box>
-        </SubCategoryHeader>
+        </RoutePageHeader>
       </StickyPageHeader>
       <ServiceCardGrid>
         {ServicesFetching ? (
@@ -88,11 +88,11 @@ export default function SubCategory() {
           <Box css={{ gridColumn: '1 / -1', width: '$percent$100' }}>
             <EmptyBox
               message={t('Messages.NoServiceFound')}
-              subMessage={`${t('Messages.NoServiceFoundSub')} "${searchTerm}"`}
+              subMessage={`${t('Messages.NoMatchingFound')} "${searchTerm}"`}
             />
           </Box>
         )}
       </ServiceCardGrid>
-    </SubCategoryWrapper>
+    </Box>
   );
 }

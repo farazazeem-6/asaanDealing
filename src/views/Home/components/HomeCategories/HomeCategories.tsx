@@ -1,59 +1,43 @@
-import { Button, Flex, Text } from '@/components/elements';
-import { CategoryCardsGrid, HomeCategoriesWrapper } from './style';
+import { Box, Button, Flex } from '@/components/elements';
+import { HomeCategoriesWrapper } from './style';
 import { TEXT } from '@/constants';
-import { CategoryCard, CategoryCardSkeleton } from '@/components/ui';
-import { useScreenWidth } from '@/hooks';
-import { Heading, SubHeading } from '../style';
 import { useTranslation } from 'react-i18next';
-import { useGetTaskerCategories } from '@/services';
-import { useMemo } from 'react';
-import { generateUniqueIds } from '@/utils/helpers';
+import { useRouter } from 'next/navigation';
+import { CategoriesGrid, CategoriesHeader } from '@/components/ui/Categories';
+import { useScreenWidth } from '@/hooks';
+import { useCategories } from '@/components/ui/hook';
 
 export const HomeCategories = () => {
-  const {
-    data: categories,
-    isLoading,
-    isError,
-  } = useGetTaskerCategories({
-    enabled: true,
-  });
-
   const { t } = useTranslation();
+  const router = useRouter();
   const { isMobile } = useScreenWidth();
-  const allCategories = categories || [];
 
-  const visibleCategories = isMobile
-    ? allCategories.slice(0, 6)
-    : allCategories.slice(0, 10);
-
-  const skeletonCount = isMobile ? 6 : 10;
-  const skeletonKeys = useMemo(
-    () => generateUniqueIds(skeletonCount, 'category'),
-    [skeletonCount],
-  );
+  const limit = isMobile ? 6 : 10;
+  const { categories, isLoading, isError } = useCategories(limit);
 
   return (
     <HomeCategoriesWrapper>
-      <Flex justify={'center'} direction={'column'}>
-        <Heading>
-          {t(TEXT.CATEGORY.TITLE)}{' '}
-          <Text gradient={'3'} css={{ fontWeight: '$fontWeight$semibold' }}>
-            {t('HomeContent.Categories')}
-          </Text>
-        </Heading>
-        <SubHeading>{t(TEXT.CATEGORY.SUBTITLE)}</SubHeading>
-      </Flex>
+      <Box css={{ marginBottom: '$px$40' }}>
+        <CategoriesHeader
+          title={t(TEXT.CATEGORY.TITLE)}
+          subtitle={t(TEXT.CATEGORY.SUBTITLE)}
+          showSearch={false}
+        />
+      </Box>
 
-      <CategoryCardsGrid>
-        {isLoading || isError
-          ? skeletonKeys.map((key) => <CategoryCardSkeleton key={key} />)
-          : visibleCategories.map((item) => (
-              <CategoryCard key={item.id} data={item} />
-            ))}
-      </CategoryCardsGrid>
-
-      <Flex justify={'center'} css={{ marginTop: '$rem$1' }}>
-        <Button variant={'primary'}>{t('Action.ViewAll')}</Button>
+      <CategoriesGrid
+        categories={categories}
+        isLoading={isLoading}
+        isError={isError}
+        skeletonCount={limit}
+      />
+      <Flex justify="center" css={{ marginTop: '$rem$1' }}>
+        <Button
+          variant="primary"
+          onClick={() => router.push('/find-tasker/categories')}
+        >
+          {t('Action.ViewAll')}
+        </Button>
       </Flex>
     </HomeCategoriesWrapper>
   );

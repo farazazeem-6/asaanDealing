@@ -1,3 +1,4 @@
+'use client';
 import { Flex, Box, Badge, Tooltip, NextImage } from '@/components/elements';
 import {
   AvatarImg,

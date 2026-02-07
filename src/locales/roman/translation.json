@@ -12,7 +12,8 @@
     "BecomeTasker": "Tasker banein",
     "Search": "Talash karein",
     "ViewMore": "Mazeed dekhein",
-    "ClearSelection": "Chunao khatam karein"
+    "ClearSelection": "Chunao khatam karein",
+    "Available": "Mojood"
   },
   "Hero": {
     "HeroTitle": "Mahireen ko dhundne aur book karne ka asaan tareen tareeqa",
@@ -30,7 +31,8 @@
     "SelectLocation": "Maqam muntakhib karein",
     "SelectProvince": "Sooba muntakhib karein",
     "SelectCity": "Shehar muntakhib karein",
-    "NoResultsFound": "Koi nateeja nahi mila"
+    "NoResultsFound": "Koi nateeja nahi mila",
+    "SearchCategory": "Category talash karein"
   },
   "Stats": {
     "TasksPosted": "Darj shuda kaam",
@@ -84,11 +86,14 @@
     "TaglineLong": "Sada jiyein. Zahanat se jiyein. Everything you need in one place."
   },
   "Services": {
-    "Available": "Mojood",
     "ServiceDesc": "Tamam dastiyab services dekhein aur apni zaroorat ke mutabiq behtareen service talash karein."
+  },
+  "Categories": {
+    "CategoryDesc": "Tamam dastiyaab zimray dekhein aur apni zarurat ke mutabiq durust intikhab karein."
   },
   "Messages": {
     "NoServiceFound": "Koi service nahi mili",
-    "NoServiceFoundSub": "Humein kuch bhi mutabiqat rakhne wala nahi mila"
+    "NoMatchingFound": "Humein kuch bhi mutabiqat rakhne wala nahi mila",
+    "NoCategoryFound": "Koi category nai mili"
   }
 }

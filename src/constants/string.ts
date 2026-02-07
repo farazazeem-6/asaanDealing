@@ -6,6 +6,7 @@ export const TEXT = {
   CATEGORY: {
     TITLE: 'HomeContent.CategoryTitle',
     SUBTITLE: 'HomeContent.CategoryDesc',
+    SUBTITLE2: 'Categories.CategoryDesc',
   },
   EXPERT: {
     TITLE: 'Expert.ExpertTitle',
@@ -16,7 +17,9 @@ export const TEXT = {
     DISC: 'Footer.TaglineLong',
   },
   SERVICES: {
-    TITLE: 'Services.Available',
     SUBTITLE: 'Services.ServiceDesc',
+  },
+  STRING: {
+    AVAILBLE: 'Action.Available',
   },
 };

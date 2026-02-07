@@ -1,3 +1,4 @@
+'use client';
 import { Badge, NextImage } from '@/components/elements';
 import {
   ServiceCardTitle,
@@ -78,7 +79,7 @@ export const ServiceCard = ({ Service }: { Service: TServiceData }) => {
         </Badge>
       </ServiceCardHeader>
 
-      <ServiceCardDesc>{Service.description}</ServiceCardDesc>
+      <ServiceCardDesc>{Service.metadata?.default_description}</ServiceCardDesc>
     </ServiceCardWrapper>
   );
 };

@@ -1,15 +1,6 @@
 import { Box, Container, Flex } from '@/components/elements';
-import { ReactNode } from 'react';
 import { styled } from '@/theme';
-
-type TStickyPageHeaderProps = {
-  heading?: ReactNode;
-  children?: ReactNode;
-  zIndex?: number;
-  topOffset?: string | number;
-  isSticky?: boolean;
-  border?: boolean;
-};
+import { TStickyPageHeaderProps } from '../types';
 
 const StickyWrapper = styled(Box, {
   backgroundColor: '$white',
