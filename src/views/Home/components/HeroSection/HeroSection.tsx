@@ -101,7 +101,7 @@ export const HeroSection = () => {
         <PopularSearchWrapper>
           {displayServices.map((service: TPopularServices) => (
             <PopularSearchLabel key={service.id}>
-              {t(service.name)}
+              {service.name}
             </PopularSearchLabel>
           ))}
         </PopularSearchWrapper>

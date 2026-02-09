@@ -99,6 +99,8 @@
   "Messages": {
     "NoServiceFound": "کوئی سروس نہیں ملی",
     "NoMatchingFound": "ہمیں کچھ بھی مطابقت رکھنے والا نہیں ملا",
-    "NoCategoryFound": "کوئی کیٹیگری نہیں ملی"
+    "NoCategoryFound": "کوئی کیٹیگری نہیں ملی",
+    "NoCategoryAvailable": "کوئی شعبہ دستیاب نہیں۔",
+    "CheckBackLater": "بعد میں چیک کریں۔"
   }
 }

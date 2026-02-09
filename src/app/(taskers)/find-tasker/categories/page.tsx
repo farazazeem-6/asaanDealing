@@ -19,7 +19,7 @@ const AllCategories = () => {
   return (
     <Box>
       <CategoriesHeader
-        title={t(TEXT.STRING.AVAILBLE)}
+        title={t(TEXT.STRING.AVAILABLE)}
         subtitle={t(TEXT.CATEGORY.SUBTITLE2)}
         showSearch
         isSticky={true}

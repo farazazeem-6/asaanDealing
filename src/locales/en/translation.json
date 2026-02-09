@@ -99,6 +99,8 @@
   "Messages": {
     "NoServiceFound": "No Service Found",
     "NoMatchingFound": "We couldn't find anything matching",
-    "NoCategoryFound": "No Category Found"
+    "NoCategoryFound": "No Category Found",
+    "NoCategoryAvailable": "No Category Available",
+    "CheckBackLater": "Check Back Later"
   }
 }

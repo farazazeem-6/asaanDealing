@@ -11,7 +11,7 @@ export const CategoriesGrid = ({
   isLoading,
   isError,
   skeletonCount = 10,
-  searchTerm,
+  searchTerm = '',
 }: TCategoriesGridProps & { searchTerm?: string }) => {
   const { t } = useTranslation();
   const skeletonKeys = useMemo(
@@ -36,8 +36,16 @@ export const CategoriesGrid = ({
       ) : (
         <Box css={{ gridColumn: '1 / -1', width: '$percent$100' }}>
           <EmptyBox
-            message={t('Messages.NoCategoryFound')}
-            subMessage={`${t('Messages.NoMatchingFound')} "${searchTerm}"`}
+            message={
+              searchTerm
+                ? t('Messages.NoCategoryFound')
+                : t('Messages.NoCategoryAvailable')
+            }
+            subMessage={
+              searchTerm
+                ? `${t('Messages.NoMatchingFound')} "${searchTerm}"`
+                : t('Messages.CheckBackLater')
+            }
           />
         </Box>
       )}

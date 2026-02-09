@@ -13,11 +13,22 @@ export const axios: AxiosInstance = Axios.create({
 axios.interceptors.response.use(
   (response) => response,
   (error) => {
+    const responseData = error.response?.data;
+    const safeData =
+      responseData && typeof responseData === 'object'
+        ? {
+            message:
+              responseData.message ||
+              responseData.error ||
+              'No specific message',
+          }
+        : responseData;
+
     logger.error('❌ API Request Failed', {
       url: error.config?.url,
       method: error.config?.method?.toUpperCase(),
       status: error.response?.status,
-      data: error.response?.data,
+      data: safeData,
       message: error.message,
     });
 

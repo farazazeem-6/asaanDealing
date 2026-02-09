@@ -36,9 +36,13 @@ export default function SubCategory() {
     [],
   );
   const headerContent = (
-    <Flex justify={'center'} direction={'column'} css={{marginTop:'$px$25','@sm_max':{marginTop:'$px$8'}}}>
+    <Flex
+      justify={'center'}
+      direction={'column'}
+      css={{ marginTop: '$px$25', '@sm_max': { marginTop: '$px$8' } }}
+    >
       <Heading>
-        {t(TEXT.STRING.AVAILBLE)}{' '}
+        {t(TEXT.STRING.AVAILABLE)}{' '}
         <Text gradient={'3'} css={{ fontWeight: '$fontWeight$semibold' }}>
           {t('Nav.Services')}
         </Text>

@@ -20,6 +20,6 @@ export const TEXT = {
     SUBTITLE: 'Services.ServiceDesc',
   },
   STRING: {
-    AVAILBLE: 'Action.Available',
+    AVAILABLE: 'Action.Available',
   },
 };

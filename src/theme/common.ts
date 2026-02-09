@@ -283,7 +283,7 @@ const defaultTokens = {
     xxxl: '1780px',
   },
   shadows: {
-    cardShadow: '',
+    cardShadow: '0px 0px 5px 0px rgba(0, 0, 0, 0.08)',
     card: '0 $px$2 $px$2 rgba(0, 0, 0, 0.3)',
     button: '0 $px$2 $px$10 rgba(,0,0,0.3)',
     sm: '0 $px$1 $px$3 rgba(0, 0, 0, 0.12)',

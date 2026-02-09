@@ -94,6 +94,8 @@
   "Messages": {
     "NoServiceFound": "Koi service nahi mili",
     "NoMatchingFound": "Humein kuch bhi mutabiqat rakhne wala nahi mila",
-    "NoCategoryFound": "Koi category nai mili"
+    "NoCategoryFound": "Koi category nai mili",
+    "NoCategoryAvailable": "Koi shoba dastiyab nahin",
+    "CheckBackLater": " Baad mein check karein."
   }
 }
