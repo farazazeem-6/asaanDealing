@@ -1,6 +1,6 @@
 import Axios, { AxiosInstance } from 'axios';
 import { BASE_URL } from './envConfig';
-import { logger } from '@/lib/logger.client';
+import { logger } from '@/lib/logger';
 
 export const axios: AxiosInstance = Axios.create({
   baseURL: BASE_URL,
@@ -13,12 +13,23 @@ export const axios: AxiosInstance = Axios.create({
 axios.interceptors.response.use(
   (response) => response,
   (error) => {
-    logger.error({
-      msg: 'API Request Failed',
+    const responseData = error.response?.data;
+    const safeData =
+      responseData && typeof responseData === 'object'
+        ? {
+            message:
+              responseData.message ||
+              responseData.error ||
+              'No specific message',
+          }
+        : responseData;
+
+    logger.error('❌ API Request Failed', {
       url: error.config?.url,
+      method: error.config?.method?.toUpperCase(),
       status: error.response?.status,
-      params: error.config?.params,
-      error: error.message,
+      data: safeData,
+      message: error.message,
     });
 
     return Promise.reject(error);

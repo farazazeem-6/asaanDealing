@@ -12,7 +12,8 @@
     "BecomeTasker": "Become a Tasker",
     "Search": "Search",
     "ViewMore": "View More",
-    "ClearSelection": "Clear selection"
+    "ClearSelection": "Clear selection",
+    "Available": "Available"
   },
   "Hero": {
     "HeroTitle": "The easiest way to find and book experts",
@@ -30,7 +31,8 @@
     "SelectLocation": "Select Location",
     "SelectProvince": "Select Province",
     "SelectCity": "Select City",
-    "NoResultsFound": "No results found"
+    "NoResultsFound": "No results found",
+    "SearchCategory": "Search for category"
   },
   "Stats": {
     "TasksPosted": "Tasks Posted",
@@ -89,11 +91,16 @@
     "TaglineLong": "Live simpler. Live smarter. Everything you need in one place."
   },
   "Services": {
-    "Available": "Available",
     "ServiceDesc": "Browse all available services and find the right one for your needs."
+  },
+  "Categories": {
+    "CategoryDesc": "Browse all available Categories and find the right one for your needs."
   },
   "Messages": {
     "NoServiceFound": "No Service Found",
-    "NoServiceFoundSub": "We couldn't find anything matching"
+    "NoMatchingFound": "We couldn't find anything matching",
+    "NoCategoryFound": "No Category Found",
+    "NoCategoryAvailable": "No Category Available",
+    "CheckBackLater": "Check Back Later"
   }
 }

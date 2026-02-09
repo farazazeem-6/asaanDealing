@@ -11,16 +11,21 @@ import {
   PopularSearchWrapper,
   StatCardsWrapper,
 } from './style';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useCountUp, useScreenWidth } from '@/hooks';
 import { TypingText } from '../TypingText';
 import { GlobalSearch } from '../GlobalSearch';
-import { POPULAR_SERVICES, TEXT } from '@/constants';
+import { TEXT } from '@/constants';
 import { HeroImageSlider } from '../HeroImageSlider';
 import { TStatItemProps } from '../types';
 import { useTranslation } from 'react-i18next';
-import { useGetPlatformStats } from '@/services';
+import { useGetPlatformStats, useGetServicesByCategory } from '@/services';
 import { TaskerIcon, TaskPostedIcon, UserIcon } from '@/components/svgs';
+
+export type TPopularServices = {
+  id: number;
+  name: string;
+};
 
 // Stat Card Component
 const StatCard = ({ icon: Icon, number, label }: TStatItemProps) => {
@@ -57,6 +62,12 @@ export const HeroSection = () => {
     );
     return () => clearInterval(interval);
   }, []);
+  const { data: services } = useGetServicesByCategory({
+    enabled: true,
+  });
+  const displayServices = useMemo(() => {
+    return services?.slice(0, 3) || [];
+  }, [services]);
 
   return (
     <Flex justify={'around'}>
@@ -88,9 +99,9 @@ export const HeroSection = () => {
         <PopularHeading>{t('Hero.PopularSearches')}</PopularHeading>
 
         <PopularSearchWrapper>
-          {POPULAR_SERVICES.slice(0, 3).map((service) => (
+          {displayServices.map((service: TPopularServices) => (
             <PopularSearchLabel key={service.id}>
-              {t(service.label)}
+              {service.name}
             </PopularSearchLabel>
           ))}
         </PopularSearchWrapper>

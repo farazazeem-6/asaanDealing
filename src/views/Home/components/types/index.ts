@@ -1,1 +1,1 @@
-export * from './statCard'
+export * from './statCard';

@@ -3,8 +3,6 @@ export * from './images';
 export * from './string';
 export * from './regex';
 export * from './language';
-export * from './popularServices';
-export * from './topExperData';
 export * from './quickLinks';
 export * from './socialLinks';
 export * from './quickLinks';

@@ -90,9 +90,6 @@ const darkThemeOpt = {
     gray11: '#F8F9FA',
     gray12: '#FFFFFF',
   },
-  shadows: {
-    cardShadow: '0 2px 8px rgba(20, 95, 45, 0.25)',
-  },
   gradients: {
     primaryButton: 'linear-gradient(90deg, #0F4E29, #0B3A1F)',
     primaryHover: 'linear-gradient(90deg, #0A3A1B, #062C16)',

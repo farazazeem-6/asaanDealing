@@ -12,7 +12,8 @@
     "BecomeTasker": "ٹاسکر بنیں",
     "Search": "تلاش کریں",
     "ViewMore": "مزید دیکھیں",
-    "ClearSelection": "چناؤ ختم کریں"
+    "ClearSelection": "چناؤ ختم کریں",
+    "Available": "دستیاب"
   },
   "Hero": {
     "HeroTitle": "ماہرین کو ڈھونڈنے اور بک کرنے کا آسان طریقہ",
@@ -30,7 +31,8 @@
     "SelectLocation": "مقام منتخب کریں",
     "SelectProvince": "صوبہ منتخب کریں",
     "SelectCity": "شہر منتخب کریں",
-    "NoResultsFound": "کوئی نتیجہ نہیں ملا"
+    "NoResultsFound": "کوئی نتیجہ نہیں ملا",
+    "SearchCategory": "کیٹیگری تلاش کریں"
   },
   "Stats": {
     "TasksPosted": "درج شدہ کام",
@@ -89,11 +91,16 @@
     "TaglineLong": "سادہ جئیں، ذہانت سے جئیں، آپ کی ضرورت کی ہر چیز اب ایک ہی جگہ پر۔"
   },
   "Services": {
-    "Available": "دستیاب",
     "ServiceDesc": "تمام دستیاب سروسز دیکھیں اور اپنی ضرورت کے مطابق درست سروس تلاش کریں۔"
+  },
+  "Categories": {
+    "CategoryDesc": "تمام دستیاب زمرے دیکھیں اور اپنی ضرورت کے مطابق درست انتخاب کریں۔"
   },
   "Messages": {
     "NoServiceFound": "کوئی سروس نہیں ملی",
-    "NoServiceFoundSub": "ہمیں کچھ بھی مطابقت رکھنے والا نہیں ملا"
+    "NoMatchingFound": "ہمیں کچھ بھی مطابقت رکھنے والا نہیں ملا",
+    "NoCategoryFound": "کوئی کیٹیگری نہیں ملی",
+    "NoCategoryAvailable": "کوئی شعبہ دستیاب نہیں۔",
+    "CheckBackLater": "بعد میں چیک کریں۔"
   }
 }
