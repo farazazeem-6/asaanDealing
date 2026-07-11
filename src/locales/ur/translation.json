@@ -1,0 +1,106 @@
+{
+  "Nav": {
+    "Home": "گھر",
+    "Services": "خدمات",
+    "Categories": "کیٹیگریز",
+    "Tasks": "کام"
+  },
+  "Action": {
+    "SignIn": "سائن ان",
+    "ViewAll": "سب دیکھیں",
+    "PostTask": "نیا کام درج کریں",
+    "BecomeTasker": "ٹاسکر بنیں",
+    "Search": "تلاش کریں",
+    "ViewMore": "مزید دیکھیں",
+    "ClearSelection": "چناؤ ختم کریں",
+    "Available": "دستیاب"
+  },
+  "Hero": {
+    "HeroTitle": "ماہرین کو ڈھونڈنے اور بک کرنے کا آسان طریقہ",
+    "HeroDesc": "براؤز کریں، بک کریں، یا خود بک ہو جائیں — انتخاب آپ کا ہے۔",
+    "PopularSearches": "مقبول تلاشیں",
+    "For": "کے لیے"
+  },
+  "HomeContent": {
+    "CategoryTitle": "دریافت کریں ہماری",
+    "CategoryDesc": "ہم نے کیٹیگریز کو سادہ کر دیا ہے تاکہ آپ اپنی ضرورت کو تیزی اور آسانی سے ڈھونڈ سکیں۔",
+    "Categories": "کیٹیگریز"
+  },
+  "Inputs": {
+    "ServiceInput": "سروس تلاش کریں",
+    "SelectLocation": "مقام منتخب کریں",
+    "SelectProvince": "صوبہ منتخب کریں",
+    "SelectCity": "شہر منتخب کریں",
+    "NoResultsFound": "کوئی نتیجہ نہیں ملا",
+    "SearchCategory": "کیٹیگری تلاش کریں"
+  },
+  "Stats": {
+    "TasksPosted": "درج شدہ کام",
+    "Taskers": "ٹاسکرز",
+    "Users": "صارفین"
+  },
+  "CategoryNames": {
+    "ApplianceRepair": "اشیاء کی مرمت",
+    "HVAC": "اے سی اور ہیٹنگ سروسز",
+    "Maintenance": "دیکھ بھال اور مرمت",
+    "CareerServices": "داخلہ اور کیریئر سروسز",
+    "Architectural": "فن تعمیر اور میپنگ",
+    "Tailoring": "گھر پر سلائی کی خدمات",
+    "Cleaning": "صفائی کی خدمات",
+    "EventServices": "کمرشل اور ایونٹ سروسز",
+    "Courier": "کورئیر اور ڈیلیوری سروسز",
+    "Emergency": "ہنگامی خدمات"
+  },
+  "PopularServices": {
+    "AC": "ایئر کنڈیشننگ اور وینٹی لیشن",
+    "HVAC": "ایچ وی اے سی مینٹیننس",
+    "Solar": "ہیٹنگ اور سولر واٹر سسٹم",
+    "CarWash": "کار واش اور ڈیٹیلنگ",
+    "Battery": "اے سی اور بیٹری سروس"
+  },
+  "Professions": {
+    "ACRepair": "اے سی کی تنصیب اور مرمت",
+    "Painting": "گھروں اور دفاتر کی پینٹنگ",
+    "Photography": "فوٹوگرافی اور ویڈیوگرافی",
+    "Electrical": "بجلی کی خدمات",
+    "EventGrooming": "تقریبات کے لیے گرومنگ",
+    "Plumbing": "پلمبنگ",
+    "BeardGrooming": "خط اور شیو",
+    "HomeCleaning": "گھر کی صفائی",
+    "PestControl": "کیڑے مار ادویات کا سپرے"
+  },
+  "Expert": {
+    "ExpertTitle": "بہترین ماہرین، آپ کے ",
+    "ExpertDesc": "ہمارے ماہر اور قابلِ اعتماد ایکسپرٹس، آپ کے سب سے زیادہ قابلِ بھروسہ ساتھی",
+    "Town": "شہر میں"
+  },
+  "DownloadApp": {
+    "Heading": "ہم کوڈنگ کر رہے ہیں",
+    "Desc1": "ایک دلچسپ نئی ایپ کے تجربے کے لیے تیار ہو جائیں!",
+    "Desc2": "ہم آپ کے لیے ایک بہترین موبائل تجربہ لانے کے لیے سخت محنت کر رہے ہیں۔"
+  },
+  "Footer": {
+    "Home": "ہوم",
+    "HowItWorks": "یہ کیسے کام کرتا ہے",
+    "AboutUs": "ہمارے بارے میں",
+    "FAQs": "عمومی سوالات",
+    "ContactUs": "ہم سے رابطہ کریں",
+    "QuickLink": "فوری لنکس",
+    "PopularSearch": "مقبول تلاشیں",
+    "PopularCategory": "مقبول کیٹیگریز",
+    "TaglineLong": "سادہ جئیں، ذہانت سے جئیں، آپ کی ضرورت کی ہر چیز اب ایک ہی جگہ پر۔"
+  },
+  "Services": {
+    "ServiceDesc": "تمام دستیاب سروسز دیکھیں اور اپنی ضرورت کے مطابق درست سروس تلاش کریں۔"
+  },
+  "Categories": {
+    "CategoryDesc": "تمام دستیاب زمرے دیکھیں اور اپنی ضرورت کے مطابق درست انتخاب کریں۔"
+  },
+  "Messages": {
+    "NoServiceFound": "کوئی سروس نہیں ملی",
+    "NoMatchingFound": "ہمیں کچھ بھی مطابقت رکھنے والا نہیں ملا",
+    "NoCategoryFound": "کوئی کیٹیگری نہیں ملی",
+    "NoCategoryAvailable": "کوئی شعبہ دستیاب نہیں۔",
+    "CheckBackLater": "بعد میں چیک کریں۔"
+  }
+}

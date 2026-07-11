@@ -1,0 +1,101 @@
+{
+  "Nav": {
+    "Home": "Ghar",
+    "Services": "Khidmaat",
+    "Categories": "Categories",
+    "Tasks": "Kaam"
+  },
+  "Action": {
+    "SignIn": "Sign In",
+    "ViewAll": "Sab dekhein",
+    "PostTask": "Naya kaam darj karein",
+    "BecomeTasker": "Tasker banein",
+    "Search": "Talash karein",
+    "ViewMore": "Mazeed dekhein",
+    "ClearSelection": "Chunao khatam karein",
+    "Available": "Mojood"
+  },
+  "Hero": {
+    "HeroTitle": "Mahireen ko dhundne aur book karne ka asaan tareen tareeqa",
+    "HeroDesc": "Browse karein, book karein, ya khud book ho jayain — intekhab aap ka hai.",
+    "PopularSearches": "Maqbool talashein",
+    "For": "Ke liye"
+  },
+  "HomeContent": {
+    "CategoryTitle": "Daryaaft karein Hamari",
+    "CategoryDesc": "Hum ne categories ko sada kar diya hai taake aap apni zaroorat ko teezi aur aasani se dhoond sakein.",
+    "Categories": "Categories"
+  },
+  "Inputs": {
+    "ServiceInput": "Service talash karein",
+    "SelectLocation": "Maqam muntakhib karein",
+    "SelectProvince": "Sooba muntakhib karein",
+    "SelectCity": "Shehar muntakhib karein",
+    "NoResultsFound": "Koi nateeja nahi mila",
+    "SearchCategory": "Category talash karein"
+  },
+  "Stats": {
+    "TasksPosted": "Darj shuda kaam",
+    "Taskers": "Taskers",
+    "Users": "Sarifeen"
+  },
+  "CategoryNames": {
+    "ApplianceRepair": "Gharelu ashya ki marammat",
+    "HVAC": "AC aur Heating services",
+    "Maintenance": "Dekh bhaal aur marammat",
+    "CareerServices": "Dakhla aur career services",
+    "Architectural": "Fan-e-tameer aur mapping",
+    "Tailoring": "Ghar par silai ki khidmat",
+    "Cleaning": "Safai ki khidmat",
+    "EventServices": "Commercial aur event services",
+    "Courier": "Courier aur delivery services",
+    "Emergency": "Hangami khidmat"
+  },
+  "PopularServices": {
+    "AC": "Air Conditioning aur Ventilation",
+    "HVAC": "HVAC Maintenance aur Optimization",
+    "Solar": "Heating aur Solar Water Systems",
+    "CarWash": "Car Wash aur Detailing",
+    "Battery": "AC aur Battery Service"
+  },
+  "Professions": {
+    "ACRepair": "AC Installation aur Marammat",
+    "Painting": "Gharon aur Offices ki Painting",
+    "Photography": "Photography aur Videography",
+    "Electrical": "Bijli ki Khidmat",
+    "EventGrooming": "Events ke liye Grooming",
+    "Plumbing": "Plumbing",
+    "BeardGrooming": "Khat aur Shave",
+    "HomeCleaning": "Ghar ki Safai",
+    "PestControl": "Pest Control Services"
+  },
+  "DownloadApp": {
+    "Heading": "Hum Coding Kar Rahe Hain",
+    "Desc1": "Ek dilchasp nayi app ke tajrubay ke liye tayyar ho jayain!",
+    "Desc2": "Hum aap ke liye ek behtareen mobile tajruba lane ke liye sakht mehnat kar rahe hain."
+  },
+  "Footer": {
+    "Home": "Home",
+    "HowItWorks": "Yeh kaise kaam karta hai",
+    "AboutUs": "Hamare baare mein",
+    "FAQs": "FAQs",
+    "ContactUs": "Hum se rabta karein",
+    "QuickLink": "Quick Links",
+    "PopularSearch": "Maqbool talashein",
+    "PopularCategory": "Maqbool categories",
+    "TaglineLong": "Sada jiyein. Zahanat se jiyein. Everything you need in one place."
+  },
+  "Services": {
+    "ServiceDesc": "Tamam dastiyab services dekhein aur apni zaroorat ke mutabiq behtareen service talash karein."
+  },
+  "Categories": {
+    "CategoryDesc": "Tamam dastiyaab zimray dekhein aur apni zarurat ke mutabiq durust intikhab karein."
+  },
+  "Messages": {
+    "NoServiceFound": "Koi service nahi mili",
+    "NoMatchingFound": "Humein kuch bhi mutabiqat rakhne wala nahi mila",
+    "NoCategoryFound": "Koi category nai mili",
+    "NoCategoryAvailable": "Koi shoba dastiyab nahin",
+    "CheckBackLater": " Baad mein check karein."
+  }
+}

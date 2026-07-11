@@ -1,0 +1,106 @@
+{
+  "Nav": {
+    "Home": "Home",
+    "Services": "Services",
+    "Categories": "Categories",
+    "Tasks": "Tasks"
+  },
+  "Action": {
+    "SignIn": "Sign In",
+    "ViewAll": "View All",
+    "PostTask": "Post a Task",
+    "BecomeTasker": "Become a Tasker",
+    "Search": "Search",
+    "ViewMore": "View More",
+    "ClearSelection": "Clear selection",
+    "Available": "Available"
+  },
+  "Hero": {
+    "HeroTitle": "The easiest way to find and book experts",
+    "HeroDesc": "Browse, Book, or Get Booked — the choice is yours.",
+    "PopularSearches": "Popular Searches",
+    "For": "for"
+  },
+  "HomeContent": {
+    "CategoryTitle": "Explore our",
+    "CategoryDesc": "We have simplified our categories to help you find what you need—faster and easier.",
+    "Categories": "Categories"
+  },
+  "Inputs": {
+    "ServiceInput": "Search for service",
+    "SelectLocation": "Select Location",
+    "SelectProvince": "Select Province",
+    "SelectCity": "Select City",
+    "NoResultsFound": "No results found",
+    "SearchCategory": "Search for category"
+  },
+  "Stats": {
+    "TasksPosted": "Tasks Posted",
+    "Taskers": "Taskers",
+    "Users": "Users"
+  },
+  "CategoryNames": {
+    "ApplianceRepair": "Appliance Repair",
+    "HVAC": "HVAC Services",
+    "Maintenance": "Maintenance and Repair",
+    "CareerServices": "Admission & Career Services",
+    "Architectural": "Architectural Mapping",
+    "Tailoring": "At-Home Tailoring",
+    "Cleaning": "Cleaning Services",
+    "EventServices": "Commercial & Event Services",
+    "Courier": "Courier & Delivery Services",
+    "Emergency": "Emergency Services"
+  },
+  "PopularServices": {
+    "AC": "Air Conditioning & Ventilation",
+    "HVAC": "HVAC Maintenance & Optimization",
+    "Solar": "Heating & Solar Water Systems",
+    "CarWash": "Car Wash & Detailing",
+    "Battery": "AC & Battery Service"
+  },
+  "Professions": {
+    "ACRepair": "AC Installation & Repair",
+    "Painting": "Residential & Commercial Painting",
+    "Photography": "Photography & Videography",
+    "Electrical": "Electrical Services",
+    "EventGrooming": "Special Event Grooming",
+    "Plumbing": "Plumbing",
+    "BeardGrooming": "Beard Grooming & Shaving",
+    "HomeCleaning": "Home Cleaning",
+    "PestControl": "General Pest Control"
+  },
+  "Expert": {
+    "ExpertTitle": "Top Experts in your ",
+    "ExpertDesc": "Our skilled and reliable experts, your most trusted partners",
+    "Town": "Town"
+  },
+  "DownloadApp": {
+    "Heading": "We Are Coding",
+    "Desc1": "Get ready for an exciting new app experience!",
+    "Desc2": "We are working hard to bring you an amazing mobile experience."
+  },
+  "Footer": {
+    "Home": "Home",
+    "HowItWorks": "How It Works",
+    "AboutUs": "About Us",
+    "FAQs": "FAQs",
+    "ContactUs": "Contact Us",
+    "QuickLink": "Quick Links",
+    "PopularSearch": "Popular Searches",
+    "PopularCategory": "Popular Categories",
+    "TaglineLong": "Live simpler. Live smarter. Everything you need in one place."
+  },
+  "Services": {
+    "ServiceDesc": "Browse all available services and find the right one for your needs."
+  },
+  "Categories": {
+    "CategoryDesc": "Browse all available Categories and find the right one for your needs."
+  },
+  "Messages": {
+    "NoServiceFound": "No Service Found",
+    "NoMatchingFound": "We couldn't find anything matching",
+    "NoCategoryFound": "No Category Found",
+    "NoCategoryAvailable": "No Category Available",
+    "CheckBackLater": "Check Back Later"
+  }
+}

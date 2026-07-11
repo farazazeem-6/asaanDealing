@@ -1,8 +1,35 @@
-// "use client";
+'use client';
+import { ThemeProvider } from 'next-themes';
+import { ThemeSync } from './ThemeSync';
+import { Loader } from '@/components/elements';
+import { useEffect, useState } from 'react';
+import { Header } from '@/layout/Header';
+import { globalStyles } from '@/theme';
+import { I18nProvider } from '@/components/providers';
+import { Footer } from '@/layout/Footer';
+import { QueryProvider } from '@/providers';
 
-// import { store } from "@/store/store";
-// import { Provider } from "react-redux";
+export const Providers = ({ children }: { children: React.ReactNode }) => {
+  const [mounted, setMounted] = useState(false);
+  globalStyles();
 
-// export default function Providers({ children }: { children: React.ReactNode }) {
-//   return <Provider store={store}>{children}</Provider>;
-// }
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return <Loader />;
+  }
+  return (
+    <I18nProvider>
+      <ThemeProvider attribute={'class'} defaultTheme="light">
+        <QueryProvider>
+          <ThemeSync />
+          <Header />
+          {children}
+          <Footer />
+        </QueryProvider>
+      </ThemeProvider>
+    </I18nProvider>
+  );
+};

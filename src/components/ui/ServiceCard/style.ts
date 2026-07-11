@@ -1,0 +1,75 @@
+import { Box, Flex, Text } from '@/components/elements';
+import { CardsShimmer, styled } from '@/theme';
+
+export const ServiceCardWrapper = styled(Box, {
+  padding: '$px$8',
+  border: '$px$1 solid $lightGrayLine',
+  borderRadius: '$radius$lg',
+  cursor: 'pointer',
+  background: '$categoryCardBg',
+  transition: 'all .3s ease',
+  '&:hover': {
+    border: '$px$1 solid $dGreen',
+  },
+});
+export const ServiceCardImage = styled(Box, {
+  position: 'relative',
+  width: '$percent$100',
+  height: '$px$160',
+  borderRadius: '$radius$lg',
+  overflow: 'hidden',
+  marginBottom: '$px$10',
+
+  '& img': {
+    width: '$percent$100',
+    height: '$percent$100',
+    objectFit: 'cover',
+    transition: 'transform 0.3s ease',
+  },
+
+  '@sm_max': {
+    height: '$px$120',
+    marginBottom: '$px$10',
+  },
+
+  '@xs_max': {
+    height: '$px$100',
+    marginBottom: '$px$8',
+  },
+});
+export const ServiceCardTitle = styled(Text, {
+  color: '$primaryHeading !important',
+  fontSize: '$fontSize$sm',
+  fontWeight: '$fontWeight$bold',
+  width: '$percent$80',
+});
+export const ServiceCardDesc = styled(Text, {
+  color: '$secondryHeading !important',
+  fontSize: '$fontSize$xs',
+  '@sm_max': {
+    fontSize: '$fontSize$xxs',
+  },
+});
+export const ServiceCardHeader = styled(Flex, {
+  justifyContent: 'space-between !important',
+  marginBottom: '$px$8',
+});
+
+export const ImgFallBackDiv = styled(Flex, {
+  width: '$percent$100',
+  height: '$percent$100',
+  alignItems: 'center !important',
+  justifyContent: 'center !important',
+  backgroundColor: '$skeletonWhite',
+  color: '$mediumLightGray',
+});
+
+export const SkeletonBase = styled(Box, {
+  backgroundColor: '$lightGray',
+  backgroundImage: '$skeletonGradient',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: '$px$800 $percent$100',
+  display: 'inline-block',
+  position: 'relative',
+  animation: `${CardsShimmer} 1.2s linear infinite forwards`,
+});
