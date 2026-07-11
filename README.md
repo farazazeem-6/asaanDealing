@@ -1,6 +1,6 @@
 # Asaan Dealing
 
-**Asaan Dealing** is an Airtasker-inspired service provider and tasker marketplace UI built with **Next.js**, **TypeScript**, and **React**. The app supports both service providers and customers by letting users discover local taskers, browse service categories, filter by popular services, and view top-rated experts—similar to an Australian task marketplace experience.
+**Asaan Dealing** is a service provider and tasker marketplace UI built with **Next.js**, **TypeScript**, and **React**. The app supports both service providers and customers by letting users discover local taskers, browse service categories, filter by popular services, and view top-rated experts.
 
 ## Project Overview
 
